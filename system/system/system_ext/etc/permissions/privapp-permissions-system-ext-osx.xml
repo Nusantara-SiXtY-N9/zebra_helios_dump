@@ -1,0 +1,9 @@
+<!--
+    Copyright (C) 2021 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+ -->
+
+<permissions>
+    <privapp-permissions package="com.android.systemui">
+        <permission name="android.permission.MOUNT_FORMAT_FILESYSTEMS" />
+    </privapp-permissions>
+</permissions>

@@ -1,0 +1,26 @@
+#/*! \file Combilog.rc
+#\brief Combilog init rc
+#*---------------------------------------------------------------------------
+#* Copyright (c) 2019-2024 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+#*
+#* Module: Combilog init rc
+#*
+#* Original Date: 02 Jan 2019
+#*
+#* Description:
+#*    To start Combilog service at init time.
+#*
+#* Revision History:
+#*       Initial ver. - 02 Jan 2019
+#*--------------------------------------------------------------------------
+#*/
+
+on post-fs-data
+    mkdir /data/misc/fusion 0770 shell wifi
+    mkdir /data/misc/fusion/zip_failures 0770 shell wifi
+
+
+service combilogservice /system_ext/bin/combilogservice
+   class main
+   user root
+   group wifi everybody

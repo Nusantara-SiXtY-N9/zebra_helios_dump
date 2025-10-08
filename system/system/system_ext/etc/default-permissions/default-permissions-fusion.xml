@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+ /*
+  **
+  ** Copyright (c) 2022 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+  **
+  */
+ -->
+<exceptions>
+
+    <exception package="com.symbol.fusionservice">
+        <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+        <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+        <permission name="android.permission.CHANGE_OVERLAY_PACKAGES" />
+
+
+    </exception>
+
+    <exception package="com.symbol.fusionlogger">
+        <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+        <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    </exception>
+
+    <exception package="com.symbol.fusionsettings">
+        <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+        <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    </exception>
+
+</exceptions>
