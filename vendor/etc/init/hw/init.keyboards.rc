@@ -1,0 +1,912 @@
+#
+# Copyright (c) 2018-2020 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License
+#
+
+
+on post-fs-data
+
+# Keyremap
+chown system system /sys/symbol-keypad/actions/selectkey
+chown system system /sys/symbol-keypad/actions/keyevent
+chmod 0222 /sys/symbol-keypad/actions/keyevent
+
+chown system system /sys/symbol-keypad/keys/VOLUMEDOWN/base_current
+chown system system /sys/symbol-keypad/keys/VOLUMEUP/base_current
+chown system system /sys/symbol-keypad/keys/SCAN/base_current
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_2/base_current
+chown system system /sys/symbol-keypad/keys/REAR_BUTTON/base_current
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_1/base_current
+chown system system /sys/symbol-keypad/keys/BACK/base_current
+chown system system /sys/symbol-keypad/keys/HEADSET_HOOK/base_current
+chown system system /sys/symbol-keypad/keys/HOME/base_current
+chown system system /sys/symbol-keypad/keys/MENU/base_current
+chown system system /sys/symbol-keypad/keys/NAV_PAD/base_current
+chown system system /sys/symbol-keypad/keys/RECENT/base_current
+chown system system /sys/symbol-keypad/keys/GUN_TRIGGER/base_current
+chown system system /sys/symbol-keypad/keys/0/base_current
+chown system system /sys/symbol-keypad/keys/1/base_current
+chown system system /sys/symbol-keypad/keys/2/base_current
+chown system system /sys/symbol-keypad/keys/3/base_current
+chown system system /sys/symbol-keypad/keys/4/base_current
+chown system system /sys/symbol-keypad/keys/5/base_current
+chown system system /sys/symbol-keypad/keys/6/base_current
+chown system system /sys/symbol-keypad/keys/7/base_current
+chown system system /sys/symbol-keypad/keys/8/base_current
+chown system system /sys/symbol-keypad/keys/9/base_current
+chown system system /sys/symbol-keypad/keys/ALT/base_current
+chown system system /sys/symbol-keypad/keys/BACKSPACE/base_current
+chown system system /sys/symbol-keypad/keys/BLUE/base_current
+chown system system /sys/symbol-keypad/keys/CTRL/base_current
+chown system system /sys/symbol-keypad/keys/DOT/base_current
+chown system system /sys/symbol-keypad/keys/DOWN/base_current
+chown system system /sys/symbol-keypad/keys/ENT/base_current
+chown system system /sys/symbol-keypad/keys/ESC/base_current
+chown system system /sys/symbol-keypad/keys/LEFT/base_current
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_1/base_current
+chown system system /sys/symbol-keypad/keys/LEFT_EXTERNAL_TRIGGER/base_current
+chown system system /sys/symbol-keypad/keys/ORANGE/base_current
+chown system system /sys/symbol-keypad/keys/P1/base_current
+chown system system /sys/symbol-keypad/keys/P2/base_current
+chown system system /sys/symbol-keypad/keys/P3/base_current
+chown system system /sys/symbol-keypad/keys/W1/base_current
+chown system system /sys/symbol-keypad/keys/W2/base_current
+chown system system /sys/symbol-keypad/keys/ALPHA/base_current
+chown system system /sys/symbol-keypad/keys/FUNC/base_current
+chown system system /sys/symbol-keypad/keys/END/base_current
+chown system system /sys/symbol-keypad/keys/MINUS/base_current
+chown system system /sys/symbol-keypad/keys/PAUSE/base_current
+chown system system /sys/symbol-keypad/keys/PLUS/base_current
+chown system system /sys/symbol-keypad/keys/RIGHT/base_current
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_2/base_current
+chown system system /sys/symbol-keypad/keys/RIGHT_EXTERNAL_TRIGGER/base_current
+chown system system /sys/symbol-keypad/keys/SHIFT/base_current
+chown system system /sys/symbol-keypad/keys/SPACE/base_current
+chown system system /sys/symbol-keypad/keys/TAB/base_current
+chown system system /sys/symbol-keypad/keys/UP/base_current
+chown system system /sys/symbol-keypad/keys/COMMA/base_current
+chown system system /sys/symbol-keypad/keys/F1/base_current
+chown system system /sys/symbol-keypad/keys/F2/base_current
+chown system system /sys/symbol-keypad/keys/F3/base_current
+chown system system /sys/symbol-keypad/keys/F4/base_current
+chown system system /sys/symbol-keypad/keys/F5/base_current
+chown system system /sys/symbol-keypad/keys/F6/base_current
+chown system system /sys/symbol-keypad/keys/F7/base_current
+chown system system /sys/symbol-keypad/keys/F8/base_current
+chown system system /sys/symbol-keypad/keys/F9/base_current
+chown system system /sys/symbol-keypad/keys/F10/base_current
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER/base_current
+chown system system /sys/symbol-keypad/keys/A/base_current
+chown system system /sys/symbol-keypad/keys/B/base_current
+chown system system /sys/symbol-keypad/keys/C/base_current
+chown system system /sys/symbol-keypad/keys/D/base_current
+chown system system /sys/symbol-keypad/keys/E/base_current
+chown system system /sys/symbol-keypad/keys/F/base_current
+chown system system /sys/symbol-keypad/keys/G/base_current
+chown system system /sys/symbol-keypad/keys/H/base_current
+chown system system /sys/symbol-keypad/keys/I/base_current
+chown system system /sys/symbol-keypad/keys/J/base_current
+chown system system /sys/symbol-keypad/keys/K/base_current
+chown system system /sys/symbol-keypad/keys/L/base_current
+chown system system /sys/symbol-keypad/keys/M/base_current
+chown system system /sys/symbol-keypad/keys/N/base_current
+chown system system /sys/symbol-keypad/keys/O/base_current
+chown system system /sys/symbol-keypad/keys/P/base_current
+chown system system /sys/symbol-keypad/keys/Q/base_current
+chown system system /sys/symbol-keypad/keys/R/base_current
+chown system system /sys/symbol-keypad/keys/S/base_current
+chown system system /sys/symbol-keypad/keys/T/base_current
+chown system system /sys/symbol-keypad/keys/U/base_current
+chown system system /sys/symbol-keypad/keys/V/base_current
+chown system system /sys/symbol-keypad/keys/W/base_current
+chown system system /sys/symbol-keypad/keys/X/base_current
+chown system system /sys/symbol-keypad/keys/Y/base_current
+chown system system /sys/symbol-keypad/keys/Z/base_current
+chown system system /sys/symbol-keypad/keys/CLR/base_current
+chown system system /sys/symbol-keypad/keys/DIAMOND/base_current
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER_2/base_current
+chown system system /sys/symbol-keypad/keys/FIELD_EXIT/base_current
+chown system system /sys/symbol-keypad/keys/RETURN/base_current
+chown system system /sys/symbol-keypad/keys/F11/base_current
+chown system system /sys/symbol-keypad/keys/F12/base_current
+chown system system /sys/symbol-keypad/keys/KEYLIGHTDOWN/base_current
+chown system system /sys/symbol-keypad/keys/KEYLIGHTUP/base_current
+chown system system /sys/symbol-keypad/keys/PAGEUP/base_current
+chown system system /sys/symbol-keypad/keys/PAGEDOWN/base_current
+chown system system /sys/symbol-keypad/keys/INSERT/base_current
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSUP/base_current
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSDOWN/base_current
+chown system system /sys/symbol-keypad/keys/KEYBOARD/base_current
+chown system system /sys/symbol-keypad/keys/ENTER/base_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_1/base_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_2/base_current
+chown system system /sys/symbol-keypad/keys/GREY/base_current
+
+chown system system /sys/symbol-keypad/keys/VOLUMEDOWN/blue_current
+chown system system /sys/symbol-keypad/keys/VOLUMEDOWN/orange_current
+chown system system /sys/symbol-keypad/keys/VOLUMEDOWN/control_current
+chown system system /sys/symbol-keypad/keys/VOLUMEDOWN/shift_current
+chown system system /sys/symbol-keypad/keys/VOLUMEDOWN/diamond_current
+chown system system /sys/symbol-keypad/keys/VOLUMEDOWN/grey_current
+
+chown system system /sys/symbol-keypad/keys/VOLUMEUP/blue_current
+chown system system /sys/symbol-keypad/keys/VOLUMEUP/orange_current
+chown system system /sys/symbol-keypad/keys/VOLUMEUP/control_current
+chown system system /sys/symbol-keypad/keys/VOLUMEUP/shift_current
+chown system system /sys/symbol-keypad/keys/VOLUMEUP/diamond_current
+chown system system /sys/symbol-keypad/keys/VOLUMEUP/grey_current
+
+chown system system /sys/symbol-keypad/keys/SCAN/blue_current
+chown system system /sys/symbol-keypad/keys/SCAN/orange_current
+chown system system /sys/symbol-keypad/keys/SCAN/control_current
+chown system system /sys/symbol-keypad/keys/SCAN/shift_current
+chown system system /sys/symbol-keypad/keys/SCAN/diamond_current
+chown system system /sys/symbol-keypad/keys/SCAN/grey_current
+
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_2/blue_current
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_2/orange_current
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_2/control_current
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_2/shift_current
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_2/diamond_current
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_2/grey_current
+
+chown system system /sys/symbol-keypad/keys/REAR_BUTTON/blue_current
+chown system system /sys/symbol-keypad/keys/REAR_BUTTON/orange_current
+chown system system /sys/symbol-keypad/keys/REAR_BUTTON/control_current
+chown system system /sys/symbol-keypad/keys/REAR_BUTTON/shift_current
+chown system system /sys/symbol-keypad/keys/REAR_BUTTON/diamond_current
+chown system system /sys/symbol-keypad/keys/REAR_BUTTON/grey_current
+
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_1/blue_current
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_1/orange_current
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_1/control_current
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_1/shift_current
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_1/diamond_current
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_1/grey_current
+
+chown system system /sys/symbol-keypad/keys/BACK/blue_current
+chown system system /sys/symbol-keypad/keys/BACK/orange_current
+chown system system /sys/symbol-keypad/keys/BACK/control_current
+chown system system /sys/symbol-keypad/keys/BACK/shift_current
+chown system system /sys/symbol-keypad/keys/BACK/diamond_current
+chown system system /sys/symbol-keypad/keys/BACK/grey_current
+
+chown system system /sys/symbol-keypad/keys/HEADSET_HOOK/blue_current
+chown system system /sys/symbol-keypad/keys/HEADSET_HOOK/orange_current
+chown system system /sys/symbol-keypad/keys/HEADSET_HOOK/control_current
+chown system system /sys/symbol-keypad/keys/HEADSET_HOOK/shift_current
+chown system system /sys/symbol-keypad/keys/HEADSET_HOOK/diamond_current
+chown system system /sys/symbol-keypad/keys/HEADSET_HOOK/grey_current
+
+chown system system /sys/symbol-keypad/keys/HOME/blue_current
+chown system system /sys/symbol-keypad/keys/HOME/orange_current
+chown system system /sys/symbol-keypad/keys/HOME/control_current
+chown system system /sys/symbol-keypad/keys/HOME/shift_current
+chown system system /sys/symbol-keypad/keys/HOME/diamond_current
+chown system system /sys/symbol-keypad/keys/HOME/grey_current
+
+chown system system /sys/symbol-keypad/keys/MENU/blue_current
+chown system system /sys/symbol-keypad/keys/MENU/orange_current
+chown system system /sys/symbol-keypad/keys/MENU/control_current
+chown system system /sys/symbol-keypad/keys/MENU/shift_current
+chown system system /sys/symbol-keypad/keys/MENU/diamond_current
+chown system system /sys/symbol-keypad/keys/MENU/grey_current
+
+chown system system /sys/symbol-keypad/keys/RECENT/blue_current
+chown system system /sys/symbol-keypad/keys/RECENT/orange_current
+chown system system /sys/symbol-keypad/keys/RECENT/control_current
+chown system system /sys/symbol-keypad/keys/RECENT/shift_current
+chown system system /sys/symbol-keypad/keys/RECENT/diamond_current
+chown system system /sys/symbol-keypad/keys/RECENT/grey_current
+
+chown system system /sys/symbol-keypad/keys/GUN_TRIGGER/blue_current
+chown system system /sys/symbol-keypad/keys/GUN_TRIGGER/orange_current
+chown system system /sys/symbol-keypad/keys/GUN_TRIGGER/control_current
+chown system system /sys/symbol-keypad/keys/GUN_TRIGGER/shift_current
+chown system system /sys/symbol-keypad/keys/GUN_TRIGGER/diamond_current
+chown system system /sys/symbol-keypad/keys/GUN_TRIGGER/grey_current
+
+chown system system /sys/symbol-keypad/keys/0/blue_current
+chown system system /sys/symbol-keypad/keys/0/orange_current
+chown system system /sys/symbol-keypad/keys/0/control_current
+chown system system /sys/symbol-keypad/keys/0/shift_current
+chown system system /sys/symbol-keypad/keys/0/diamond_current
+chown system system /sys/symbol-keypad/keys/0/grey_current
+
+chown system system /sys/symbol-keypad/keys/1/blue_current
+chown system system /sys/symbol-keypad/keys/1/orange_current
+chown system system /sys/symbol-keypad/keys/1/control_current
+chown system system /sys/symbol-keypad/keys/1/shift_current
+chown system system /sys/symbol-keypad/keys/1/diamond_current
+chown system system /sys/symbol-keypad/keys/1/grey_current
+
+chown system system /sys/symbol-keypad/keys/2/blue_current
+chown system system /sys/symbol-keypad/keys/2/orange_current
+chown system system /sys/symbol-keypad/keys/2/control_current
+chown system system /sys/symbol-keypad/keys/2/shift_current
+chown system system /sys/symbol-keypad/keys/2/diamond_current
+chown system system /sys/symbol-keypad/keys/2/grey_current
+
+chown system system /sys/symbol-keypad/keys/3/blue_current
+chown system system /sys/symbol-keypad/keys/3/orange_current
+chown system system /sys/symbol-keypad/keys/3/control_current
+chown system system /sys/symbol-keypad/keys/3/shift_current
+chown system system /sys/symbol-keypad/keys/3/diamond_current
+chown system system /sys/symbol-keypad/keys/3/grey_current
+
+chown system system /sys/symbol-keypad/keys/4/blue_current
+chown system system /sys/symbol-keypad/keys/4/orange_current
+chown system system /sys/symbol-keypad/keys/4/control_current
+chown system system /sys/symbol-keypad/keys/4/shift_current
+chown system system /sys/symbol-keypad/keys/4/diamond_current
+chown system system /sys/symbol-keypad/keys/4/grey_current
+
+chown system system /sys/symbol-keypad/keys/5/blue_current
+chown system system /sys/symbol-keypad/keys/5/orange_current
+chown system system /sys/symbol-keypad/keys/5/control_current
+chown system system /sys/symbol-keypad/keys/5/shift_current
+chown system system /sys/symbol-keypad/keys/5/diamond_current
+chown system system /sys/symbol-keypad/keys/5/grey_current
+
+chown system system /sys/symbol-keypad/keys/6/blue_current
+chown system system /sys/symbol-keypad/keys/6/orange_current
+chown system system /sys/symbol-keypad/keys/6/control_current
+chown system system /sys/symbol-keypad/keys/6/shift_current
+chown system system /sys/symbol-keypad/keys/6/diamond_current
+chown system system /sys/symbol-keypad/keys/6/grey_current
+
+chown system system /sys/symbol-keypad/keys/7/blue_current
+chown system system /sys/symbol-keypad/keys/7/orange_current
+chown system system /sys/symbol-keypad/keys/7/control_current
+chown system system /sys/symbol-keypad/keys/7/shift_current
+chown system system /sys/symbol-keypad/keys/7/diamond_current
+chown system system /sys/symbol-keypad/keys/7/grey_current
+
+chown system system /sys/symbol-keypad/keys/8/blue_current
+chown system system /sys/symbol-keypad/keys/8/orange_current
+chown system system /sys/symbol-keypad/keys/8/control_current
+chown system system /sys/symbol-keypad/keys/8/shift_current
+chown system system /sys/symbol-keypad/keys/8/diamond_current
+chown system system /sys/symbol-keypad/keys/8/grey_current
+
+chown system system /sys/symbol-keypad/keys/9/blue_current
+chown system system /sys/symbol-keypad/keys/9/orange_current
+chown system system /sys/symbol-keypad/keys/9/control_current
+chown system system /sys/symbol-keypad/keys/9/shift_current
+chown system system /sys/symbol-keypad/keys/9/diamond_current
+chown system system /sys/symbol-keypad/keys/9/grey_current
+
+chown system system /sys/symbol-keypad/keys/ALT/blue_current
+chown system system /sys/symbol-keypad/keys/ALT/orange_current
+chown system system /sys/symbol-keypad/keys/ALT/control_current
+chown system system /sys/symbol-keypad/keys/ALT/shift_current
+chown system system /sys/symbol-keypad/keys/ALT/diamond_current
+chown system system /sys/symbol-keypad/keys/ALT/grey_current
+
+chown system system /sys/symbol-keypad/keys/BACKSPACE/blue_current
+chown system system /sys/symbol-keypad/keys/BACKSPACE/orange_current
+chown system system /sys/symbol-keypad/keys/BACKSPACE/control_current
+chown system system /sys/symbol-keypad/keys/BACKSPACE/shift_current
+chown system system /sys/symbol-keypad/keys/BACKSPACE/diamond_current
+chown system system /sys/symbol-keypad/keys/BACKSPACE/grey_current
+
+chown system system /sys/symbol-keypad/keys/BLUE/blue_current
+chown system system /sys/symbol-keypad/keys/BLUE/orange_current
+chown system system /sys/symbol-keypad/keys/BLUE/control_current
+chown system system /sys/symbol-keypad/keys/BLUE/shift_current
+chown system system /sys/symbol-keypad/keys/BLUE/diamond_current
+chown system system /sys/symbol-keypad/keys/BLUE/grey_current
+
+chown system system /sys/symbol-keypad/keys/CTRL/blue_current
+chown system system /sys/symbol-keypad/keys/CTRL/orange_current
+chown system system /sys/symbol-keypad/keys/CTRL/control_current
+chown system system /sys/symbol-keypad/keys/CTRL/shift_current
+chown system system /sys/symbol-keypad/keys/CTRL/diamond_current
+chown system system /sys/symbol-keypad/keys/CTRL/grey_current
+
+chown system system /sys/symbol-keypad/keys/DOT/blue_current
+chown system system /sys/symbol-keypad/keys/DOT/orange_current
+chown system system /sys/symbol-keypad/keys/DOT/control_current
+chown system system /sys/symbol-keypad/keys/DOT/shift_current
+chown system system /sys/symbol-keypad/keys/DOT/diamond_current
+chown system system /sys/symbol-keypad/keys/DOT/grey_current
+
+chown system system /sys/symbol-keypad/keys/DOWN/blue_current
+chown system system /sys/symbol-keypad/keys/DOWN/orange_current
+chown system system /sys/symbol-keypad/keys/DOWN/control_current
+chown system system /sys/symbol-keypad/keys/DOWN/shift_current
+chown system system /sys/symbol-keypad/keys/DOWN/diamond_current
+chown system system /sys/symbol-keypad/keys/DOWN/grey_current
+
+chown system system /sys/symbol-keypad/keys/ENT/blue_current
+chown system system /sys/symbol-keypad/keys/ENT/orange_current
+chown system system /sys/symbol-keypad/keys/ENT/control_current
+chown system system /sys/symbol-keypad/keys/ENT/shift_current
+chown system system /sys/symbol-keypad/keys/ENT/diamond_current
+chown system system /sys/symbol-keypad/keys/ENT/grey_current
+
+chown system system /sys/symbol-keypad/keys/ESC/blue_current
+chown system system /sys/symbol-keypad/keys/ESC/orange_current
+chown system system /sys/symbol-keypad/keys/ESC/control_current
+chown system system /sys/symbol-keypad/keys/ESC/shift_current
+chown system system /sys/symbol-keypad/keys/ESC/diamond_current
+chown system system /sys/symbol-keypad/keys/ESC/grey_current
+
+chown system system /sys/symbol-keypad/keys/LEFT/blue_current
+chown system system /sys/symbol-keypad/keys/LEFT/orange_current
+chown system system /sys/symbol-keypad/keys/LEFT/control_current
+chown system system /sys/symbol-keypad/keys/LEFT/shift_current
+chown system system /sys/symbol-keypad/keys/LEFT/diamond_current
+chown system system /sys/symbol-keypad/keys/LEFT/grey_current
+
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_1/blue_current
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_1/orange_current
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_1/control_current
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_1/shift_current
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_1/diamond_current
+chown system system /sys/symbol-keypad/keys/LEFT_TRIGGER_1/grey_current
+
+chown system system /sys/symbol-keypad/keys/LEFT_EXTERNAL_TRIGGER/blue_current
+chown system system /sys/symbol-keypad/keys/LEFT_EXTERNAL_TRIGGER/orange_current
+chown system system /sys/symbol-keypad/keys/LEFT_EXTERNAL_TRIGGER/control_current
+chown system system /sys/symbol-keypad/keys/LEFT_EXTERNAL_TRIGGER/shift_current
+chown system system /sys/symbol-keypad/keys/LEFT_EXTERNAL_TRIGGER/diamond_current
+chown system system /sys/symbol-keypad/keys/LEFT_EXTERNAL_TRIGGER/grey_current
+
+chown system system /sys/symbol-keypad/keys/ORANGE/blue_current
+chown system system /sys/symbol-keypad/keys/ORANGE/orange_current
+chown system system /sys/symbol-keypad/keys/ORANGE/control_current
+chown system system /sys/symbol-keypad/keys/ORANGE/shift_current
+chown system system /sys/symbol-keypad/keys/ORANGE/diamond_current
+chown system system /sys/symbol-keypad/keys/ORANGE/grey_current
+
+chown system system /sys/symbol-keypad/keys/P1/blue_current
+chown system system /sys/symbol-keypad/keys/P1/orange_current
+chown system system /sys/symbol-keypad/keys/P1/control_current
+chown system system /sys/symbol-keypad/keys/P1/shift_current
+chown system system /sys/symbol-keypad/keys/P1/diamond_current
+chown system system /sys/symbol-keypad/keys/P1/grey_current
+
+chown system system /sys/symbol-keypad/keys/P2/blue_current
+chown system system /sys/symbol-keypad/keys/P2/orange_current
+chown system system /sys/symbol-keypad/keys/P2/control_current
+chown system system /sys/symbol-keypad/keys/P2/shift_current
+chown system system /sys/symbol-keypad/keys/P2/diamond_current
+chown system system /sys/symbol-keypad/keys/P2/grey_current
+
+chown system system /sys/symbol-keypad/keys/P3/blue_current
+chown system system /sys/symbol-keypad/keys/P3/orange_current
+chown system system /sys/symbol-keypad/keys/P3/control_current
+chown system system /sys/symbol-keypad/keys/P3/shift_current
+chown system system /sys/symbol-keypad/keys/P3/diamond_current
+chown system system /sys/symbol-keypad/keys/P3/grey_current
+
+chown system system /sys/symbol-keypad/keys/W1/blue_current
+chown system system /sys/symbol-keypad/keys/W1/orange_current
+chown system system /sys/symbol-keypad/keys/W1/control_current
+chown system system /sys/symbol-keypad/keys/W1/shift_current
+
+chown system system /sys/symbol-keypad/keys/W2/blue_current
+chown system system /sys/symbol-keypad/keys/W2/orange_current
+chown system system /sys/symbol-keypad/keys/W2/control_current
+chown system system /sys/symbol-keypad/keys/W2/shift_current
+
+chown system system /sys/symbol-keypad/keys/ALPHA/blue_current
+chown system system /sys/symbol-keypad/keys/ALPHA/orange_current
+chown system system /sys/symbol-keypad/keys/ALPHA/control_current
+chown system system /sys/symbol-keypad/keys/ALPHA/shift_current
+
+chown system system /sys/symbol-keypad/keys/FUNC/blue_current
+chown system system /sys/symbol-keypad/keys/FUNC/orange_current
+chown system system /sys/symbol-keypad/keys/FUNC/control_current
+chown system system /sys/symbol-keypad/keys/FUNC/shift_current
+
+chown system system /sys/symbol-keypad/keys/END/blue_current
+chown system system /sys/symbol-keypad/keys/END/orange_current
+chown system system /sys/symbol-keypad/keys/END/control_current
+chown system system /sys/symbol-keypad/keys/END/shift_current
+
+chown system system /sys/symbol-keypad/keys/MINUS/blue_current
+chown system system /sys/symbol-keypad/keys/MINUS/orange_current
+chown system system /sys/symbol-keypad/keys/MINUS/control_current
+chown system system /sys/symbol-keypad/keys/MINUS/shift_current
+chown system system /sys/symbol-keypad/keys/MINUS/diamond_current
+chown system system /sys/symbol-keypad/keys/MINUS/grey_current
+
+chown system system /sys/symbol-keypad/keys/PAUSE/blue_current
+chown system system /sys/symbol-keypad/keys/PAUSE/orange_current
+chown system system /sys/symbol-keypad/keys/PAUSE/control_current
+chown system system /sys/symbol-keypad/keys/PAUSE/shift_current
+
+chown system system /sys/symbol-keypad/keys/PLUS/blue_current
+chown system system /sys/symbol-keypad/keys/PLUS/orange_current
+chown system system /sys/symbol-keypad/keys/PLUS/control_current
+chown system system /sys/symbol-keypad/keys/PLUS/shift_current
+chown system system /sys/symbol-keypad/keys/PLUS/diamond_current
+chown system system /sys/symbol-keypad/keys/PLUS/grey_current
+
+chown system system /sys/symbol-keypad/keys/RIGHT/blue_current
+chown system system /sys/symbol-keypad/keys/RIGHT/orange_current
+chown system system /sys/symbol-keypad/keys/RIGHT/control_current
+chown system system /sys/symbol-keypad/keys/RIGHT/shift_current
+chown system system /sys/symbol-keypad/keys/RIGHT/diamond_current
+chown system system /sys/symbol-keypad/keys/RIGHT/grey_current
+
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_2/blue_current
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_2/orange_current
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_2/control_current
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_2/shift_current
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_2/diamond_current
+chown system system /sys/symbol-keypad/keys/RIGHT_TRIGGER_2/grey_current
+
+chown system system /sys/symbol-keypad/keys/RIGHT_EXTERNAL_TRIGGER/blue_current
+chown system system /sys/symbol-keypad/keys/RIGHT_EXTERNAL_TRIGGER/orange_current
+chown system system /sys/symbol-keypad/keys/RIGHT_EXTERNAL_TRIGGER/control_current
+chown system system /sys/symbol-keypad/keys/RIGHT_EXTERNAL_TRIGGER/shift_current
+chown system system /sys/symbol-keypad/keys/RIGHT_EXTERNAL_TRIGGER/diamond_current
+chown system system /sys/symbol-keypad/keys/RIGHT_EXTERNAL_TRIGGER/grey_current
+
+chown system system /sys/symbol-keypad/keys/SHIFT/blue_current
+chown system system /sys/symbol-keypad/keys/SHIFT/orange_current
+chown system system /sys/symbol-keypad/keys/SHIFT/control_current
+chown system system /sys/symbol-keypad/keys/SHIFT/shift_current
+chown system system /sys/symbol-keypad/keys/SHIFT/diamond_current
+chown system system /sys/symbol-keypad/keys/SHIFT/grey_current
+
+chown system system /sys/symbol-keypad/keys/SPACE/blue_current
+chown system system /sys/symbol-keypad/keys/SPACE/orange_current
+chown system system /sys/symbol-keypad/keys/SPACE/control_current
+chown system system /sys/symbol-keypad/keys/SPACE/shift_current
+chown system system /sys/symbol-keypad/keys/SPACE/diamond_current
+chown system system /sys/symbol-keypad/keys/SPACE/grey_current
+
+chown system system /sys/symbol-keypad/keys/TAB/blue_current
+chown system system /sys/symbol-keypad/keys/TAB/orange_current
+chown system system /sys/symbol-keypad/keys/TAB/control_current
+chown system system /sys/symbol-keypad/keys/TAB/shift_current
+chown system system /sys/symbol-keypad/keys/TAB/diamond_current
+chown system system /sys/symbol-keypad/keys/TAB/grey_current
+
+chown system system /sys/symbol-keypad/keys/UP/blue_current
+chown system system /sys/symbol-keypad/keys/UP/orange_current
+chown system system /sys/symbol-keypad/keys/UP/control_current
+chown system system /sys/symbol-keypad/keys/UP/shift_current
+chown system system /sys/symbol-keypad/keys/UP/diamond_current
+chown system system /sys/symbol-keypad/keys/UP/grey_current
+
+chown system system /sys/symbol-keypad/keys/COMMA/blue_current
+chown system system /sys/symbol-keypad/keys/COMMA/orange_current
+chown system system /sys/symbol-keypad/keys/COMMA/control_current
+chown system system /sys/symbol-keypad/keys/COMMA/shift_current
+chown system system /sys/symbol-keypad/keys/COMMA/diamond_current
+chown system system /sys/symbol-keypad/keys/COMMA/grey_current
+
+chown system system /sys/symbol-keypad/keys/F1/blue_current
+chown system system /sys/symbol-keypad/keys/F1/orange_current
+chown system system /sys/symbol-keypad/keys/F1/control_current
+chown system system /sys/symbol-keypad/keys/F1/shift_current
+chown system system /sys/symbol-keypad/keys/F1/diamond_current
+chown system system /sys/symbol-keypad/keys/F1/grey_current
+
+chown system system /sys/symbol-keypad/keys/F2/blue_current
+chown system system /sys/symbol-keypad/keys/F2/orange_current
+chown system system /sys/symbol-keypad/keys/F2/control_current
+chown system system /sys/symbol-keypad/keys/F2/shift_current
+chown system system /sys/symbol-keypad/keys/F2/diamond_current
+chown system system /sys/symbol-keypad/keys/F2/grey_current
+
+chown system system /sys/symbol-keypad/keys/F3/blue_current
+chown system system /sys/symbol-keypad/keys/F3/orange_current
+chown system system /sys/symbol-keypad/keys/F3/control_current
+chown system system /sys/symbol-keypad/keys/F3/shift_current
+chown system system /sys/symbol-keypad/keys/F3/diamond_current
+chown system system /sys/symbol-keypad/keys/F3/grey_current
+
+chown system system /sys/symbol-keypad/keys/F4/blue_current
+chown system system /sys/symbol-keypad/keys/F4/orange_current
+chown system system /sys/symbol-keypad/keys/F4/control_current
+chown system system /sys/symbol-keypad/keys/F4/shift_current
+chown system system /sys/symbol-keypad/keys/F4/diamond_current
+chown system system /sys/symbol-keypad/keys/F4/grey_current
+
+chown system system /sys/symbol-keypad/keys/F5/blue_current
+chown system system /sys/symbol-keypad/keys/F5/orange_current
+chown system system /sys/symbol-keypad/keys/F5/control_current
+chown system system /sys/symbol-keypad/keys/F5/shift_current
+chown system system /sys/symbol-keypad/keys/F5/diamond_current
+chown system system /sys/symbol-keypad/keys/F5/grey_current
+
+chown system system /sys/symbol-keypad/keys/F6/blue_current
+chown system system /sys/symbol-keypad/keys/F6/orange_current
+chown system system /sys/symbol-keypad/keys/F6/control_current
+chown system system /sys/symbol-keypad/keys/F6/shift_current
+chown system system /sys/symbol-keypad/keys/F6/diamond_current
+chown system system /sys/symbol-keypad/keys/F6/grey_current
+
+chown system system /sys/symbol-keypad/keys/F7/blue_current
+chown system system /sys/symbol-keypad/keys/F7/orange_current
+chown system system /sys/symbol-keypad/keys/F7/control_current
+chown system system /sys/symbol-keypad/keys/F7/shift_current
+chown system system /sys/symbol-keypad/keys/F7/diamond_current
+chown system system /sys/symbol-keypad/keys/F7/grey_current
+
+chown system system /sys/symbol-keypad/keys/F8/blue_current
+chown system system /sys/symbol-keypad/keys/F8/orange_current
+chown system system /sys/symbol-keypad/keys/F8/control_current
+chown system system /sys/symbol-keypad/keys/F8/shift_current
+chown system system /sys/symbol-keypad/keys/F8/diamond_current
+chown system system /sys/symbol-keypad/keys/F8/grey_current
+
+chown system system /sys/symbol-keypad/keys/F9/blue_current
+chown system system /sys/symbol-keypad/keys/F9/orange_current
+chown system system /sys/symbol-keypad/keys/F9/control_current
+chown system system /sys/symbol-keypad/keys/F9/shift_current
+chown system system /sys/symbol-keypad/keys/F9/diamond_current
+chown system system /sys/symbol-keypad/keys/F9/grey_current
+
+chown system system /sys/symbol-keypad/keys/F10/blue_current
+chown system system /sys/symbol-keypad/keys/F10/orange_current
+chown system system /sys/symbol-keypad/keys/F10/control_current
+chown system system /sys/symbol-keypad/keys/F10/shift_current
+chown system system /sys/symbol-keypad/keys/F10/diamond_current
+chown system system /sys/symbol-keypad/keys/F10/grey_current
+
+chown system system /sys/symbol-keypad/keys/F11/blue_current
+chown system system /sys/symbol-keypad/keys/F11/orange_current
+chown system system /sys/symbol-keypad/keys/F11/control_current
+chown system system /sys/symbol-keypad/keys/F11/shift_current
+chown system system /sys/symbol-keypad/keys/F11/diamond_current
+chown system system /sys/symbol-keypad/keys/F11/grey_current
+
+chown system system /sys/symbol-keypad/keys/F12/blue_current
+chown system system /sys/symbol-keypad/keys/F12/orange_current
+chown system system /sys/symbol-keypad/keys/F12/control_current
+chown system system /sys/symbol-keypad/keys/F12/shift_current
+chown system system /sys/symbol-keypad/keys/F12/diamond_current
+chown system system /sys/symbol-keypad/keys/F12/grey_current
+
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER/blue_current
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER/orange_current
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER/control_current
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER/shift_current
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER/diamond_current
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER/grey_current
+
+chown system system /sys/symbol-keypad/keys/A/blue_current
+chown system system /sys/symbol-keypad/keys/A/orange_current
+chown system system /sys/symbol-keypad/keys/A/control_current
+chown system system /sys/symbol-keypad/keys/A/shift_current
+chown system system /sys/symbol-keypad/keys/A/diamond_current
+chown system system /sys/symbol-keypad/keys/A/grey_current
+
+chown system system /sys/symbol-keypad/keys/B/blue_current
+chown system system /sys/symbol-keypad/keys/B/orange_current
+chown system system /sys/symbol-keypad/keys/B/control_current
+chown system system /sys/symbol-keypad/keys/B/shift_current
+chown system system /sys/symbol-keypad/keys/B/diamond_current
+chown system system /sys/symbol-keypad/keys/B/grey_current
+
+chown system system /sys/symbol-keypad/keys/C/blue_current
+chown system system /sys/symbol-keypad/keys/C/orange_current
+chown system system /sys/symbol-keypad/keys/C/control_current
+chown system system /sys/symbol-keypad/keys/C/shift_current
+chown system system /sys/symbol-keypad/keys/C/diamond_current
+chown system system /sys/symbol-keypad/keys/C/grey_current
+
+chown system system /sys/symbol-keypad/keys/D/blue_current
+chown system system /sys/symbol-keypad/keys/D/orange_current
+chown system system /sys/symbol-keypad/keys/D/control_current
+chown system system /sys/symbol-keypad/keys/D/shift_current
+chown system system /sys/symbol-keypad/keys/D/diamond_current
+chown system system /sys/symbol-keypad/keys/D/grey_current
+
+chown system system /sys/symbol-keypad/keys/E/blue_current
+chown system system /sys/symbol-keypad/keys/E/orange_current
+chown system system /sys/symbol-keypad/keys/E/control_current
+chown system system /sys/symbol-keypad/keys/E/shift_current
+chown system system /sys/symbol-keypad/keys/E/diamond_current
+chown system system /sys/symbol-keypad/keys/E/grey_current
+
+chown system system /sys/symbol-keypad/keys/F/blue_current
+chown system system /sys/symbol-keypad/keys/F/orange_current
+chown system system /sys/symbol-keypad/keys/F/control_current
+chown system system /sys/symbol-keypad/keys/F/shift_current
+chown system system /sys/symbol-keypad/keys/F/diamond_current
+chown system system /sys/symbol-keypad/keys/F/grey_current
+
+chown system system /sys/symbol-keypad/keys/G/blue_current
+chown system system /sys/symbol-keypad/keys/G/orange_current
+chown system system /sys/symbol-keypad/keys/G/control_current
+chown system system /sys/symbol-keypad/keys/G/shift_current
+chown system system /sys/symbol-keypad/keys/G/diamond_current
+chown system system /sys/symbol-keypad/keys/G/grey_current
+
+chown system system /sys/symbol-keypad/keys/H/blue_current
+chown system system /sys/symbol-keypad/keys/H/orange_current
+chown system system /sys/symbol-keypad/keys/H/control_current
+chown system system /sys/symbol-keypad/keys/H/shift_current
+chown system system /sys/symbol-keypad/keys/H/diamond_current
+chown system system /sys/symbol-keypad/keys/H/grey_current
+
+chown system system /sys/symbol-keypad/keys/I/blue_current
+chown system system /sys/symbol-keypad/keys/I/orange_current
+chown system system /sys/symbol-keypad/keys/I/control_current
+chown system system /sys/symbol-keypad/keys/I/shift_current
+chown system system /sys/symbol-keypad/keys/I/diamond_current
+chown system system /sys/symbol-keypad/keys/I/grey_current
+
+chown system system /sys/symbol-keypad/keys/J/blue_current
+chown system system /sys/symbol-keypad/keys/J/orange_current
+chown system system /sys/symbol-keypad/keys/J/control_current
+chown system system /sys/symbol-keypad/keys/J/shift_current
+chown system system /sys/symbol-keypad/keys/J/diamond_current
+chown system system /sys/symbol-keypad/keys/J/grey_current
+
+chown system system /sys/symbol-keypad/keys/K/blue_current
+chown system system /sys/symbol-keypad/keys/K/orange_current
+chown system system /sys/symbol-keypad/keys/K/control_current
+chown system system /sys/symbol-keypad/keys/K/shift_current
+chown system system /sys/symbol-keypad/keys/K/diamond_current
+chown system system /sys/symbol-keypad/keys/K/grey_current
+
+chown system system /sys/symbol-keypad/keys/L/blue_current
+chown system system /sys/symbol-keypad/keys/L/orange_current
+chown system system /sys/symbol-keypad/keys/L/control_current
+chown system system /sys/symbol-keypad/keys/L/shift_current
+chown system system /sys/symbol-keypad/keys/L/diamond_current
+chown system system /sys/symbol-keypad/keys/L/grey_current
+
+chown system system /sys/symbol-keypad/keys/M/blue_current
+chown system system /sys/symbol-keypad/keys/M/orange_current
+chown system system /sys/symbol-keypad/keys/M/control_current
+chown system system /sys/symbol-keypad/keys/M/shift_current
+chown system system /sys/symbol-keypad/keys/M/diamond_current
+chown system system /sys/symbol-keypad/keys/M/grey_current
+
+chown system system /sys/symbol-keypad/keys/N/blue_current
+chown system system /sys/symbol-keypad/keys/N/orange_current
+chown system system /sys/symbol-keypad/keys/N/control_current
+chown system system /sys/symbol-keypad/keys/N/shift_current
+chown system system /sys/symbol-keypad/keys/N/diamond_current
+chown system system /sys/symbol-keypad/keys/N/grey_current
+
+chown system system /sys/symbol-keypad/keys/O/blue_current
+chown system system /sys/symbol-keypad/keys/O/orange_current
+chown system system /sys/symbol-keypad/keys/O/control_current
+chown system system /sys/symbol-keypad/keys/O/shift_current
+chown system system /sys/symbol-keypad/keys/O/diamond_current
+chown system system /sys/symbol-keypad/keys/O/grey_current
+
+chown system system /sys/symbol-keypad/keys/P/blue_current
+chown system system /sys/symbol-keypad/keys/P/orange_current
+chown system system /sys/symbol-keypad/keys/P/control_current
+chown system system /sys/symbol-keypad/keys/P/shift_current
+chown system system /sys/symbol-keypad/keys/P/diamond_current
+chown system system /sys/symbol-keypad/keys/P/grey_current
+
+chown system system /sys/symbol-keypad/keys/Q/blue_current
+chown system system /sys/symbol-keypad/keys/Q/orange_current
+chown system system /sys/symbol-keypad/keys/Q/control_current
+chown system system /sys/symbol-keypad/keys/Q/shift_current
+chown system system /sys/symbol-keypad/keys/Q/diamond_current
+chown system system /sys/symbol-keypad/keys/Q/grey_current
+
+chown system system /sys/symbol-keypad/keys/R/blue_current
+chown system system /sys/symbol-keypad/keys/R/orange_current
+chown system system /sys/symbol-keypad/keys/R/control_current
+chown system system /sys/symbol-keypad/keys/R/shift_current
+chown system system /sys/symbol-keypad/keys/R/diamond_current
+chown system system /sys/symbol-keypad/keys/R/grey_current
+
+chown system system /sys/symbol-keypad/keys/S/blue_current
+chown system system /sys/symbol-keypad/keys/S/orange_current
+chown system system /sys/symbol-keypad/keys/S/control_current
+chown system system /sys/symbol-keypad/keys/S/shift_current
+chown system system /sys/symbol-keypad/keys/S/diamond_current
+chown system system /sys/symbol-keypad/keys/S/grey_current
+
+chown system system /sys/symbol-keypad/keys/T/blue_current
+chown system system /sys/symbol-keypad/keys/T/orange_current
+chown system system /sys/symbol-keypad/keys/T/control_current
+chown system system /sys/symbol-keypad/keys/T/shift_current
+chown system system /sys/symbol-keypad/keys/T/diamond_current
+chown system system /sys/symbol-keypad/keys/T/grey_current
+
+chown system system /sys/symbol-keypad/keys/U/blue_current
+chown system system /sys/symbol-keypad/keys/U/orange_current
+chown system system /sys/symbol-keypad/keys/U/control_current
+chown system system /sys/symbol-keypad/keys/U/shift_current
+chown system system /sys/symbol-keypad/keys/U/diamond_current
+chown system system /sys/symbol-keypad/keys/U/grey_current
+
+chown system system /sys/symbol-keypad/keys/V/blue_current
+chown system system /sys/symbol-keypad/keys/V/orange_current
+chown system system /sys/symbol-keypad/keys/V/control_current
+chown system system /sys/symbol-keypad/keys/V/shift_current
+chown system system /sys/symbol-keypad/keys/V/diamond_current
+chown system system /sys/symbol-keypad/keys/V/grey_current
+
+chown system system /sys/symbol-keypad/keys/W/blue_current
+chown system system /sys/symbol-keypad/keys/W/orange_current
+chown system system /sys/symbol-keypad/keys/W/control_current
+chown system system /sys/symbol-keypad/keys/W/shift_current
+chown system system /sys/symbol-keypad/keys/W/diamond_current
+chown system system /sys/symbol-keypad/keys/W/grey_current
+
+chown system system /sys/symbol-keypad/keys/X/blue_current
+chown system system /sys/symbol-keypad/keys/X/orange_current
+chown system system /sys/symbol-keypad/keys/X/control_current
+chown system system /sys/symbol-keypad/keys/X/shift_current
+chown system system /sys/symbol-keypad/keys/X/diamond_current
+chown system system /sys/symbol-keypad/keys/X/grey_current
+
+chown system system /sys/symbol-keypad/keys/Y/blue_current
+chown system system /sys/symbol-keypad/keys/Y/orange_current
+chown system system /sys/symbol-keypad/keys/Y/control_current
+chown system system /sys/symbol-keypad/keys/Y/shift_current
+chown system system /sys/symbol-keypad/keys/Y/diamond_current
+chown system system /sys/symbol-keypad/keys/Y/grey_current
+
+chown system system /sys/symbol-keypad/keys/Z/blue_current
+chown system system /sys/symbol-keypad/keys/Z/orange_current
+chown system system /sys/symbol-keypad/keys/Z/control_current
+chown system system /sys/symbol-keypad/keys/Z/shift_current
+chown system system /sys/symbol-keypad/keys/Z/diamond_current
+chown system system /sys/symbol-keypad/keys/Z/grey_current
+
+chown system system /sys/symbol-keypad/keys/CLR/blue_current
+chown system system /sys/symbol-keypad/keys/CLR/orange_current
+chown system system /sys/symbol-keypad/keys/CLR/control_current
+chown system system /sys/symbol-keypad/keys/CLR/shift_current
+chown system system /sys/symbol-keypad/keys/CLR/diamond_current
+chown system system /sys/symbol-keypad/keys/CLR/grey_current
+
+chown system system /sys/symbol-keypad/keys/DIAMOND/blue_current
+chown system system /sys/symbol-keypad/keys/DIAMOND/orange_current
+chown system system /sys/symbol-keypad/keys/DIAMOND/control_current
+chown system system /sys/symbol-keypad/keys/DIAMOND/shift_current
+chown system system /sys/symbol-keypad/keys/DIAMOND/diamond_current
+chown system system /sys/symbol-keypad/keys/DIAMOND/grey_current
+
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER_2/blue_current
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER_2/orange_current
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER_2/control_current
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER_2/shift_current
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER_2/diamond_current
+chown system system /sys/symbol-keypad/keys/GRIP_TRIGGER_2/grey_current
+
+chown system system /sys/symbol-keypad/keys/FIELD_EXIT/blue_current
+chown system system /sys/symbol-keypad/keys/FIELD_EXIT/orange_current
+chown system system /sys/symbol-keypad/keys/FIELD_EXIT/control_current
+chown system system /sys/symbol-keypad/keys/FIELD_EXIT/shift_current
+chown system system /sys/symbol-keypad/keys/FIELD_EXIT/diamond_current
+chown system system /sys/symbol-keypad/keys/FIELD_EXIT/grey_current
+
+chown system system /sys/symbol-keypad/keys/RETURN/blue_current
+chown system system /sys/symbol-keypad/keys/RETURN/orange_current
+chown system system /sys/symbol-keypad/keys/RETURN/control_current
+chown system system /sys/symbol-keypad/keys/RETURN/shift_current
+chown system system /sys/symbol-keypad/keys/RETURN/diamond_current
+chown system system /sys/symbol-keypad/keys/RETURN/grey_current
+
+chown system system /sys/symbol-keypad/keys/KEYLIGHTDOWN/blue_current
+chown system system /sys/symbol-keypad/keys/KEYLIGHTDOWN/orange_current
+chown system system /sys/symbol-keypad/keys/KEYLIGHTDOWN/control_current
+chown system system /sys/symbol-keypad/keys/KEYLIGHTDOWN/shift_current
+chown system system /sys/symbol-keypad/keys/KEYLIGHTDOWN/diamond_current
+chown system system /sys/symbol-keypad/keys/KEYLIGHTDOWN/grey_current
+
+chown system system /sys/symbol-keypad/keys/KEYLIGHTUP/blue_current
+chown system system /sys/symbol-keypad/keys/KEYLIGHTUP/orange_current
+chown system system /sys/symbol-keypad/keys/KEYLIGHTUP/control_current
+chown system system /sys/symbol-keypad/keys/KEYLIGHTUP/shift_current
+chown system system /sys/symbol-keypad/keys/KEYLIGHTUP/diamond_current
+chown system system /sys/symbol-keypad/keys/KEYLIGHTUP/grey_current
+
+chown system system /sys/symbol-keypad/keys/PAGEUP/blue_current
+chown system system /sys/symbol-keypad/keys/PAGEUP/orange_current
+chown system system /sys/symbol-keypad/keys/PAGEUP/control_current
+chown system system /sys/symbol-keypad/keys/PAGEUP/shift_current
+chown system system /sys/symbol-keypad/keys/PAGEUP/diamond_current
+chown system system /sys/symbol-keypad/keys/PAGEUP/grey_current
+
+chown system system /sys/symbol-keypad/keys/PAGEDOWN/blue_current
+chown system system /sys/symbol-keypad/keys/PAGEDOWN/orange_current
+chown system system /sys/symbol-keypad/keys/PAGEDOWN/control_current
+chown system system /sys/symbol-keypad/keys/PAGEDOWN/shift_current
+chown system system /sys/symbol-keypad/keys/PAGEDOWN/diamond_current
+chown system system /sys/symbol-keypad/keys/PAGEDOWN/grey_current
+
+chown system system /sys/symbol-keypad/keys/INSERT/blue_current
+chown system system /sys/symbol-keypad/keys/INSERT/orange_current
+chown system system /sys/symbol-keypad/keys/INSERT/control_current
+chown system system /sys/symbol-keypad/keys/INSERT/shift_current
+chown system system /sys/symbol-keypad/keys/INSERT/diamond_current
+chown system system /sys/symbol-keypad/keys/INSERT/grey_current
+
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSUP/blue_current
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSUP/orange_current
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSUP/control_current
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSUP/shift_current
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSUP/diamond_current
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSUP/grey_current
+
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSDOWN/blue_current
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSDOWN/orange_current
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSDOWN/control_current
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSDOWN/shift_current
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSDOWN/diamond_current
+chown system system /sys/symbol-keypad/keys/BRIGHTNESSDOWN/grey_current
+
+chown system system /sys/symbol-keypad/keys/KEYBOARD/blue_current
+chown system system /sys/symbol-keypad/keys/KEYBOARD/orange_current
+chown system system /sys/symbol-keypad/keys/KEYBOARD/control_current
+chown system system /sys/symbol-keypad/keys/KEYBOARD/shift_current
+chown system system /sys/symbol-keypad/keys/KEYBOARD/diamond_current
+chown system system /sys/symbol-keypad/keys/KEYBOARD/grey_current
+
+chown system system /sys/symbol-keypad/keys/ENTER/blue_current
+chown system system /sys/symbol-keypad/keys/ENTER/orange_current
+chown system system /sys/symbol-keypad/keys/ENTER/control_current
+chown system system /sys/symbol-keypad/keys/ENTER/shift_current
+chown system system /sys/symbol-keypad/keys/ENTER/diamond_current
+chown system system /sys/symbol-keypad/keys/ENTER/grey_current
+
+chown system system /sys/symbol-keypad/modifiers/alt/state
+chown system system /sys/symbol-keypad/modifiers/blue/state
+chown system system /sys/symbol-keypad/modifiers/control/state
+chown system system /sys/symbol-keypad/modifiers/orange/state
+chown system system /sys/symbol-keypad/modifiers/grey/state
+chown system system /sys/symbol-keypad/modifiers/shift/state
+chown system system /sys/symbol-keypad/modifiers/capslock/state
+chown system system /sys/symbol-keypad/modifiers/diamond/state
+
+chmod 0664 /sys/symbol-keypad/modifiers/alt/state
+chmod 0664 /sys/symbol-keypad/modifiers/blue/state
+chmod 0664 /sys/symbol-keypad/modifiers/control/state
+chmod 0664 /sys/symbol-keypad/modifiers/orange/state
+chmod 0664 /sys/symbol-keypad/modifiers/grey/state
+chmod 0664 /sys/symbol-keypad/modifiers/shift/state
+chmod 0664 /sys/symbol-keypad/modifiers/capslock/state
+chmod 0664 /sys/symbol-keypad/modifiers/diamond/state
+
+chown system system /sys/symbol-keypad/keys/ROTATE/base_current
+chown system system /sys/symbol-keypad/keys/ROTATE/blue_current
+chown system system /sys/symbol-keypad/keys/ROTATE/orange_current
+chown system system /sys/symbol-keypad/keys/ROTATE/control_current
+chown system system /sys/symbol-keypad/keys/ROTATE/shift_current
+chown system system /sys/symbol-keypad/keys/ROTATE/diamond_current
+chown system system /sys/symbol-keypad/keys/ROTATE/grey_current
+
+chown system system /sys/symbol-keypad/keys/GREY/blue_current
+chown system system /sys/symbol-keypad/keys/GREY/orange_current
+chown system system /sys/symbol-keypad/keys/GREY/control_current
+chown system system /sys/symbol-keypad/keys/GREY/shift_current
+chown system system /sys/symbol-keypad/keys/GREY/diamond_current
+chown system system /sys/symbol-keypad/keys/GREY/grey_current
+
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_1/base_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_1/blue_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_1/orange_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_1/control_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_1/shift_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_1/diamond_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_1/grey_current
+
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_2/base_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_2/blue_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_2/orange_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_2/control_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_2/shift_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_2/diamond_current
+chown system system /sys/symbol-keypad/keys/BLUETOOTH_REMOTE_TRIGGER_2/grey_current

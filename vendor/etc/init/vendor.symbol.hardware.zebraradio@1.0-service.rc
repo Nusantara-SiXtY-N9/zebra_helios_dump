@@ -1,0 +1,7 @@
+service zebraradio-1-0 /system/vendor/bin/vendor.symbol.hardware.zebraradio@1.0-service
+    interface vendor.symbol.hardware.zebraradio@1.0::IZebraRadio default
+    class hal
+    user radio
+    group radio cache inet misc audio log readproc wakelock oem_2901
+
+

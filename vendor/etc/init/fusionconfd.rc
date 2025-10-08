@@ -1,0 +1,23 @@
+#/*! \file fusionconfd.rc
+#\brief FusionConfd init rc
+#*---------------------------------------------------------------------------
+#* Copyright (c) 2018-2020 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+#*
+#* Module: FusionConfd init rc
+#*
+#* Author: Janmejay Panda
+#*
+#* Original Date: 19 Jan 2018
+#*
+#* Description:
+#*    To start FusionConfd service at init time.
+#*
+#* Revision History:
+#*       Initial ver. - 19 Jan 2018
+#*--------------------------------------------------------------------------
+#*/
+service fusionconfd system/vendor/bin/fusionconfd
+    class main
+    user wifi
+    group wifi system net_raw net_admin
+    capabilities NET_RAW NET_ADMIN SYS_TIME

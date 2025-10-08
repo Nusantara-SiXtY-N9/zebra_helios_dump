@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (C) 2012-2019 The Linux Foundation. All rights reserved.
+     Copyright (c) 2020-2023 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+
+     Not a contribution.
+
+     Copyright (C) 2012-2013 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<config>
+    <model name="VC8310">
+        <alias>VC8310_RU</alias>
+        <alias>VC8310_TR</alias>
+    </model>
+    <model name="VC8308">
+        <alias>VC8308_RU</alias>
+        <alias>VC8308_TR</alias>
+    </model>
+    <model name="EC30RT">
+        <alias>EC30PR</alias>
+        <alias>EC30PR_RU</alias>
+        <alias>EC30_RU</alias>
+    </model>
+    <model name="WT6300P">
+        <alias>WT6300G</alias>
+        <alias>WT6300A</alias>
+        <alias>WT6300G_TR</alias>
+        <alias>WT6300G_RU</alias>
+    </model>
+    <model name="TC21P">
+        <alias>TC21PA</alias>
+        <alias>TC21PG</alias>
+        <alias>TC21PG_TR</alias>
+        <alias>TC21PG_RU</alias>
+    </model>
+    <model name="TC26P">
+        <alias>TC26PA</alias>
+        <alias>TC26PG</alias>
+        <alias>TC26PG_TR</alias>
+        <alias>TC26PG_RU</alias>
+     </model>
+    <model name="TC21M">
+        <alias>TC21MG</alias>
+        <alias>TC21MA</alias>
+        <alias>TC21MG_TR</alias>
+        <alias>TC21MG_RU</alias>
+    </model>
+    <model name="TC26M">
+        <alias>TC26MA</alias>
+        <alias>TC26MG</alias>
+        <alias>TC26MG_RU</alias>
+    </model>
+    <model name="TC26MG_TR">
+        <alias>TC26MG_TR</alias>
+    </model>
+    <model name="TC52">
+        <alias>TC52XS_TR</alias>
+        <alias>TC52X_TR</alias>
+        <alias>TC52XS_RU</alias>
+        <alias>TC52X_RU</alias>
+        <alias>TC52XSA</alias>
+        <alias>TC52XA</alias>
+        <alias>TC52XS</alias>
+        <alias>TC52X</alias>
+    </model>
+    <model name="TC57">
+        <alias>TC57X_TR</alias>
+        <alias>TC57XS_TR</alias>
+        <alias>TC57X_RU</alias>
+        <alias>TC57XS_RU</alias>
+        <alias>TC57XA</alias>
+        <alias>TC57XSA</alias>
+        <alias>TC57X</alias>
+        <alias>TC57XS</alias>
+    </model>
+    <model name="MC2200P">
+        <alias>MC2200PG</alias>
+        <alias>MC2200PA</alias>
+        <alias>MC2200PG_TR</alias>
+        <alias>MC2200PG_RU</alias>
+    </model>
+    <model name="MC2200M">
+        <alias>MC2200MG</alias>
+        <alias>MC2200MA</alias>
+        <alias>MC2200MG_RU</alias>
+        <alias>MC2200MA_RU</alias>
+    </model>
+    <model name="MC2200B">
+        <alias>MC2200BG</alias>
+        <alias>MC2200BA</alias>
+        <alias>MC2200BG_TR</alias>
+        <alias>MC2200BG_RU</alias>
+    </model>
+    <model name="MC2700P">
+        <alias>MC2700PG</alias>
+        <alias>MC2700PA</alias>
+        <alias>MC2700PG_TR</alias>
+        <alias>MC2700PG_RU</alias>
+    </model>
+    <model name="MC2700B">
+        <alias>MC2700BG</alias>
+        <alias>MC2700BA</alias>
+        <alias>MC2700BG_TR</alias>
+        <alias>MC2700BG_RU</alias>
+    </model>
+    <model name="MC3300xC">
+        <alias>MC3300xS</alias>
+        <alias>MC3300xNS</alias>
+        <alias>MC3300xS_TR</alias>
+        <alias>MC3300xS_RU</alias>
+    </model>
+    <model name="MC3300x">
+        <alias>MC3300x_RU</alias>
+        <alias>MC3300xN</alias>
+    </model>
+    <model name="MC3300ax">
+        <alias>MC3300ax</alias>
+        <alias>MC3300axN</alias>
+        <alias>MC3300ax_TR</alias>
+        <alias>MC3300ax_RU</alias>
+    </model>
+    <model name="MC3300axC">
+        <alias>MC3300axS</alias>
+        <alias>MC3300axNS</alias>
+        <alias>MC3300axS_TR</alias>
+        <alias>MC3300axS_RU</alias>
+    </model>
+    <model name="TC52AX">
+        <alias>TC52AXS_TR</alias>
+        <alias>TC52AX_TR</alias>
+        <alias>TC52AXS_RU</alias>
+        <alias>TC52AX_RU</alias>
+        <alias>TC52AXS</alias>
+        <alias>TC52AXSA</alias>
+        <alias>TC52AXA</alias>
+    </model>
+    <model name="EC50">
+        <alias>EC50S</alias>
+        <alias>EC50SA</alias>
+        <alias>EC50S_TR</alias>
+        <alias>EC50S_RU</alias>
+    </model>
+    <model name="EC50NF">
+        <alias>EC50SNF</alias>
+        <alias>EC50SANF</alias>
+        <alias>EC50SNF_TR</alias>
+        <alias>EC50SNF_RU</alias>
+    </model>
+    <model name="EC55">
+        <alias>EC55S</alias>
+        <alias>EC55SA</alias>
+        <alias>EC55S_TR</alias>
+        <alias>EC55S_RU</alias>
+    </model>
+    <model name="EC55NF">
+        <alias>EC55SNF</alias>
+        <alias>EC55SANF</alias>
+        <alias>EC55SNF_TR</alias>
+        <alias>EC55SNF_RU</alias>
+    </model>
+    <model name="L10AW">
+        <alias>L10AW</alias>
+        <alias>L10AW_RU</alias>
+    </model>
+    <!-- model name MC93C(odm_MC93C.img) is for Pkg2. -->
+    <model name="MC93C">
+        <alias>MC93C</alias>
+        <alias>MC93C_RU</alias> <!-- For Russia SKU -->
+    </model>
+    <model name="TC83B0">
+        <alias>TC83B0_RU</alias>
+    </model>
+    <model name="TC83BH">
+        <alias>TC83BH_RU</alias>
+    </model>
+    <model name="CC605LN">
+        <alias>CC605LN_RU</alias>
+    </model>
+    <model name="CC610LC">
+        <alias>CC610LC_RU</alias>
+    </model>
+    <model name="CC610LN">
+        <alias>CC610LN_RU</alias>
+    </model>
+    <model name="CC610PC">
+        <alias>CC610PC_RU</alias>
+    </model>
+  <!--During OS upgrade this xml will be in use
+      1. copy_odm will compare ro.vendor.product with alias name, if it matches with any value the
+         first it will return corresponding model name.
+      2. Next copy_odm will again scan alias name as ro.vendor.product, if it match any config_name
+         and config_value then it will supress model name, rather it will return target name
+         eg: ro.vendor.product=TC21PG ->first it will match and return model name as TC21P which is
+             equivalent to odm_TC21P.img, Now for 4GB device instead of odm_TC21P, ofm_TC21PH will
+             be used, so in next scan it will match with config namd and value and will retun TC21PH
+             So instead of copying odm_TC21P content it will copy TC21PH contents. -->
+   <setup_odm>
+       <prop_value config_name="ro.config.device.memsize" config_value="16">
+           <target name="TC21PH">
+               <alias>TC21PG</alias>
+               <alias>TC21PA</alias>
+               <alias>TC21PG_TR</alias>
+               <alias>TC21PG_RU</alias>
+           </target>
+           <target name="TC26PH">
+               <alias>TC26PG</alias>
+               <alias>TC26PA</alias>
+               <alias>TC26PG_TR</alias>
+               <alias>TC26PG_RU</alias>
+           </target>
+       </prop_value>
+       <prop_value config_name="ro.config.device.memsize" config_value="8">
+           <target name="EC50L">
+               <alias>EC50S</alias>
+               <alias>EC50SA</alias>
+               <alias>EC50S_TR</alias>
+               <alias>EC50S_RU</alias>
+           </target>
+           <target name="EC55L">
+               <alias>EC55S</alias>
+               <alias>EC55SA</alias>
+               <alias>EC55S_TR</alias>
+               <alias>EC55S_RU</alias>
+           </target>
+       </prop_value>
+       <prop_value config_name="ro.config.device.memsize" config_value="4">
+           <target name="TC21ML">
+               <alias>TC21MG</alias>
+               <alias>TC21MA</alias>
+               <alias>TC21MG_TR</alias>
+               <alias>TC21MG_RU</alias>
+           </target>
+           <target name="TC26ML">
+               <alias>TC26MG</alias>
+               <alias>TC26MA</alias>
+               <alias>TC26MG_RU</alias>
+           </target>
+           <target name="TC26ML_TR">
+               <alias>TC26MG_TR</alias>
+           </target>
+       </prop_value>
+       <prop_value config_name="ro.vendor.product.device" config_value="ET51S">
+           <target name="ET51S">
+               <alias>ET51</alias>
+               <alias>ET51_RU</alias>
+           </target>
+       </prop_value>
+       <prop_value config_name="ro.vendor.product.device" config_value="ET51L">
+           <target name="ET51L">
+               <alias>ET51</alias>
+               <alias>ET51_RU</alias>
+           </target>
+       </prop_value>
+       <prop_value config_name="ro.vendor.product.device" config_value="ET56S">
+           <target name="ET56S">
+               <alias>ET56</alias>
+               <alias>ET56_RU</alias>
+           </target>
+       </prop_value>
+       <prop_value config_name="ro.vendor.product.device" config_value="ET56L">
+           <target name="ET56L">
+               <alias>ET56C</alias>
+               <alias>ET56CA</alias>
+               <alias>ET56C_TR</alias>
+               <alias>ET56C_RU</alias>
+           </target>
+       </prop_value>
+       <prop_value config_name="ro.config.device.vibrator" config_value="1">
+           <target name="MC2200PV">
+               <alias>MC2200PA</alias>
+               <alias>MC2200PG</alias>
+           </target>
+           <target name="MC2700PV">
+               <alias>MC2700PA</alias>
+               <alias>MC2700PG</alias>
+           </target>
+       </prop_value>
+       <!-- target name MC93(odm_MC93.img) is for Base. -->
+       <prop_value config_name="ro.config.device.nfc" config_value="0">
+           <target name="MC93">
+               <alias>MC93</alias>
+               <alias>MC93_RU</alias> <!-- For Russia SKU -->
+           </target>
+       </prop_value>
+       <!-- target name MC93BN(odm_MC93BN.img) is for Pkg1. -->
+       <prop_value config_name="ro.config.device.nfc" config_value="1">
+           <target name="MC93BN">
+               <alias>MC93</alias>
+               <alias>MC93_RU</alias> <!-- For Russia SKU -->
+           </target>
+       </prop_value>
+   </setup_odm>
+</config>

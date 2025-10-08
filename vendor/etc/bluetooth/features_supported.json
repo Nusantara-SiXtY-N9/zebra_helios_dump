@@ -1,0 +1,19 @@
+{
+  "AllowPairing": "true",
+  "AllowDiscoverability": "true",
+  "SilentPairing": "true",
+  "SinglePairing": "true",
+  "TrustedPairing": "true",
+  "ProximityMonitor": "true",
+  "PairedDeviceAction": "true",
+  "BtInsight": "true",
+  "BleScanFilter":
+    {
+      "RssiRange": "true"
+    },
+  "PackageBasedAppConfig":
+    {
+      "BleScan" : "true"
+    },
+  "ProfileConfig" : "true"
+}

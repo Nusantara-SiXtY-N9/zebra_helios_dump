@@ -1,0 +1,4 @@
+service dchwmanager-1-0 /vendor/bin/hw/vendor.symbol.hardware.dchwmanager@1.0-service
+    class hal
+    user system
+    group input system sdcard_rw

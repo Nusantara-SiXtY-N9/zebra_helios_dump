@@ -1,0 +1,20 @@
+service devtrack-hal-1-0 /vendor/bin/hw/vendor.zebra.hardware.devtrack@1.0-service
+    class hal
+    user bluetooth
+    group bluetooth system
+
+on fs
+    chmod 0666 /dev/i2c-3
+
+on post-fs
+     start fw_version
+
+service fw_version /vendor/bin/bleutils fw-version
+    class hal
+    user bluetooth
+    group bluetooth system
+    oneshot
+    disabled
+
+on property:sys.boot_completed=1 && property:ro.boot.device.memsize=4
+    stop devtrack-hal-1-0

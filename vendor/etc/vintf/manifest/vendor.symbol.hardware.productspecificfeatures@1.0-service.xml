@@ -1,0 +1,11 @@
+<manifest version="1.0" type="device">
+    <hal format="hidl">
+        <name>vendor.symbol.hardware.productspecificfeatures</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IHalPsfDevice</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>

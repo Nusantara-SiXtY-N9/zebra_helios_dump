@@ -1,0 +1,15 @@
+#/*! \file vendor.zebra.filecopy@1.0-service
+#\brief filecopy HAL init rc file
+#*---------------------------------------------------------------------------
+#* Copyright (c) 2019-2022 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+#*
+#* Module: file copy init rc
+#*
+#* Description:
+#*    To copy file from system to vendor partition.
+#*--------------------------------------------------------------------------
+#*/
+service filecopy_hal-1-0 system/vendor/bin/hw/vendor.zebra.filecopy@1.0-service
+    class hal
+    user wifi
+    group wifi

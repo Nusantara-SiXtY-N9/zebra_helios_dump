@@ -1,0 +1,7 @@
+service vendor.thermal-hal-2-0-symbol /vendor/bin/hw/android.hardware.thermal@2.0-service.symbol
+    interface android.hardware.thermal@1.0::IThermal default
+    interface android.hardware.thermal@2.0::IThermal default
+    class hal
+    user system
+    group system
+

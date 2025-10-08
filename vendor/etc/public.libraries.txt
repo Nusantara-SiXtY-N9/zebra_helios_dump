@@ -1,0 +1,9 @@
+vendor.symbol.hardware.cradle@1.0.so 64
+vendor.symbol.hardware.irda@1.0.so 64
+vendor.symbol.hardware.dex@1.0.so 64
+vendor.symbol.hardware.hwbeep@1.0.so 64
+vendor.symbol.hardware.hwbeep@1.1.so 64
+vendor.symbol.hardware.msr@1.0.so 64
+vendor.symbol.hardware.sam@1.0.so 64
+vendor.symbol.hardware.gpiocradle@1.0.so 64
+vendor.symbol.hardware.zebraradio@1.0.so 64

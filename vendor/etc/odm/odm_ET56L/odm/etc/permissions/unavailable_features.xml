@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<permissions>
+	<unavailable-feature name="android.hardware.sensor.hifi_sensors"/>
+	<unavailable-feature name="android.hardware.sensor.barometer"/>
+	<unavailable-feature name="android.hardware.sensor.proximity"/>
+	<unavailable-feature name="android.software.device_id_attestation"/>
+	<unavailable-feature name="android.software.telecom"/>
+	<unavailable-feature name="android.hardware.telephony.ims"/>
+	<unavailable-feature name="android.hardware.telephony.calling"/>
+	<unavailable-feature name="android.software.connectionservice"/>
+	<unavailable-feature name="android.hardware.telephony.euicc"/>
+</permissions>

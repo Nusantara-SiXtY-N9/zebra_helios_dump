@@ -1,0 +1,8 @@
+service cradle_hal_service /vendor/bin/hw/vendor.symbol.hardware.cradle@1.0-service
+    class hal
+    user system
+    group system
+
+# disable unused services for 2GB to reduce the memory usage
+on property:sys.boot_completed=1 && property:ro.config.device.memsize=4
+    stop cradle_hal_service

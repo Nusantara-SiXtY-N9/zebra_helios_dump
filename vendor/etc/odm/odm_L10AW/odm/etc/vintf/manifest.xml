@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<manifest target-level="4" type="device" version="1.0">
+	<hal override="true">
+		<name>android.hardware.bluetooth</name>
+		<transport>hwbinder</transport>
+		<version>1.0</version>
+		<interface>
+			<name>IBluetoothHci</name>
+			<instance>default</instance>
+		</interface>
+	</hal>
+	<sepolicy>
+		<version>34.0</version>
+	</sepolicy>
+</manifest>

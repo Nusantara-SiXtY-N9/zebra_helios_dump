@@ -1,0 +1,8 @@
+service sam-1-0 /vendor/bin/hw/vendor.symbol.hardware.sam@1.0-service
+    class hal
+    user system
+    group system
+
+# disable SAM service for device without SAM sku
+on property:sys.boot_completed=1 && property:ro.config.device.sambridge=0
+    stop sam-1-0

@@ -1,0 +1,24 @@
+#/*! \file vendor.zebra.fusionethernet@1.0-service
+#\brief fusionethernet HAL init rc file
+#*---------------------------------------------------------------------------
+#* Copyright (c) 2024 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+#*
+#* Module: fusion ethernet init rc
+#*
+#* Description:
+#*    To start ethernet supplicant and update the configuration.
+#*--------------------------------------------------------------------------
+#*/
+
+service vendor.zebra.fusionethernet_aidl-service /vendor/bin/hw/vendor.zebra.fusionethernet_aidl-service
+    interface aidl vendor.zebra.fusionethernet_aidl.IFusionEthernet/default
+    class hal
+    user wifi
+    group wifi
+    disabled
+
+on property:ro.boot.device.platform=6375 && property:ro.build.version.release=14
+    enable vendor.zebra.fusionethernet_aidl-service
+
+on property:ro.board.platform=sdm660 && property:ro.build.version.release=14
+    enable vendor.zebra.fusionethernet_aidl-service

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<permissions>
+	<unavailable-feature name="android.hardware.camera.front"/>
+	<unavailable-feature name="android.hardware.sensor.compass"/>
+	<unavailable-feature name="android.hardware.sensor.barometer"/>
+	<unavailable-feature name="android.software.device_id_attestation"/>
+	<unavailable-feature name="android.hardware.sensor.hifi_sensors"/>
+	<unavailable-feature name="android.software.vr.mode"/>
+	<unavailable-feature name="android.hardware.vr.high_performance"/>
+	<unavailable-feature name="android.hardware.wifi.rtt"/>
+</permissions>

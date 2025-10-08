@@ -1,0 +1,1530 @@
+# Copyright (c) 2013-2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2024 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
+
+import /vendor/etc/init/hw/init.helios.usb.configfs.rc
+import /vendor/etc/init/hw/init.keyboards.rc
+import /vendor/etc/init/hw/init.helios.odm.rc
+import /vendor/etc/init/hw/nofusion_driverload.rc
+
+on early-init
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_apr audio_wglink audio_adsp_loader audio_q6_pdr audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_digital_cdc audio_analog_cdc audio_msm_sdw audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm660 audio_wcd934x audio_mbhc audio_wcd9xxx audio_wcd_core audio_helios_ptt
+    mkdir /firmware 0771 system system
+    mkdir /bt_firmware 0771 system system
+    mkdir /dsp 0771 media media
+    mkdir /enterprise 0771 system system
+    mkdir /factory 0771 root system
+    # persist partition mounting
+    mkdir /mnt/vendor/persist/ 0700 system system
+    chmod 0771 /mnt/vendor/persist
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}/by-name/persist
+    mount ext4 /dev/block/platform/soc/${ro.boot.bootdevice}/by-name/persist /mnt/vendor/persist  nosuid nodev noatime barrier=1
+    restorecon_recursive --force /mnt/vendor/persist
+
+on init
+    write /dev/stune/foreground/schedtune.sched_boost_no_override 1
+    write /dev/stune/top-app/schedtune.sched_boost_no_override 1
+    write /dev/stune/schedtune.colocate 0
+    write /dev/stune/background/schedtune.colocate 0
+    write /dev/stune/system-background/schedtune.colocate 0
+    write /dev/stune/foreground/schedtune.colocate 0
+    write /dev/stune/top-app/schedtune.colocate 1
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    start vendor.qseecomd
+    start keymaster-4-0
+    #mkdir /mnt/vendor/persist/ 0700 system system
+    #chmod 0771 /mnt/vendor/persist
+    #wait /dev/block/platform/soc/${ro.boot.bootdevice}/by-name/persist
+    #mount ext4 /dev/block/platform/soc/${ro.boot.bootdevice}/by-name/persist /mnt/vendor/persist  nosuid nodev noatime barrier=1
+    #restorecon_recursive /mnt/vendor/persist
+
+on init && property:ro.build.type=user
+    restorecon_recursive --force /mnt/vendor/persist
+
+on init && property:ro.build.type=userdebug
+    umount /mnt/vendor/persist
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}/by-name/persist
+    mount ext4 /dev/block/platform/soc/${ro.boot.bootdevice}/by-name/persist /mnt/vendor/persist  nosuid nodev noatime barrier=1
+    restorecon_recursive --force /mnt/vendor/persist
+
+on early-fs
+    start vold
+
+on fs && property:ro.build.user=android-build
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    mount_all /vendor/etc/fstab.qcom
+    swapon_all /vendor/etc/fstab.qcom
+
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+    mount_all /vendor/etc/fstab.qcom
+    swapon_all /vendor/etc/fstab.qcom
+
+    chown root system /mnt/vendor/persist
+    #chmod 0771 /mnt/vendor/persist
+
+    # Keeping following partitions outside fstab file. As user may not have
+    # these partition flashed on the device. Failure to mount any partition in fstab file
+    # results in failure to launch late-start class.
+
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}/by-name/persist
+    mount ext4 /dev/block/bootdevice/by-name/persist /mnt/vendor/persist nosuid nodev noatime barrier=1
+    mkdir /mnt/vendor/persist/data 0700 system system
+    mkdir /mnt/vendor/persist/bms 0700 root system
+    mkdir /mnt/vendor/persist/time/ 0700 system system
+    restorecon_recursive --force /mnt/vendor/persist
+    chmod 0771 /mnt/vendor/persist
+    write /sys/kernel/boot_adsp/boot 1
+
+
+#AutoScan
+    chmod 0666 /dev/input/event5
+    chown system system /sys/class/input/event1/device/LONGDISTANCEPROX/prox_scan_start
+    chown system system /sys/class/input/event1/device/LONGDISTANCEPROX/prox_scan_stop
+    chown system system /sys/class/input/event3/device/LONGDISTANCEPROX/prox_scan_start
+    chown system system /sys/class/input/event3/device/LONGDISTANCEPROX/prox_scan_stop
+    chown system system /sys/class/input/event4/device/LONGDISTANCEPROX/prox_scan_start
+    chown system system /sys/class/input/event4/device/LONGDISTANCEPROX/prox_scan_stop
+    chown system system /sys/class/input/event5/device/LONGDISTANCEPROX/prox_scan_start
+    chown system system /sys/class/input/event5/device/LONGDISTANCEPROX/prox_scan_stop
+
+########################################################################
+# change mode for VNCL4200(Frozone) and ISL29021(CC600,5")
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/prox_enable
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/prox_set_delay_ms
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/prox_pollrate_ms
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/prox_do_flush
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/prox_proxTrigState
+   ##auto-leveling service will require this
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/prox_setThreNear
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/prox_setThreFar
+   chmod 0644 /persist/vcnl4200_calFile.txt
+
+   chmod 0666 /sys/class/input/event1/device/LONGDISTANCEPROX/prox_enable
+   chmod 0666 /sys/class/input/event1/device/LONGDISTANCEPROX/prox_set_delay_ms
+   chmod 0666 /sys/class/input/event1/device/LONGDISTANCEPROX/prox_pollrate_ms
+   chmod 0666 /sys/class/input/event1/device/LONGDISTANCEPROX/prox_do_flush
+   chmod 0666 /sys/class/input/event1/device/LONGDISTANCEPROX/prox_proxTrigState
+    ##auto-leveling service will require this
+   chmod 0666 /sys/class/input/event1/device/LONGDISTANCEPROX/prox_setThreNear
+   chmod 0666 /sys/class/input/event1/device/LONGDISTANCEPROX/prox_setThreFar
+
+# change mode for HALL Sensor(Frozone)
+   chmod 0666 /sys/class/input/event4/device/hallholster/hall_enable
+   chmod 0666 /sys/class/input/event4/device/hallholster/hall_set_delay_ms
+   chmod 0666 /sys/class/input/event4/device/hallholster/hall_pollrate_ms
+   chmod 0666 /sys/class/input/event4/device/hallholster/hall_do_flush
+
+# change mode for ISL29021(CC6000,10")
+   chmod 0666 /sys/class/input/event2/device/LONGDISTANCEPROX/prox_enable
+   chmod 0666 /sys/class/input/event2/device/LONGDISTANCEPROX/prox_set_delay_ms
+   chmod 0666 /sys/class/input/event2/device/LONGDISTANCEPROX/prox_pollrate_ms
+   chmod 0666 /sys/class/input/event2/device/LONGDISTANCEPROX/prox_do_flush
+   chmod 0666 /sys/class/input/event2/device/LONGDISTANCEPROX/prox_proxTrigState
+   ##auto-leveling service will require this
+   chmod 0666 /sys/class/input/event2/device/LONGDISTANCEPROX/prox_setThreNear
+   chmod 0666 /sys/class/input/event2/device/LONGDISTANCEPROX/prox_setThreFar
+   chmod 0664 /persist/isl29021_calFile.txt
+   chown system system /persist/isl29021_calFile.txt
+
+# change mode for ISL29501(Raven)
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/prox_enable
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/prox_set_delay_ms
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/prox_pollrate_ms
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/prox_do_flush
+   ###For R branch
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/prox_enable
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/prox_set_delay_ms
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/prox_pollrate_ms
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/prox_do_flush
+   ###ProxCalTool require this###
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/cal_distance
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/calibrate
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/distance
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/do_cal
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/dump_proxdata
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/dump_proxdata_single
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/dump_register
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/get_calfile_data
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/get_proxdata_count
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/ir_current
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/persistence
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/proxht
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/proxlt
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/set_cache_proxdata
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/set_cal
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/set_register
+   chmod 0666 /sys/class/input/event4/device/LONGDISTANCEPROX/sleep_time
+   ##R Branch use below event node ##
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/cal_distance
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/calibrate
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/distance
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/do_cal
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/dump_proxdata
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/dump_proxdata_single
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/dump_register
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/get_calfile_data
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/get_proxdata_count
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/ir_current
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/persistence
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/proxht
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/proxlt
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/set_cache_proxdata
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/set_cal
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/set_register
+   chmod 0666 /sys/class/input/event3/device/LONGDISTANCEPROX/sleep_time
+
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/cal_distance
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/calibrate
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/distance
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/do_cal
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/dump_proxdata
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/dump_proxdata_single
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/dump_register
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/get_calfile_data
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/get_proxdata_count
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/ir_current
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/persistence
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/proxht
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/proxlt
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/set_cache_proxdata
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/set_cal
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/set_register
+   chmod 0666 /sys/class/input/event5/device/LONGDISTANCEPROX/sleep_time
+
+   chmod 0644 /persist/isl29501_calibration_done.txt
+   chmod 0644 /persist/isl29501_defaults.txt
+
+# change mode for HALL Sensor(Raven)
+   chmod 0666 /sys/class/input/event5/device/hallholster/hall_enable
+   chmod 0666 /sys/class/input/event5/device/hallholster/hall_set_delay_ms
+   chmod 0666 /sys/class/input/event5/device/hallholster/hall_pollrate_ms
+   chmod 0666 /sys/class/input/event5/device/hallholster/hall_do_flush
+   ##R Branch : hall sensor at event2 node ##
+   chmod 0666 /sys/class/input/event2/device/hallholster/hall_enable
+   chmod 0666 /sys/class/input/event2/device/hallholster/hall_set_delay_ms
+   chmod 0666 /sys/class/input/event2/device/hallholster/hall_pollrate_ms
+   chmod 0666 /sys/class/input/event2/device/hallholster/hall_do_flush
+
+# key backlight pwm
+   chown system system /sys/zebra-keylight/
+   chown system system /sys/zebra-keylight/0
+   chown system system /sys/zebra-keylight/0/keypad_avail_duration_hz
+   chown system system /sys/zebra-keylight/0/keypad_avail_freq_hz
+   chown system system /sys/zebra-keylight/0/keypad_duty_cycle_ns
+   chown system system /sys/zebra-keylight/0/keypad_level_maximum
+   chown system system /sys/zebra-keylight/0/keypad_level_minimum
+   chown system system /sys/zebra-keylight/0/keypad_period_ns
+   chown system system /sys/zebra-keylight/0/keypad_pwm_on
+   chown system system /sys/zebra-keylight/0/keypad_time_ms
+   chmod 0644 /sys/zebra-keylight/0/keypad_duty_cycle_ns
+   chmod 0644 /sys/zebra-keylight/0/keypad_period_ns
+   chmod 0644 /sys/zebra-keylight/0/keypad_pwm_on
+   chmod 0644 /sys/zebra-keylight/0/keypad_time_ms
+
+# key backlight pwm
+   chown system system /sys/zebra-keylight/
+   chown system system /sys/zebra-keylight/0
+   chown system system /sys/zebra-keylight/0/keypad_avail_duration_hz
+   chown system system /sys/zebra-keylight/0/keypad_avail_freq_hz
+   chown system system /sys/zebra-keylight/0/keypad_duty_cycle_ns
+   chown system system /sys/zebra-keylight/0/keypad_level_maximum
+   chown system system /sys/zebra-keylight/0/keypad_level_minimum
+   chown system system /sys/zebra-keylight/0/keypad_period_ns
+   chown system system /sys/zebra-keylight/0/keypad_pwm_on
+   chown system system /sys/zebra-keylight/0/keypad_time_ms
+   chmod 0644 /sys/zebra-keylight/0/keypad_duty_cycle_ns
+   chmod 0644 /sys/zebra-keylight/0/keypad_period_ns
+   chmod 0644 /sys/zebra-keylight/0/keypad_pwm_on
+   chmod 0644 /sys/zebra-keylight/0/keypad_time_ms
+
+   # Switch owner to system for Scanner FW Progress state
+   chown system system /sys/symbol-typec/scanner_fw_inprogress
+
+########################################################################
+
+ #Animation Partition
+   wait /dev/block/bootdevice/by-name/animation
+   mount ext4 /dev/block/bootdevice/by-name/animation  /animation   ro context=u:object_r:animation_file:s0
+
+on property:ro.wlan.reg_device_id=*
+    wait /data/vendor/wifi
+    start vendor.fusionloader
+
+on post-fs
+    write /dev/ipa 1
+# Permissions for ttyMSM1 port
+    chmod 0666 /dev/ttyMSM1
+    chown system system /dev/ttyMSM1
+    chown system system /dev/cradledrv
+    chmod 0666 /dev/cradledrv
+    chown system system /sys/symbol-cradle
+    chown system system /dev/cradle_dev
+    chmod 0666 /dev/cradle_dev
+
+on init
+    # write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+    start hw_config
+    start uuid
+
+on load_persist_props_action && property:vendor.display.lcd_density=*
+   start display_hw_config
+
+on property:persist.sys.device.rotation=*
+   start display_hw_config_rotation
+
+on property:ro.boot.symbol.btmacaddr=*
+   setprop ro.vendor.boot.btmacaddr ${ro.boot.symbol.btmacaddr}
+   setprop ro.vendor.bt.boot.macaddr ${ro.boot.symbol.btmacaddr}
+
+on property:ro.boot.wlan.reg_device_id=*
+   setprop ro.wlan.reg_device_id ${ro.boot.wlan.reg_device_id}
+
+on property:ro.boot.device.partnumber=*
+   setprop ro.config.device.partnumber ${ro.boot.device.partnumber}
+
+on property:ro.boot.device.regulatory=*
+   setprop ro.config.device.regulatory ${ro.boot.device.regulatory}
+
+on post-fs-data
+    mkdir /data/vendor/tombstones/modem 0771 system system
+    mkdir /data/vendor/tombstones/lpass 0771 system system
+    mkdir /data/vendor/tombstones/wcnss 0771 system system
+    mkdir /data/vendor/tombstones/dsps 0771 system system
+    mkdir /data/vendor/hbtp 0750 system system
+    mkdir /persist/qti_fp 0700 system system
+    mkdir /data/vendor/misc/seemp 0700 system system
+    mkdir /data/vendor/device 0700 system system
+    mkdir /data/vendor/tloc 0700 system drmrpc
+
+# OS Update
+    mkdir /data/tmp 0771 system system
+    mkdir /data/tmp/public 0777 system system
+
+#Load fusionwl driver
+    start vendor.fusionloader_init
+
+# Switch owner to system for usb host and peripheral mode
+    chown system system /sys/devices/platform/soc/a800000.ssusb/mode
+    chown system system /sys/devices/platform/soc/c200000.hsusb/mode
+
+# Enterprise nfc config folder
+    mkdir /data/vendor/enfc 0700 nfc nfc
+
+# Switch owner to system for usb typec simu mode
+    chown system system /sys/symbol-typec/typec_simu_none
+
+# Switch owner to system for usb_physically_removed
+    chown system system /sys/symbol_usb_phy_removed/usb_physically_removed
+
+# Device settings for keyremap
+    chown system system /sys/symbol-keypad/actions/selectkey
+
+#Switch owner to system for usb Back IO
+    chown system system /sys/symbol-IsBackIo/back_io_Acc
+
+#WakeupSource
+    mkdir /data/vendor/keywakeup 0760 system system
+    chown system system /dev/wakeup
+    chmod 0666 /dev/wakeup
+
+#permission for sensor sns.reg
+    chown system root /mnt/vendor/persist/sensors/sns.reg
+    chmod 0644 /mnt/vendor/persist/sensors/sns.reg
+
+# change owner to the system for irda
+    chown system system /sys/symbol_irda/irdabaudrate
+    chmod 0666 /sys/symbol_irda/irdabaudrate
+
+# switch owner to the system for SAM
+    chown system system /sys/symbol-sam
+
+# Permissions for SAM device
+    chown system system /dev/sam-bridge
+    chmod 0666 /dev/sam-bridge
+
+# Ocelot Ethernet
+    chown system system /sys/bus/usb/devices/1-1.5/power/control
+    chmod 0664 /sys/bus/usb/devices/1-1.5/power/control
+
+# switch owner to the system for ProductSpecificFeatures (PSF)
+    chown system system /sys/zebra-ec/antenna_switchs/0/value
+    chown system system /sys/zebra-ec/antenna_switchs/1/value
+    chown system system /sys/zebra-ec/blueled
+    chown system system /sys/zebra-ec/ignition/config
+    chown system system /sys/zebra-ec/ignition/delay
+    chown system system /sys/zebra-ec/powerrails/0/value
+    chown system system /sys/zebra-ec/powerrails/1/value
+    chown system system /sys/zebra-ec/powerrails/2/value
+
+# switch owner to the system for EC
+    chown system system /sys/zebra-ec/dev_pwr
+
+# Battery Swap
+    chown system system /sys/battery_swap/enabled
+    chown system system /sys/battery_swap/enable_buck_boost
+    chown system system /sys/battery_swap/super_cap_ready
+    chown system system /sys/battery_swap/rtc_poweron_alarm
+    chown system system /sys/battery_swap/batteryswap_inprogress
+    chown system system /sys/class/leds/blue/breath
+    chown system system /sys/devices/platform/soc/c178000.i2c/i2c-4/4-004b/touch_screen_mode
+    chown system system /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0034/tca8418_keypad_mode
+    chown system system /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0024/cyttsp5_ts_mode
+    chown system system /sys/devices/platform/soc/soc:helios_gpio_keys/disabled_keys
+    chown system system /sys/devices/platform/soc/soc:helios_gpio_keys/keys
+    chown system system /sys/devices/soc/soc:gpio-mpa-keys/mpa_gpio_mode
+    chown system system /sys/devices/soc/c178000.i2c/i2c-4/4-0038/touch_screen_mode
+
+# BSPA-134268 [Ocelot][Battery] [Android Q] Notify (blue) led is not controlled correctly by led service
+# switch owner to the system for EC LED
+    chown system system /sys/zebra-ec/led_ntfy
+
+# Touch
+    chown system root /sys/devices/platform/soc/c178000.i2c/i2c-4/4-004b/update_fw
+    chown system root /sys/devices/platform/soc/c178000.i2c/i2c-4/4-004b/cfg_version
+    chown system root /sys/devices/platform/soc/c178000.i2c/i2c-4/4-004a/update_fw
+    chown system root /sys/devices/platform/soc/c178000.i2c/i2c-4/4-004a/cfg_version
+    chown system root /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0024/ic_ver
+    chown system root /sys/bus/i2c/devices/4-002a/firmware_version
+    chown system root /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0038/fts_fw_version
+
+# Badger Touch
+    chown system system /sys/devices/soc/c178000.i2c/i2c-4/4-0038/fts_glove_mode
+
+on early-boot
+    chown system system /mnt/vendor/persist/sensors
+    chown system system /mnt/vendor/persist/sensors/sns.reg
+    chown system system /mnt/vendor/persist/sensors/sensors_settings
+    chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
+
+on boot
+    start rmt_storage
+    start rfs_access
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/foreground/boost/cpus 0-7
+    write /dev/cpuset/background/cpus 0-7
+    write /dev/cpuset/system-background/cpus 0-7
+    ####Regionalization config and prop files####
+    chmod 0644 /persist/speccfg/spec
+    chmod 0644 /persist/speccfg/devicetype
+    chmod 0644 /persist/speccfg/mbnversion
+    chmod 0644 /persist/speccfg/.not_triggered
+    chmod 0644 /persist/speccfg/vendor_ro.prop
+    chmod 0644 /persist/speccfg/vendor_persist.prop
+    chmod 0644 /persist/speccfg/submask
+    chmod 0644 /persist/speccfg/partition
+    chown system system /persist/speccfg/spec
+    chown system system /persist/speccfg/devicetype
+    chown system system /persist/speccfg/mbnversion
+    chown system system /persist/speccfg/.not_triggered
+    chown system system /persist/speccfg/vendor_ro.prop
+    chown system system /persist/speccfg/vendor_persist.prop
+    chown system system /persist/speccfg/submask
+    chown system system /persist/speccfg/partition
+
+# rfid
+   chown system system /sys/symbol-rfid/rfid_gpio
+
+#Remote Key
+   chown system system /sys/rkey/rk_reg
+   chown system system /sys/rkey/rk_unreg
+   chown system system /dev/rkey
+   chmod 0666 /dev/rkey
+
+# LED system owner for led-gpio node for scan red and green
+    chown system system /sys/class/backlight/lcd-bl/brightness
+
+# LED system owner for led-qpnp node
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/green/blink
+    chown system system /sys/class/leds/blue/blink
+    chown system system /sys/class/leds/red/duty_pcts
+    chown system system /sys/class/leds/green/duty_pcts
+    chown system system /sys/class/leds/blue/duty_pcts
+    chown system system /sys/class/leds/red/ramp_step_ms
+    chown system system /sys/class/leds/green/ramp_step_ms
+    chown system system /sys/class/leds/blue/ramp_step_ms
+    chown system system /sys/class/leds/red/start_idx
+    chown system system /sys/class/leds/green/start_idx
+    chown system system /sys/class/leds/blue/start_idx
+    chown system system /sys/class/leds/red/rgb_mode
+    chown system system /sys/class/leds/green/rgb_mode
+    chown system system /sys/class/leds/blue/rgb_mode
+    chown system system /sys/class/leds/red/trigger
+    chown system system /sys/class/leds/green/trigger
+    chown system system /sys/class/leds/blue/trigger
+    chown system system /sys/class/leds/red/pattern
+    chown system system /sys/class/leds/red/loop_mode
+    chown system system /sys/class/leds/green/loop_mode
+    chown system system /sys/class/leds/blue/loop_mode
+    chown system system /sys/class/leds/red/hotswap_mode
+    chown system system /sys/class/leds/green/hotswap_mode
+    chown system system /sys/class/leds/blue/hotswap_mode
+
+    chown system system /sys/class/pwm/pwmchip0/device/lpg1_duty_pcts
+    chown system system /sys/class/pwm/pwmchip0/device/lpg1_lo_index
+    chown system system /sys/class/pwm/pwmchip0/device/lpg1_ramp_step_ms
+    chown system system /sys/class/pwm/pwmchip0/device/lpg2_duty_pcts
+    chown system system /sys/class/pwm/pwmchip0/device/lpg2_lo_index
+    chown system system /sys/class/pwm/pwmchip0/device/lpg2_ramp_step_ms
+    chown system system /sys/class/pwm/pwmchip0/device/lpg3_duty_pcts
+    chown system system /sys/class/pwm/pwmchip0/device/lpg3_lo_index
+    chown system system /sys/class/pwm/pwmchip0/device/lpg3_ramp_step_ms
+
+# LED system owner for led-gpio node for scan red and green
+    chown system system /sys/class/leds/scan_led_drv_g/brightness
+    chown system system /sys/class/leds/scan_led_drv_r/brightness
+    chmod 0664 /sys/class/leds/scan_led_drv_r/brightness
+    chown system system /sys/devices/soc/soc:helios_gpio_keys/disabled_keys
+    chown system system /sys/class/leds/keyboard_led/brightness
+    chown system system /sys/class/backlight/lcd-bl/brightness
+
+# LED system owner for led-gpio node of scan RGB
+    chown system system /sys/class/leds/scan_led_drv_r/trigger
+    chown system system /sys/class/leds/scan_led_drv_r/delay_off
+    chown system system /sys/class/leds/scan_led_drv_r/delay_on
+    chown system system /sys/class/leds/scan_led_drv_r/timer_on
+
+    chown system system /sys/class/leds/scan_led_drv_g/trigger
+    chown system system /sys/class/leds/scan_led_drv_g/delay_off
+    chown system system /sys/class/leds/scan_led_drv_g/delay_on
+    chown system system /sys/class/leds/scan_led_drv_g/timer_on
+
+    chown system system /sys/class/leds/scan_led_drv_b/trigger
+    chown system system /sys/class/leds/scan_led_drv_b/delay_off
+    chown system system /sys/class/leds/scan_led_drv_b/delay_on
+    chown system system /sys/class/leds/scan_led_drv_b/timer_on
+
+#Create folder dump yuv images while debugging
+    mkdir /data/vendor/camera 0770 camera camera
+
+#Load WLAN driver
+#   insmod /vendor/lib/modules/qca_cld3_wlan.ko
+
+#USB controller configuration
+    setprop vendor.usb.rndis.func.name "rndis_bam"
+    setprop vendor.usb.rmnet.func.name "rmnet_bam"
+    setprop vendor.usb.rmnet.inst.name "rmnet"
+    setprop vendor.usb.dpl.inst.name "dpl"
+    write /sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size 15916
+    setprop sys.usb.configfs 1
+ # support enable for one handed mode
+    setprop ro.support_one_handed_mode true
+ # change mode for Heater (Galactus)
+    chown system system /sys/zebra-heaters/
+    chown system system /sys/zebra-heaters/0/
+    chown system system /sys/zebra-heaters/0/dutyCycle
+    chown system system /sys/zebra-heaters/0/enabled
+    chown system system /sys/zebra-heaters/0/on
+    chown system system /sys/zebra-heaters/0/rampTime
+    chown system system /sys/zebra-heaters/0/timeout
+    chown system system /sys/zebra-heaters/params/enabled
+    chown system system /sys/zebra-heaters/params/heater_enabled
+
+    chmod 0664 /sys/zebra-heaters/0/dutyCycle
+    chmod 0664 /sys/zebra-heaters/0/enabled
+    chmod 0664 /sys/zebra-heaters/0/on
+    chmod 0664 /sys/zebra-heaters/0/rampTime
+    chmod 0664 /sys/zebra-heaters/0/timeout
+    chmod 0664 /sys/zebra-heaters/params/enabled
+    chmod 0664 /sys/zebra-heaters/params/heater_enabled
+
+    chown system system /sys/zebra-temperature/
+    chown system system /sys/zebra-temperature/2
+    chown system system /sys/zebra-temperature/3
+    chown system system /sys/zebra-temperature/4
+    chown system system /sys/zebra-temperature/5
+    chown system system /sys/zebra-temperature/6
+    chown system system /sys/zebra-temperature/7
+    chown system system /sys/zebra-temperature/2/name
+    chown system system /sys/zebra-temperature/2/temp
+    chown system system /sys/zebra-temperature/3/name
+    chown system system /sys/zebra-temperature/3/temp
+    chown system system /sys/zebra-temperature/4/name
+    chown system system /sys/zebra-temperature/4/temp
+    chown system system /sys/zebra-temperature/5/name
+    chown system system /sys/zebra-temperature/5/temp
+    chown system system /sys/zebra-temperature/6/name
+    chown system system /sys/zebra-temperature/6/temp
+    chown system system /sys/zebra-temperature/7/name
+    chown system system /sys/zebra-temperature/7/temp
+
+    chmod 0444 /sys/zebra-temperature/2/name
+    chmod 0444 /sys/zebra-temperature/2/temp
+    chmod 0444 /sys/zebra-temperature/3/name
+    chmod 0444 /sys/zebra-temperature/3/temp
+    chmod 0444 /sys/zebra-temperature/4/name
+    chmod 0444 /sys/zebra-temperature/4/temp
+    chmod 0444 /sys/zebra-temperature/5/name
+    chmod 0444 /sys/zebra-temperature/5/temp
+    chmod 0444 /sys/zebra-temperature/6/name
+    chmod 0444 /sys/zebra-temperature/6/temp
+    chmod 0444 /sys/zebra-temperature/7/name
+    chmod 0444 /sys/zebra-temperature/7/temp
+
+    chown system system /sys/zebra-humidity/
+    chown system system /sys/zebra-humidity/0/
+    chown system system /sys/zebra-humidity/0/name
+    chown system system /sys/zebra-humidity/0/temp
+    chown system system /sys/zebra-humidity/0/humidity
+    chown system system /sys/zebra-humidity/1/
+    chown system system /sys/zebra-humidity/1/name
+    chown system system /sys/zebra-humidity/1/temp
+    chown system system /sys/zebra-humidity/1/humidity
+
+    chmod 0444 /sys/zebra-humidity/0/name
+    chmod 0444 /sys/zebra-humidity/0/temp
+    chmod 0444 /sys/zebra-humidity/0/humidity
+    chmod 0444 /sys/zebra-humidity/1/name
+    chmod 0444 /sys/zebra-humidity/1/temp
+    chmod 0444 /sys/zebra-humidity/1/humidity
+
+    # Switch owner to the system for heaters (Optimus)
+    chown system system /sys/heater/
+    chown system system /sys/heater/0/
+    chown system system /sys/heater/0/enable
+    chown system system /sys/heater/0/name
+    chown system system /sys/heater/0/status
+    chown system system /sys/heater/0/test
+    chown system system /sys/heater/0/threshold-off
+    chown system system /sys/heater/0/threshold-on
+    chown system system /sys/heater/1/
+    chown system system /sys/heater/1/enable
+    chown system system /sys/heater/1/name
+    chown system system /sys/heater/1/status
+    chown system system /sys/heater/1/test
+    chown system system /sys/heater/1/threshold-off
+    chown system system /sys/heater/1/threshold-on
+    chown system system /sys/heater/2/
+    chown system system /sys/heater/2/enable
+    chown system system /sys/heater/2/name
+    chown system system /sys/heater/2/status
+    chown system system /sys/heater/2/test
+    chown system system /sys/heater/2/threshold-off
+    chown system system /sys/heater/2/threshold-on
+    chown system system /sys/heater/3/
+    chown system system /sys/heater/3/enable
+    chown system system /sys/heater/3/name
+    chown system system /sys/heater/3/status
+    chown system system /sys/heater/3/test
+    chown system system /sys/heater/3/threshold-off
+    chown system system /sys/heater/3/threshold-on
+    chown system system /sys/heater/4/
+    chown system system /sys/heater/4/enable
+    chown system system /sys/heater/4/name
+    chown system system /sys/heater/4/status
+    chown system system /sys/heater/4/test
+    chown system system /sys/heater/4/threshold-off
+    chown system system /sys/heater/4/threshold-on
+
+#WTIoConnector
+    chown system system /sys/devices/platform/soc/soc:wt-iomux/extpoweravail
+    chown system system /sys/devices/platform/soc/soc:wt-iomux/leftconfigure
+    chown system system /sys/devices/platform/soc/soc:wt-iomux/rightconfigure
+    chown system system /sys/devices/platform/soc/soc:wt-iomux/scannerport
+    chown system system /sys/devices/platform/soc/soc:wt-iomux/powersave
+    chown system system /sys/devices/platform/soc/soc:wt-iomux/timedgpio
+
+    chmod 0664 /sys/devices/platform/soc/soc:wt-iomux/extpoweravail
+    chmod 0664 /sys/devices/platform/soc/soc:wt-iomux/leftconfigure
+    chmod 0664 /sys/devices/platform/soc/soc:wt-iomux/rightconfigure
+    chmod 0664 /sys/devices/platform/soc/soc:wt-iomux/scannerport
+    chmod 0664 /sys/devices/platform/soc/soc:wt-iomux/powersave
+    chmod 0664 /sys/devices/platform/soc/soc:wt-iomux/timedgpio
+
+    chown system system /dev/ttyHS2
+    chmod 0660 /dev/ttyHS2
+
+    chown system system /sys/vspoc/enable
+    chown system system /sys/vspoc/vspoc_reset
+    chown system system /sys/vspoc/vspoc_usb_switch
+    chown system system /sys/vspoc/vspoc_5p0
+    chown system system /sys/vspoc/enable_charging
+    chown system system /sys/vspoc/battflags
+    chown system system /sys/zback_scanner/vbus_enable
+    chown system system /sys/zback_scanner/usb_devname
+
+#Peripheral manager
+service vendor.per_mgr /system/vendor/bin/pm-service
+    class core
+    user system
+    group system
+    ioprio rt 4
+
+service vendor.per_proxy /system/vendor/bin/pm-proxy
+    class core
+    user system
+    group system
+    disabled
+
+on property:init.svc.vendor.per_mgr=running
+    start vendor.per_proxy
+
+on property:sys.shutdown.requested=*
+    stop vendor.per_proxy
+
+# allow switching touch cfg
+    chown system system /sys/bus/i2c/devices/4-0024/switch_cfg
+
+# HW-Config
+service hw_config /system/vendor/bin/hw_config
+    class core
+    user root
+    group root
+    oneshot
+
+#Display HW-Config
+service display_hw_config /system/vendor/bin/hw_config display_props
+    class core
+    user root
+    group root
+    oneshot
+
+#Display HW-Config
+service display_hw_config_rotation /system/vendor/bin/hw_config display_props ${persist.sys.device.rotation}
+    class core
+    user root
+    group root
+    oneshot
+    disabled
+
+#UUID
+service uuid /system/vendor/bin/uuid
+    class core
+    user root
+    group root
+    oneshot
+
+on property:ro.vendor.product=ET51S
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET56S
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET51L
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET56L
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET51
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET56
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET51_RU
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET56_RU
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET51C
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET56C
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET51C_TR
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET56C_TR
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET51CA_TR
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET56CA_TR
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET51C_RU
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET56C_RU
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET51CA_RU
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET56CA_RU
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET51CA
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+on property:ro.vendor.product=ET56CA
+    write /sys/devices/platform/soc/c178000.i2c/i2c-4/4-0020/input/input1/zebra_mode 1
+
+
+on property:ro.config.device.legacy_battery_support=1
+    write /sys/class/power_supply/battery/legacy_battery_support 1
+
+#start camera server as daemon
+#service qcamerasvr /system/bin/mm-qcamera-daemon
+#    class late_start
+#    user camera
+#    group camera system inet input graphics
+
+## import cne init file
+#on post-fs
+#    export LD_PRELOAD /vendor/lib/libNimsWrap.so
+#
+## Allow usb charging to be disabled peristently
+#on property:persist.usb.chgdisabled=1
+#    write /sys/class/power_supply/battery/charging_enabled 0
+#
+#on property:persist.usb.chgdisabled=0
+#    write /sys/class/power_supply/battery/charging_enabled 1
+#
+#service qrngd /system/bin/qrngd -f
+#   class main
+#   user root
+#   group root
+#
+#service qrngp /system/bin/qrngp
+#    class main
+#    user root
+#    group root
+#    oneshot
+#    disabled
+#
+#on property:sys.boot_completed=1
+#    start qrngp
+#
+service vendor.qseecomd /vendor/bin/qseecomd
+   class core
+   user root
+   group root
+
+service vendor.fusionloader_init /system/vendor/bin/fusionloader
+   class main
+   user root
+   group wifi
+   disabled
+   oneshot
+
+service vendor.fusionloader /system/vendor/bin/fusionloader
+   class main
+   user root
+   group wifi
+   oneshot
+
+#service qosmgrd /system/bin/qosmgr /system/etc/qosmgr_rules.xml
+#   user system
+#   group system
+#   disabled
+#
+service thermal-engine /system/vendor/bin/thermal-engine
+   class main
+   user root
+   socket thermal-send-client stream 0666 system system
+   socket thermal-recv-client stream 0660 system system
+   socket thermal-recv-passive-client stream 0666 system system
+   socket thermal-send-rule stream 0660 system system
+   group root
+
+#service security-check1 /sbin/security_boot_check system
+#    class core
+#    oneshot
+#
+#service security-check2 /sbin/security_boot_check recovery
+#    class core
+#    oneshot
+#
+#service adsprpcd_root /vendor/bin/adsprpcd
+#   class main
+#   user media
+#   group media
+
+#service adsprpcd /vendor/bin/adsprpcd audiopd
+#   class main
+#   user media
+#   group media
+
+service hbtp /system/vendor/bin/hbtp_daemon
+    class main
+    user system
+    group system
+    disabled
+
+service audiod /system/vendor/bin/audiod
+   class late_start
+   user system
+   group system
+
+#service vendor.cdsprpcd /vendor/bin/cdsprpcd
+#   class main
+#   user system
+#   group system
+#   disabled
+
+#
+#service usf_tester /system/vendor/bin/usf_tester
+#    user system
+#    group system inet
+#    disabled
+#
+#service usf_epos /system/vendor/bin/usf_epos
+#    user system
+#    group system inet
+#    disabled
+#
+#service usf_gesture /system/vendor/bin/usf_gesture
+#    user system
+#    group system inet
+#    disabled
+#
+
+#service usf_sync_gesture /system/vendor/bin/usf_sync_gesture
+#    user system
+#    group system inet
+#    disabled
+#
+
+#service usf_p2p /system/vendor/bin/usf_p2p
+#    user system
+#    group system inet
+#    disabled
+#
+#service usf_hovering /system/vendor/bin/usf_hovering
+#    user system
+#    group system inet
+#    disabled
+#
+#service usf_proximity /system/vendor/bin/usf_proximity
+#    user system
+#    group system inet
+#    disabled
+#
+#service usf-post-boot /system/vendor/bin/sh /system/etc/usf_post_boot.sh
+#    class late_start
+#    user root
+#    disabled
+#    oneshot
+#
+#on property:init.svc.bootanim=stopped
+#    start usf-post-boot
+#
+#
+#on boot
+#    insmod /system/lib/modules/adsprpc.ko
+#    insmod /system/lib/modules/mhi.ko
+## access permission for secure touch
+#    chmod 0660 /sys/devices/f9966000.i2c/i2c-1/1-004a/secure_touch_enable
+#    chmod 0440 /sys/devices/f9966000.i2c/i2c-1/1-004a/secure_touch
+#    chmod 0660 /sys/devices/f9966000.i2c/i2c-1/1-0020/secure_touch_enable
+#    chmod 0440 /sys/devices/f9966000.i2c/i2c-1/1-0020/secure_touch
+#    chown system drmrpc /sys/devices/f9966000.i2c/i2c-1/1-004a/secure_touch_enable
+#    chown system drmrpc /sys/devices/f9966000.i2c/i2c-1/1-004a/secure_touch
+#    chown system drmrpc /sys/devices/f9966000.i2c/i2c-1/1-0020/secure_touch_enable
+#    chown system drmrpc /sys/devices/f9966000.i2c/i2c-1/1-0020/secure_touch
+#
+#
+#
+service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
+    class core
+    user root
+    oneshot
+#
+#service mdm_helper /system/bin/mdm_helper
+#    class core
+#    onrestart setprop ro.service.mdm_helper_restarted "true"
+#    disabled
+#
+#service mdm_helper_proxy /system/bin/mdm_helper_proxy
+#    class core
+#    disabled
+#
+#service mdm_launcher /system/bin/sh /init.mdm.sh
+#    class main
+#    oneshot
+#
+#service qcamerasvr /system/bin/mm-qcamera-daemon
+#    class late_start
+#    user camera
+#    group camera system inet input graphics
+#
+# Stop mdm_helper_proxy in case of shutdown
+#on property:sys.shutdown.requested=*
+#    stop mdm_helper_proxy
+#
+# Stop mdm_helper_proxy on APQ target
+#on property:ro.radio.noril=yes
+#    stop mdm_helper_proxy
+#
+#on property:persist.airplane.mode.pwr.svg=enabled
+#    setprop ro.mdm_helper_proxy_req false
+#
+#on property:init.svc.ril-daemon=running
+#    setprop ro.mdm_helper_proxy_req true
+#
+## Start mdm_helper_proxy
+#on property:ro.mdm_helper_proxy_req=true
+#    start mdm_helper_proxy
+#
+## QCA1530 SoC core detect
+#service gnss-detect /system/vendor/bin/gnss.qca1530.sh detect
+#   class core
+#   oneshot
+
+service vendor.sensors.qti /vendor/bin/sensors.qti
+    class core
+    user system
+    group system
+    disabled
+
+
+service energy-awareness /system/vendor/bin/energy-awareness
+    class main
+    user system
+    group system
+    oneshot
+
+service mdtpd /system/vendor/bin/mdtpd
+    class late_start
+    user root
+    group system radio drmrpc
+
+service vendor.pd_mapper /system/vendor/bin/pd-mapper
+     class core
+
+#
+## QCA1530 SoC late_start group trigger
+#service gnss-init /system/vendor/bin/gnss.qca1530.sh init
+#   class late_start
+#   oneshot
+#
+## QCA1530 SoC Service Daemon
+#service gnss-svcd /system/vendor/bin/gnss.qca1530.sh start
+#   class late_start
+#   user root
+#   group gps system qcom_diag diag log inet net_raw
+#   disabled
+
+#Enabe fw logs by default in userdebug,eng build
+#TODO: Revisit this change once vold.decrypt property is avaiable.
+on property:ro.build.type=userdebug
+     start cnss_diag
+
+#TODO: Revisit this change once vold.decrypt property is avaiable.
+on property:ro.build.type=eng
+     start cnss_diag
+
+#Disable fw logs in userdebug with low memory build
+on property:vendor.wifi.fusionloader.fwloglowmemdisable=1 && property:ro.build.type=userdebug
+     stop cnss_diag
+
+service cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
+   class main
+   user system
+   group system wifi inet sdcard_rw media_rw diag
+   disabled
+   oneshot
+
+service dcvs-sh /vendor/bin/init.qti.dcvs.sh
+    class late_start
+    user root
+    group root system
+    disabled
+    oneshot
+
+on property:vendor.dcvs.prop=1
+   start dcvs-sh
+
+
+#service ppd /system/vendor/bin/mm-pp-dpps
+#    class late_start
+#    user system
+#    group system graphics
+#    socket pps stream 0660 system system
+#    disabled
+
+on property:init.svc.surfaceflinger=stopped
+    stop ppd
+
+on property:init.svc.surfaceflinger=running
+    start ppd
+
+on property:init.svc.surfaceflinger=restarting
+    stop ppd
+
+on property:init.svc.zygote=stopped
+    stop health-hal-2-1
+    stop ppd
+
+
+on property:init.svc.zygote=running
+    start health-hal-2-1
+    start ppd
+
+on property:init.svc.zygote=restarting
+    stop health-hal-2-1
+    stop ppd
+
+on init
+   start vendor_charger
+
+on charger
+    start qcom-post-boot
+    start vendor.hvdcp_opti
+    setprop sys.usb.configfs 1
+    start vendor.power_off_alarm
+
+service vendor_charger /vendor/bin/vendor_charger
+    class core
+    user root
+    group root
+    oneshot
+    disabled
+
+#
+#service nqs /system/bin/nqs
+#    class late_start
+#    socket nqs_qsb_comm stream 660 system system
+#    user system
+#    group drmrpc
+#
+#service adsprpcd /system/vendor/bin/adsprpcd
+#   class main
+#   user media
+#   group media
+#
+##Start picture quality tuning service
+#service vqttoolservice /system/bin/vqttoolservice
+#    class late_start
+#    socket vqtss stream 0660 system system
+#    user system
+#    group system
+
+service seempd /system/bin/seempd
+    class late_start
+    user system
+    group system sdcard_rw
+    socket seempdw dgram 0666 system system
+
+service vendor.tlocd /vendor/bin/tloc_daemon
+    class late_start
+    user system
+    group drmrpc gps net_raw
+
+service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
+     class main
+     user root
+     group system wakelock
+
+service smcinvoked /system/bin/smcinvoked
+   class main
+   user system
+   group system
+
+on property:ro.boottime.hbtp=*
+    start touch_ver
+
+# Get touch version
+service touch_ver /vendor/bin/touch_ver.sh
+    class late_start
+    user root
+    group root
+    oneshot
+    disabled
+
+on property:vold.decrypt=trigger_restart_framework && property:sys.boot_completed=1 && property:persist.vendor.sys.raven_fw_enabler=*
+    chmod 0664 /sys/bus/i2c/devices/4-0024/firmware/cyttsp5_fw_manual_upgrade/loading
+    chown system root /sys/bus/i2c/devices/4-0024/firmware/cyttsp5_fw_manual_upgrade/loading
+    chmod 0664 /sys/bus/i2c/devices/4-0024/firmware/cyttsp5_fw_manual_upgrade/data
+    chown system root /sys/bus/i2c/devices/4-0024/firmware/cyttsp5_fw_manual_upgrade/data
+
+# Atmel touch
+service touch_config /vendor/bin/touch_config.sh
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+# Firebird undock/dock
+service dp_monitor_reset /vendor/bin/dp_monitor_reset.sh
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+on property:vold.decrypt=trigger_restart_framework && property:sys.boot_completed=1 && property:persist.sys.touch_mode=*
+   wait /sys/bus/i2c/devices/4-004b/switch_cfg
+   start touch_config
+
+on property:ro.config.device.firebird=true && property:persist.vendor.monitor.reset=*
+    start dp_monitor_reset
+
+on property:ro.config.device.wwan_device=true
+    start gnss_service
+
+# WT6300 Keypad
+
+service keypad_link /system/vendor/bin/wt6kkbdattach
+    class core
+    user root
+    group root
+    disabled
+
+# when keypad is connected, change owner to root for io controlling
+on property:persist.sys.ext_keypad=1
+    chown root root /dev/ttyHS1
+    stop keypad_link
+    start keypad_link
+
+on property:persist.sys.ext_keypad=0
+    chown system system /dev/ttyHS1
+    stop keypad_link
+
+#For secure start-up
+on property:ro.config.device.iomux=1
+    start ext_keypad
+
+service ext_keypad /vendor/bin/ext_keypad.sh
+    class core
+    user root
+    group root
+    disabled
+    oneshot
+
+on property:ro.symbol.set_ext_keypad=1
+    chown root root /dev/ttyHS1
+    stop keypad_link
+    start keypad_link
+
+#FBE
+on property:ro.crypto.type=file && property:sys.boot_completed=1 && property:persist.sys.touch_mode=*
+   wait /sys/bus/i2c/devices/4-004b/switch_cfg
+   start touch_config
+
+on property:ro.config.device.encryption=file && property:sys.boot_completed=1 && property:persist.vendor.sys.raven_fw_enabler=*
+    chmod 0664 /sys/bus/i2c/devices/4-0024/firmware/cyttsp5_fw_manual_upgrade/loading
+    chown system root /sys/bus/i2c/devices/4-0024/firmware/cyttsp5_fw_manual_upgrade/loading
+    chmod 0664 /sys/bus/i2c/devices/4-0024/firmware/cyttsp5_fw_manual_upgrade/data
+    chown system root /sys/bus/i2c/devices/4-0024/firmware/cyttsp5_fw_manual_upgrade/data
+
+#Touch Calibration
+on property:sys.boot_completed=1
+    setprop sys.touch.calibration.file /enterprise/device/settings/touch_calibration.txt
+    setprop sys.touch.calibration.sysfs /sys/bus/i2c/devices/4-0049/calibration
+    chown system system /sys/bus/i2c/devices/4-0049/calibration
+    copy /enterprise/device/settings/touch_calibration.txt /sys/bus/i2c/devices/4-0049/calibration
+
+on property:sys.boot_completed=1
+   chmod 666  /sys/power/batt_extras/percent_decommission_threshold
+   chmod 666  /sys/power/batt_extras/batteryusage_decommission_threshold
+   chmod 666  /sys/power/batt_extras/battery_low_adj
+
+# enable SSR.
+on early-init && property:ro.build.type=user
+    chown system system /sys/bus/msm_subsys/devices/subsys0/restart_level
+    chmod 0644 /sys/bus/msm_subsys/devices/subsys0/restart_level
+    write /sys/bus/msm_subsys/devices/subsys0/restart_level related
+    setprop persist.sys.ssr.restart_level ALL_ENABLE
+    write /sys/module/subsystem_restart/parameters/max_history_time 1800
+    write /sys/module/subsystem_restart/parameters/max_restarts 5
+
+on property:ro.vendor.symbol.qcom.download=1
+    write /sys/module/msm_poweroff/parameters/download_mode 1
+
+# enable SSR.
+on early-init && property:ro.build.type=user
+   setprop persist.vendor.ssr.restart_level modem
+
+on property:ro.vendor.symbol.qcom.download=1
+   setprop persist.vendor.ssr.restart_level modem
+
+on property:sys.boot_completed=1
+   setprop ro.setupwizard.mode "OPTIONAL"
+
+#Buckboost
+on property:persist.vendor.buckboost.alwayson=1
+    write /sys/battery_swap/enable_buck_boost 1
+
+on property:persist.vendor.buckboost.alwayson=0
+    write /sys/battery_swap/enable_buck_boost 0
+
+#ET51 LAN ON-Semi AR1335 Foxconn rear camera
+on property:ro.config.device.model=5000 && property:ro.config.device.camera0=32 && property:persist.vendor.camera.exif.rotation=on
+    setprop persist.vendor.camera.exif.rotation off
+    setprop persist.vendor.camera.lib2d.rotation on
+
+#ET56 WAN ON-Semi AR1335 Foxconn rear camera
+on property:ro.config.device.model=5010 && property:ro.config.device.camera0=32 && property:persist.vendor.camera.exif.rotation=on
+    setprop persist.vendor.camera.exif.rotation off
+    setprop persist.vendor.camera.lib2d.rotation on
+
+
+service wacom_version /vendor/bin/wacom_version
+    class main
+    group root
+    user root
+    disabled
+    oneshot
+
+on property:sys.boot_completed=1
+    start wacom_version
+
+on property:ro.build.user=android-build
+    setprop media.settings.xml /vendor/etc/gsi_media_profiles_V1_0.xml
+
+# BSPA-98217 [Galactus] Disable 720x480 within media controller library and media profiles xml for display 800x480
+# BSPA-101764 [Galactus] Some options are missing from the video quality menu
+# BSPA-94337 [Raven] GSI CtsCameraTestCases Fail
+on property:ro.config.device.display=505 && property:ro.build.user=android-build && property:init.svc.vold=running
+    setprop media.settings.xml /vendor/etc/media_profiles_vendor_wo720x480.xml
+
+on property:ro.config.device.display=1000 && property:ro.build.user=android-build && property:init.svc.vold=running
+    setprop media.settings.xml /vendor/etc/media_profiles_vendor_wo720x480.xml
+
+on property:ro.config.device.display=1001 && property:ro.build.user=android-build && property:init.svc.vold=running
+    setprop media.settings.xml /vendor/etc/media_profiles_vendor_wo720x480.xml
+
+on property:ro.config.device.display=1002 && property:ro.build.user=android-build && property:init.svc.vold=running
+    setprop media.settings.xml /vendor/etc/media_profiles_vendor_wo720x480.xml
+
+# SAR Sensor Daemon
+on property:ro.config.device.sar=2
+    start sardaemon
+
+service sardaemon /vendor/bin/sardaemon
+    class late_start
+    user root
+    group root
+    oneshot
+    disabled
+
+#START Wifi mac address loading
+service vendor.loadWifi_mac /vendor/bin/sh /vendor/bin/loadWifimac.sh
+    class late_start
+    user root
+    group root
+    oneshot
+    disabled
+on post-fs
+    start vendor.loadWifi_mac
+#END Wifi mac address loading
+
+#hw_disable for GSI Image
+on property:sys.boot_completed=1 && property:ro.product.system.device=generic_arm64
+    start hw_disable
+
+on property:sys.boot_completed=1 && property:ro.product.system.device=generic_arm64_ab
+    start hw_disable
+
+service hw_disable /vendor/bin/hw_disable
+    class core
+    user root
+    group root
+    oneshot
+    disabled
+
+on property:persist.vendor.startcfa=1
+   start beep_cfa
+
+service beep_cfa /system/bin/beep_cfa
+    class core
+    user root
+    group root
+    oneshot
+    disabled
+
+
+#CTS on GSI fix
+on property:ro.build.user=android-build && property:init.svc.vold=running
+    setprop vendor.vidc.enc.disable.pq true
+
+on boot && property:ro.build.type=user
+    enable vendor.qcom-usb_user-sh
+
+# BSPA-177217 workaround for USB preference disappeared after reset by package
+on property:sys.boot_completed=1 && property:ro.build.type=user
+    setprop sys.usb.config ${sys.usb.config}
+
+service vendor.qcom-usb_user-sh /vendor/bin/init.qcom.usb_user.sh
+    class core
+    user root
+    oneshot
+    disabled
+
+on property:ro.build.type=user && property:ro.symbol.test.automation=1 && property:persist.vendor.usb.config=none
+   setprop persist.vendor.usb.config adb
+
+on load_persist_props_action && property:ro.build.type=user && property:ro.symbol.test.automation=1
+   stop adbd
+   setprop persist.vendor.usb.config adb
+
+on load_persist_props_action && property:ro.build.type=user && property:ro.symbol.test.automation=0
+   setprop persist.vendor.usb.config none
+   setprop persist.sys.usb.config mtp
+
+on boot && property:ro.symbol.test.wifiautomation=1
+   setprop service.adb.tcp.port 5555
+
+on load_persist_props_action && property:ro.vendor.symbol.qcom.diag=1
+   setprop persist.vendor.usb.config diag,serial_cdev,rmnet,adb
+
+on property:persist.buckboost.alwayson=1
+    write /sys/battery_swap/enable_buck_boost 1
+
+on property:persist.buckboost.alwayson=0
+    write /sys/battery_swap/enable_buck_boost 0
+
+service sub_system_restart /vendor/bin/subsys_ssr.sh modem related
+    class core
+    user root
+    oneshot
+    disabled
+
+on property:sys.boot_completed=1 && property:persist.vendor.sys.modem_ssr=1 && property:ro.build.type=user
+    start sub_system_restart
+
+service secure_wakelock_acquire /vendor/bin/secure_wakelock.sh acquire
+    class core
+    user root
+    oneshot
+    disabled
+
+service secure_wakelock_release /vendor/bin/secure_wakelock.sh release
+    class core
+    user root
+    oneshot
+    disabled
+
+on property:vold.decrypt=trigger_restart_min_framework && property:sys.boot_completed=1
+    start secure_wakelock_acquire
+
+on property:service.bootanim.exit=1 && property:sys.secure_lock=release
+    start secure_wakelock_release
+
+# USB Mode for MtFuji
+on property:persist.sys.usb.sharp_usb_mode=0 && property:ro.config.device.model=2220
+   write /sys/devices/platform/soc/a800000.ssusb/mode none
+
+on property:persist.sys.usb.sharp_usb_mode=1 && property:ro.config.device.model=2220
+   write /sys/devices/platform/soc/a800000.ssusb/mode host
+
+on property:persist.sys.usb.sharp_usb_mode=2 && property:ro.config.device.model=2220
+   write /sys/devices/platform/soc/a800000.ssusb/mode peripheral
+
+# Set usb mode to none for battery swap
+on property:persist.sys.usb.reset_usb_none=1 && property:ro.config.device.model=2220
+   write /sys/devices/platform/soc/a800000.ssusb/mode none
+
+# Early emounting enterprise partition to read the SDK version from DeviceManifest_V2.xml file for resetting data while transitioning from FDE TO FBE.
+on early-fs && property:ro.boot.cc_state=1 && property:ro.boot.cc_supported=1
+   wait /dev/block/bootdevice/by-name/enterprise
+   mount ext4 /dev/block/bootdevice/by-name/enterprise /zebra_meta rw nosuid nodev noatime barrier=1
+
+#Enable Camera Setting to Assist AR1337 MMS Tuning
+#Lightning
+on property:ro.config.device.model=5700 && property:ro.config.device.camera0=128
+  setprop persist.vendor.camera.af_hj.enable 1
+  setprop persist.vendor.camera.cds true
+on property:ro.config.device.model=5200 && property:ro.config.device.camera0=128
+    setprop persist.vendor.camera.af_hj.enable 1
+    setprop persist.vendor.camera.cds true
+#Thunder
+on property:ro.config.device.model=7700 && property:ro.config.device.camera0=128
+  setprop persist.vendor.camera.af_hj.enable 1
+  setprop persist.vendor.camera.cds true
+on property:ro.config.device.model=7200 && property:ro.config.device.camera0=128
+    setprop persist.vendor.camera.af_hj.enable 1
+    setprop persist.vendor.camera.cds true
+#Simba
+on property:ro.config.device.model=5510 && property:ro.config.device.camera0=128
+  setprop persist.vendor.camera.af_hj.enable 1
+  setprop persist.vendor.camera.cds true
+on property:ro.config.device.model=5500 && property:ro.config.device.camera0=128
+    setprop persist.vendor.camera.af_hj.enable 1
+    setprop persist.vendor.camera.cds true
+#Mufasa and Aslan
+on property:ro.config.device.model=5710 && property:ro.config.device.camera0=128
+  setprop persist.vendor.camera.af_hj.enable 1
+  setprop persist.vendor.camera.cds true
+on property:ro.config.device.model=5210 && property:ro.config.device.camera0=128
+    setprop persist.vendor.camera.af_hj.enable 1
+    setprop persist.vendor.camera.cds true
+on property:ro.config.device.model=5220 && property:ro.config.device.camera0=128
+    setprop persist.vendor.camera.af_hj.enable 1
+    setprop persist.vendor.camera.cds true
+#Firebird
+on property:ro.config.device.model=5000 && property:ro.config.device.camera0=128
+    setprop persist.vendor.camera.pdafcoef 25.83
+on property:ro.config.device.model=5010 && property:ro.config.device.camera0=128
+    setprop persist.vendor.camera.pdafcoef 25.83
+#Galactus
+on property:ro.config.device.model=9300 && property:ro.config.device.camera0=128
+    setprop persist.vendor.camera.pdafcoef 25.83
+on property:sys.gc_settings=1
+    start force_GC
+
+service force_GC /vendor/bin/force_GC.sh
+    class late_start
+    user root
+    group root
+    oneshot
+    disabled
+
+service wifi_governor /vendor/bin/wifi_governor
+    class core
+    user root
+    group root
+    oneshot
+    disabled
+
+on post-fs-data
+   start wifi_governor
+
+# Early emounting enterprise partition to read the SDK version from DeviceManifest_V2.xml file for resetting data while transitioning from FDE TO FBE.
+on early-fs && property:ro.boot.cc_state=0
+   wait /dev/block/bootdevice/by-name/enterprise
+   mount ext4 /dev/block/bootdevice/by-name/enterprise /enterprise rw nosuid nodev noatime barrier=1
+   chown system system /enterprise/
+   chmod 0775 /enterprise/
+
+on property:fusion.restart_wifi=1
+    exec u:r:shell:s0 shell shell -- /system/bin/sh /vendor/bin/fusion_restart_wifi.sh
+    setprop fusion.restart_wifi 0
+
+
+# Add for Dynamic Lock Screen Rotation Support
+on property:ro.config.device.enable_lockscreen_rotation=1
+    setprop lockscreen.rot_override true
+
+# SPR-53070 Water droplet notification is not getting.
+on property:sys.boot_completed=1
+    write /sys/bus/i2c/devices/1-0028/fusb251_reset 1
+

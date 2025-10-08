@@ -1,0 +1,10 @@
+;
+; Comments line starts with a semi-colon
+;This file name is based on property "ro.product.device"
+;Each hardware revision version starts with [HW-hardware version]
+;Hardware revision is taken from the property "ro.config.device.hwrev"
+[HW-111]
+"General: N/A"
+"Cellular: N/A"
+
+;Other hardware revision goes below

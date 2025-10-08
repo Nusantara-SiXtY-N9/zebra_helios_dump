@@ -1,0 +1,23 @@
+#/*! \file vendor.zebra.fusion@1.0-service
+#\brief fusion HAL init rc file
+#*---------------------------------------------------------------------------
+#* Copyright (c) 2018-2019 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+#*
+#* Module: Fusion HAL init rc
+#*
+#* Author: Janmejay Panda
+#*
+#* Original Date: 19 Jan 2018
+#*
+#* Description:
+#*    To start Fusion HAL servcie at init time
+#*
+#* Revision History:
+#*       Initial ver. - 19 Jan 2018
+#*--------------------------------------------------------------------------
+#*/
+service vendor.zebra.fusion_aidl-service /vendor/bin/hw/vendor.zebra.fusion_aidl-service
+    interface aidl vendor.zebra.fusion_aidl.IFusionWifi/default
+    class hal
+    user wifi
+    group wifi

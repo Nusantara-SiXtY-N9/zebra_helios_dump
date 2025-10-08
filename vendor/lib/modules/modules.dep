@@ -1,0 +1,163 @@
+/vendor/lib/modules/rc-nec-terratec-cinergy-xs.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-terratec-slim.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_adsp_loader.ko: /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-avermedia.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/lcd.ko:
+/vendor/lib/modules/rc-pctv-sedna.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_helios_ptt.ko: /vendor/lib/modules/audio_mbhc.ko
+/vendor/lib/modules/rc-tivo.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-imon-mce.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-msi-tvanywhere-plus.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_stub.ko:
+/vendor/lib/modules/rc-asus-ps3-100.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/mpq-adapter.ko:
+/vendor/lib/modules/rc-digitalnow-tinytwin.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/msm_11ad_proxy.ko:
+/vendor/lib/modules/rc-dib0700-nec.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-digittrade.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-kworld-pc150u.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-hisi-poplar.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-proteus-2309.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_wcd9xxx.ko: /vendor/lib/modules/audio_wcd_core.ko /vendor/lib/modules/audio_q6.ko /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-flyvideo.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-videomate-s350.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_q6_notifier.ko: /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/audio_wcd_core.ko:
+/vendor/lib/modules/audio_wglink.ko:
+/vendor/lib/modules/rc-rc6-mce.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-encore-enltv.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-behold-columbus.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-winfast-usbii-deluxe.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-medion-x10-or2x.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_cpe_lsm.ko: /vendor/lib/modules/audio_wcd_cpe.ko /vendor/lib/modules/audio_wcd_core.ko /vendor/lib/modules/audio_q6.ko /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-it913x-v1.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-terratec-cinergy-xs.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-dntv-live-dvbt-pro.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-genius-tvgo-a11mce.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-winfast.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-avermedia-cardbus.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-eztv.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-manli.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-gotview7135.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-terratec-cinergy-s2-hd.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-dvbsky.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_wcd_cpe.ko: /vendor/lib/modules/audio_wcd_core.ko /vendor/lib/modules/audio_q6.ko /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-fusionhdtv-mce.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-twinhan1027.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-pinnacle-grey.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-total-media-in-hand.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-su3000.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-tt-1500.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-avertv-303.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-technisat-ts35.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_wcd9335.ko: /vendor/lib/modules/audio_swr_ctrl.ko /vendor/lib/modules/audio_swr.ko /vendor/lib/modules/audio_wcd9xxx.ko /vendor/lib/modules/audio_wcd_cpe.ko /vendor/lib/modules/audio_wcd_core.ko /vendor/lib/modules/audio_q6.ko /vendor/lib/modules/audio_mbhc.ko /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-dvico-portable.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_swr_ctrl.ko: /vendor/lib/modules/audio_swr.ko /vendor/lib/modules/audio_q6.ko /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-avermedia-m733a-rm-k6.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-lme2510.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-imon-pad.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-avermedia-rm-ks.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_msm_sdw.ko: /vendor/lib/modules/audio_swr_ctrl.ko /vendor/lib/modules/audio_swr.ko /vendor/lib/modules/audio_wcd_core.ko /vendor/lib/modules/audio_q6.ko /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-zx-irdec.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-powercolor-real-angel.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-dntv-live-dvb-t.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-encore-enltv2.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-tevii-nec.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rdbg.ko:
+/vendor/lib/modules/rc-alink-dtu-m.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-avermedia-a16d.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-d680-dmb.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/cyttsp5_debug.ko:
+/vendor/lib/modules/rc-msi-digivox-iii.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-pixelview-002t.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_usf.ko: /vendor/lib/modules/audio_q6.ko /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-tbs-nec.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-hisi-tv-demo.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-pixelview-new.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-snapstream-firefly.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-it913x-v2.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/mmc_test.ko:
+/vendor/lib/modules/rc-dm1105-nec.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-pinnacle-color.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-pinnacle-pctv-hd.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-terratec-slim-2.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/ofpart.ko: /vendor/lib/modules/mtd.ko
+/vendor/lib/modules/rc-geekbox.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-core.ko:
+/vendor/lib/modules/audio_wcd934x.ko: /vendor/lib/modules/audio_swr_ctrl.ko /vendor/lib/modules/audio_swr.ko /vendor/lib/modules/audio_wcd9xxx.ko /vendor/lib/modules/audio_wcd_core.ko /vendor/lib/modules/audio_q6.ko /vendor/lib/modules/audio_mbhc.ko /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-twinhan-dtv-cab-ci.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_apr.ko: /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-technisat-usb2.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-videomate-m1f.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-apac-viewcomp.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_machine_sdm660.ko: /vendor/lib/modules/audio_wcd934x.ko /vendor/lib/modules/audio_msm_sdw.ko /vendor/lib/modules/audio_digital_cdc.ko /vendor/lib/modules/audio_wsa881x.ko /vendor/lib/modules/audio_analog_cdc.ko /vendor/lib/modules/audio_wcd9335.ko /vendor/lib/modules/audio_swr_ctrl.ko /vendor/lib/modules/audio_swr.ko /vendor/lib/modules/audio_wcd9xxx.ko /vendor/lib/modules/audio_wcd_cpe.ko /vendor/lib/modules/audio_wcd_core.ko /vendor/lib/modules/audio_q6.ko /vendor/lib/modules/audio_mbhc.ko /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-astrometa-t2hybrid.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-kworld-plus-tv-analog.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-ati-x10.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/wil6210.ko: /vendor/lib/modules/msm_11ad_proxy.ko
+/vendor/lib/modules/rc-msi-digivox-ii.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-cec.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-ati-tv-wonder-hd-600.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_native.ko: /vendor/lib/modules/audio_platform.ko /vendor/lib/modules/audio_q6.ko /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/audio_platform.ko: /vendor/lib/modules/audio_q6.ko /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/mtd.ko:
+/vendor/lib/modules/audio_q6_pdr.ko:
+/vendor/lib/modules/rc-pixelview-mk12.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/chipreg.ko:
+/vendor/lib/modules/qca_cld3_wlan.ko:
+/vendor/lib/modules/rc-videomate-tv-pvr.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-dtt200u.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_digital_cdc.ko: /vendor/lib/modules/audio_q6.ko /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/audio_hdmi.ko:
+/vendor/lib/modules/efivarfs.ko:
+/vendor/lib/modules/rc-behold.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-purpletv.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-azurewave-ad-tu700.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_q6.ko: /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-pixelview.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-streamzap.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-total-media-in-hand-02.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-cinergy-1400.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-evga-indtube.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_swr.ko:
+/vendor/lib/modules/rc-nebula.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-budget-ci-old.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-anysee.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-avermedia-m135a.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-medion-x10-digitainer.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-imon-rsc.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-em-terratec.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_analog_cdc.ko: /vendor/lib/modules/audio_wcd9xxx.ko /vendor/lib/modules/audio_wcd_core.ko /vendor/lib/modules/audio_q6.ko /vendor/lib/modules/audio_mbhc.ko /vendor/lib/modules/audio_apr.ko /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-adstech-dvb-t-pci.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_pinctrl_lpi.ko: /vendor/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_pdr.ko
+/vendor/lib/modules/rc-reddo.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-flydvb.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-trekstor.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-real-audio-220-32-keys.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/gspca_main.ko:
+/vendor/lib/modules/rc-leadtek-y04g0051.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-pv951.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-kaiomy.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-hauppauge.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-kworld-315u.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_wcd_spi.ko:
+/vendor/lib/modules/rc-terratec-cinergy-c-pci.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-dib0700-rc5.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-msi-tvanywhere.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-gadmei-rm008z.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-iodata-bctv7e.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-avermedia-dvbt.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-medion-x10.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-encore-enltv-fm53.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-dvico-mce.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/mpq-dmx-hw-plugin.ko: /vendor/lib/modules/mpq-adapter.ko
+/vendor/lib/modules/rc-norwood.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_wsa881x.ko: /vendor/lib/modules/audio_swr.ko /vendor/lib/modules/audio_wcd_core.ko
+/vendor/lib/modules/ir-kbd-i2c.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-delock-61959.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-asus-pc39.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-cinergy.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-tango.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/rc-npgtech.ko: /vendor/lib/modules/rc-core.ko
+/vendor/lib/modules/audio_mbhc.ko:
+/vendor/lib/modules/audio_pinctrl_wcd.ko:

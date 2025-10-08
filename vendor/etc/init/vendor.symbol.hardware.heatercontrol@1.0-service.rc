@@ -1,0 +1,12 @@
+service heatercontrol-hal-1-0 /vendor/bin/hw/vendor.symbol.hardware.heatercontrol@1.0-service
+    class hal
+    user system
+    group system
+
+# disable unused services for 2GB to reduce the memory usage
+on property:sys.boot_completed=1 && property:ro.config.device.memsize=4
+    stop heatercontrol-hal-1-0
+
+# disable unused services for 3GB to reduce the memory usage
+on property:sys.boot_completed=1 && property:ro.config.device.memsize=8 && property:ro.config.device.memory_optimize_3GB=1
+    stop heatercontrol-hal-1-0

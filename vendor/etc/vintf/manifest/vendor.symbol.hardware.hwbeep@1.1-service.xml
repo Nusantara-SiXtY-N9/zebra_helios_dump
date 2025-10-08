@@ -1,0 +1,12 @@
+<!--Copyright (c) 2020 Zebra Technologies Corporation and/or its affiliates. All rights reserved-->
+<manifest version="1.0" type="device">
+    <hal format="hidl">
+        <name>vendor.symbol.hardware.hwbeep</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IHardwareBeepConfigs</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>

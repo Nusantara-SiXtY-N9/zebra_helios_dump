@@ -1,0 +1,5 @@
+#Copyright (c) 2021 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+
+on boot
+   #Load BattMan driver
+   insmod /vendor/lib/modules/BattMan.ko

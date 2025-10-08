@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<manifest target-level="4" type="device" version="1.0">
+	<sepolicy>
+		<version>34.0</version>
+	</sepolicy>
+</manifest>

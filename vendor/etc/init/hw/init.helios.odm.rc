@@ -1,0 +1,96 @@
+# Copyright (c) 2013-2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2023 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
+
+#odm starts
+
+on init
+    chown root root /odm
+    restorecon_recursive /odm/
+    restorecon_recursive --force /odm
+    chmod 0755 /odm/firmware
+    chmod 0755 /odm/etc
+    chmod 0755 /odm/etc/vintf
+    chmod 0755 /odm/etc/permissions
+    chmod 0644 /odm/etc/vintf/manifest.xml
+    chmod 0644 /odm/etc/permissions/unavailable_features.xml
+    chmod 0644 /odm/etc/media_profiles_V1_0.xml
+    chmod 0644 /odm/etc/odmconfig.xml
+    chmod 0644 /odm/etc/media_codecs.xml
+    chmod 0644 /odm/etc/media_codecs_google_audio.xml
+    chmod 0644 /odm/fbe.ini
+    chmod 0644 /odm/osu_cc.ini
+    chmod 0644 /odm/etc/media_codecs_google_telephony.xml
+    chmod 0644 /odm/etc/media_codecs_google_video.xml
+    chmod 0644 /odm/etc/media_codecs_performance.xml
+    chmod 0644 /odm/etc/media_codecs_vendor_audio.xml
+
+on init && property:ro.boot.fbe=1
+    rm /odm/fde_fbe.ini
+    start copy_odm
+
+on property:ro.vendor.hwconfig.completed=true
+    rm /odm/fde_fbe.ini
+    start copy_odm
+
+on property:sys.boot_completed=1
+   umount /odm
+   mount ext4 /dev/block/bootdevice/by-name/factory /odm ro nosuid nodev noatime barrier=1
+
+on property:ro.vendor.odm_restart=1
+    chown root root /odm
+    chmod 0755 /odm/etc
+    chmod 0755 /odm/etc/vintf
+    chmod 0755 /odm/etc/permissions
+    chmod 0644 /odm/etc/vintf/manifest.xml
+    chmod 0644 /odm/etc/permissions/unavailable_features.xml
+    chmod 0644 /odm/etc/media_profiles_V1_0.xml
+    chmod 0644 /odm/etc/odmconfig.xml
+    chmod 0644 /odm/etc/media_codecs.xml
+    chmod 0644 /odm/etc/media_codecs_google_audio.xml
+    chmod 0644 /odm/etc/media_codecs_google_telephony.xml
+    chmod 0644 /odm/etc/media_codecs_google_video.xml
+    chmod 0644 /odm/etc/media_codecs_performance.xml
+    chmod 0644 /odm/etc/media_codecs_vendor_audio.xml
+    chmod 0644 /odm/fbe.ini
+    chmod 0644 /odm/osu_cc.ini
+    start product_prop
+
+service product_prop /vendor/bin/product_prop
+    class core
+    user root
+    group root
+    oneshot
+    disabled
+
+service copy_odm /vendor/bin/copy_odm
+    class core
+    user root
+    group root
+    oneshot
+    disabled

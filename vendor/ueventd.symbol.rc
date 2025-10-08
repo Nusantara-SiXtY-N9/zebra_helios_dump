@@ -1,0 +1,30 @@
+# Copyright (c) 2018-2020 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+# Add MSR support, hidraw* is created dynamically when USB MSR attaches, CTS test is OK
+/dev/hidraw*              0660    system    system
+
+# ttyUSB0 is set in ueventd.qcom.rc as "0660 bluetooth bluetooth",
+# override it here so FTDI dual USB/Serial chip can work
+/dev/ttyUSB*              0660    system    system
+
+# Add ACM support, ttyACM* is created dynamically when USB CDC scanner or Serial Scanner is connected.
+/dev/ttyACM*              0660   system     system
+
+#For TouchConfig
+/sys/bus/i2c/devices/4-004* switch_cfg 0664 system root
+/sys/bus/i2c/devices/4-002* switch_cfg 0664 system root
+/sys/bus/i2c/devices/4-003* switch_cfg 0664 system root
+/sys/bus/i2c/devices/4-002* manual_upgrade 0664 system root
+
+/sys/devices/soc/c178000.i2c/i2c-4/4-0020/input/input* switch_cfg 0664 system root
+/sys/devices/soc/c178000.i2c/i2c-4/4-0020/input/input* config_id 0664 system root
+
+# Add max_brightness permission for thermal-engine
+/sys/class/backlight/lcd-bl/max_brightness              0660   system     system
+
+/dev/ttyHS2 0660 system system
+/dev/ttyHS1 0660 system system
+
+# Ocelot ethernet
+/sys/bus/usb/devices/1-1.5 power/control 0660 system system
+
+/sys/bus/usb/devices/*:* authorized 0664 system root

@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<permissions>
+	<unavailable-feature name="android.software.device_id_attestation"/>
+</permissions>

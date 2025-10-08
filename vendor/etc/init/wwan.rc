@@ -1,0 +1,28 @@
+# Copyright (C) 2021-2024 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+
+on property:telephony.ssr.disable=false && property:ro.build.type=user
+    chown system system /sys/bus/msm_subsys/devices/subsys0/restart_level
+    chmod 0644 /sys/bus/msm_subsys/devices/subsys0/restart_level
+    write /sys/bus/msm_subsys/devices/subsys0/restart_level related
+    setprop persist.vendor.ssr.restart_level modem
+    write /sys/module/subsystem_restart/parameters/max_history_time 1800
+    write /sys/module/subsystem_restart/parameters/max_restarts 5
+
+on property:ro.config.device.dsds=0 && property:persist.radio.multisim.config=dsds
+    setprop persist.radio.multisim.config ssss
+
+on property:ro.config.device.dsds=1 && property:persist.radio.multisim.config=ssss
+    setprop persist.radio.multisim.config dsds
+
+on property:persist.radio.mbn_hw_name=SR_DSDS-LA-7+7_mode-SDM660
+    setprop persist.zebra.multisim.config dsds
+
+on property:persist.sys.activate_pdc=1
+    start vendor.dataqti
+
+on property:persist.sys.activate_pdc=0
+    stop vendor.dataqti
+
+on fs
+    #Create directory to write subsidylock data.
+    mkdir /mnt/vendor/persist/wwan 0771 radio radio

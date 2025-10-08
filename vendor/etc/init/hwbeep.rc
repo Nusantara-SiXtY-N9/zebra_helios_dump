@@ -1,0 +1,24 @@
+#Copyright (c) 2020 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+
+on post-fs-data
+# Hw Beeper
+    chown system system /sys/power/beep_pwm/beep_pwm_on
+    chown system system /sys/power/beep_pwm/speaker_en
+    chown system system /sys/power/beep_pwm/beep_period_ns
+    chown system system /sys/power/beep_pwm/beep_time_ms
+    chown system system /sys/power/beep_pwm/beep_volume
+
+on boot
+   #Load HWBeep driver
+   insmod /vendor/lib/modules/beep_pwm.ko
+
+on property:sys.boot_completed=1
+# Hw Beeper is late in FBE
+    chown system system /sys/power/beep_pwm/beep_pwm_on
+    chown system system /sys/power/beep_pwm/speaker_en
+    chown system system /sys/power/beep_pwm/beep_period_ns
+    chown system system /sys/power/beep_pwm/beep_time_ms
+    chown system system /sys/power/beep_pwm/beep_volume
+
+on property:persist.sys.scannervolume=*
+   setprop persist.vendor.scanner.beepVol ${persist.sys.scannervolume}

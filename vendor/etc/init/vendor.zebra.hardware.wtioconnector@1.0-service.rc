@@ -1,0 +1,4 @@
+service wtioconnector-hal-1-0 /vendor/bin/hw/vendor.zebra.hardware.wtioconnector@1.0-service
+    class hal
+    user system
+    group system

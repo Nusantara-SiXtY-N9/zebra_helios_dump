@@ -1,0 +1,68 @@
+;
+; Comments line starts with a semi-colon
+;This file name is based on property "ro.product.device"
+;Each hardware revision version starts with [HW-hardware version]
+;Hardware revision is taken from the property "ro.config.device.hwrev"
+;Hardware 121 is for DV
+;140 = Rev A
+;141 = Rev B
+;142 = Rev C
+;143 = Rev D
+;111=EV1
+;112=EV2
+;120=DV(DV0)
+;121=DV1
+;122=DV2
+;123=DV3
+;124=DV4
+;130=MV
+;131=MV1
+;132=MV2
+[HW-140]
+[HW-141]
+[HW-142]
+[HW-143]
+[HW-144]
+[HW-145]
+[HW-146]
+[HW-147]
+[HW-148]
+[HW-149]
+[HW-130]
+[HW-131]
+[HW-132]
+[HW-133]
+[HW-134]
+[HW-135]
+[HW-136]
+[HW-137]
+[HW-138]
+[HW-139]
+[HW-120]
+[HW-121]
+[HW-122]
+[HW-123]
+[HW-124]
+[HW-125]
+[HW-126]
+[HW-127]
+[HW-128]
+[HW-129]
+[HW-110]
+[HW-111]
+[HW-112]
+[HW-113]
+[HW-114]
+[HW-115]
+[HW-116]
+[HW-117]
+[HW-118]
+[HW-119]
+"General: GU3.1"
+"Cellular: GU3.1"
+
+[HW-112]
+"General: GU3.1"
+"Cellular: GU3.1"
+
+;Other hardware revision goes below

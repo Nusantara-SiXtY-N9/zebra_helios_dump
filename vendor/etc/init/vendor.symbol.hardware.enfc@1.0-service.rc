@@ -1,0 +1,8 @@
+service enfc-hal-1-0 /vendor/bin/hw/vendor.symbol.hardware.enfc@1.0-service
+    class hal
+    user nfc
+    group system
+
+
+on property:sys.boot_completed=1 && property:ro.config.device.federal_SKU1=1
+    stop enfc-hal-1-0

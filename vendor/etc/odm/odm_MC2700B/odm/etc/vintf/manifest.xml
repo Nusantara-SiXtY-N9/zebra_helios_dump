@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<manifest target-level="4" type="device" version="1.0">
+	<hal override="true">
+		<name>android.hardware.nfc</name>
+		<transport>hwbinder</transport>
+	</hal>
+	<hal override="true">
+		<name>vendor.nxp.nxpnfclegacy</name>
+		<transport>hwbinder</transport>
+	</hal>
+	<hal override="true">
+		<name>android.hardware.camera.provider</name>
+		<transport>hwbinder</transport>
+	</hal>
+	<hal override="true">
+		<name>vendor.symbol.hardware.screenblanking</name>
+		<transport>hwbinder</transport>
+	</hal>
+	<hal override="true">
+		<name>vendor.symbol.hardware.gpiocradle</name>
+		<transport>hwbinder</transport>
+	</hal>
+	<hal override="true">
+		<name>vendor.symbol.hardware.rfid</name>
+		<transport>hwbinder</transport>
+	</hal>
+	<hal override="true">
+		<name>vendor.nxp.hardware.nfc</name>
+		<transport>hwbinder</transport>
+	</hal>
+	<hal override="true">
+		<name>vendor.symbol.hardware.cradle</name>
+		<transport>hwbinder</transport>
+	</hal>
+	<hal override="true">
+		<name>vendor.symbol.hardware.productspecificfeatures</name>
+		<transport>hwbinder</transport>
+	</hal>
+	<hal override="true">
+		<name>vendor.symbol.hardware.heatercontrol</name>
+		<transport>hwbinder</transport>
+	</hal>
+	<hal override="true">
+		<name>vendor.symbol.hardware.configurablecharge</name>
+		<transport>hwbinder</transport>
+	</hal>
+	<hal override="true">
+		<name>vendor.symbol.hardware.devtrack</name>
+		<transport>hwbinder</transport>
+	</hal>
+	<hal override="true">
+		<name>android.hardware.bluetooth</name>
+		<transport>hwbinder</transport>
+		<version>1.0</version>
+		<interface>
+			<name>IBluetoothHci</name>
+			<instance>default</instance>
+		</interface>
+	</hal>
+	<hal override="true">
+		<name>android.hardware.usb</name>
+		<transport>hwbinder</transport>
+		<version>1.2</version>
+		<interface>
+			<name>IUsb</name>
+			<instance>default</instance>
+		</interface>
+	</hal>
+	<sepolicy>
+		<version>34.0</version>
+	</sepolicy>
+</manifest>

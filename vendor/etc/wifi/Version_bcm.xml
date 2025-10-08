@@ -1,0 +1,24 @@
+<Fusion>
+    <Versionlist>
+        <Component>
+            <Name>Fusion</Name>
+            <Version>FUSION_SA_2_1.0.0.020_U</Version>
+        </Component>
+        <Component>
+            <Name>Application</Name>
+           <Version>SA_2_1.0.0.004_U</Version>
+        </Component>
+        <Component>
+            <Name>Middleware</Name>
+           <Version>SA_2_1.0.0.013_U</Version>
+        </Component>
+        <Component>
+            <Name>Supplicant</Name>
+           <Version>SA_2_1.0.0.009_U</Version>
+        </Component>
+        <Component>
+            <Name>Radio</Name>
+           <Version>SA_2_1.0.0.016_U</Version>
+        </Component>
+    </Versionlist>
+</Fusion>

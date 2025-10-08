@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<permissions>
+	<unavailable-feature name="android.hardware.location.gps"/>
+	<unavailable-feature name="android.hardware.camera.front"/>
+	<unavailable-feature name="android.hardware.sensor.barometer"/>
+	<unavailable-feature name="android.hardware.sensor.compass"/>
+	<unavailable-feature name="android.hardware.sensor.proximity"/>
+	<unavailable-feature name="android.hardware.sensor.hifi_sensors"/>
+	<unavailable-feature name="android.hardware.telephony"/>
+	<unavailable-feature name="android.hardware.telephony.cdma"/>
+	<unavailable-feature name="android.hardware.telephony.gsm"/>
+	<unavailable-feature name="android.hardware.telephony.carrierlock"/>
+	<unavailable-feature name="android.hardware.telephony.euicc"/>
+	<unavailable-feature name="android.hardware.telephony.mbms"/>
+	<unavailable-feature name="android.hardware.telephony.data"/>
+	<unavailable-feature name="android.hardware.telephony.ims"/>
+	<unavailable-feature name="android.hardware.telephony.messaging"/>
+	<unavailable-feature name="android.hardware.telephony.subscription"/>
+	<unavailable-feature name="android.hardware.telephony.radio.access"/>
+	<unavailable-feature name="android.hardware.telephony.calling"/>
+	<unavailable-feature name="android.hardware.se.omapi.uicc"/>
+	<unavailable-feature name="android.software.device_id_attestation"/>
+	<unavailable-feature name="android.software.telecom"/>
+</permissions>

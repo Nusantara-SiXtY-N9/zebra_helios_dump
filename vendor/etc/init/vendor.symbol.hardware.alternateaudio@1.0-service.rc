@@ -1,0 +1,4 @@
+service alternateaudio-1-0 /vendor/bin/hw/vendor.symbol.hardware.alternateaudio@1.0-service
+    class main
+    user system
+    group system

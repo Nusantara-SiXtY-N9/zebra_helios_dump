@@ -1,0 +1,5 @@
+service vendor.zcm-default /vendor/bin/hw/vendor.zebra.hardware.zcm-service
+    interface aidl vendor.zebra.hardware.zcm.IZebraChargeManager/default
+    class hal
+    user root
+    group root

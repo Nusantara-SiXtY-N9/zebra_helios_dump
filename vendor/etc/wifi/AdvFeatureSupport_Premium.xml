@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Advanced Options of WLAN with default values -->
+<!-- Note: use device specific tag below the default tag only-->
+<!-- to override the default value if needed -->
+<params>
+    <parm name = "AutoTimeConfig">
+        <default>1</default>
+    </parm>
+    <parm name = "CCKM">
+        <default>1</default>
+    </parm>
+    <parm name = "EnableRestrictedSettingsUI">
+        <default>1</default>
+    </parm>
+    <parm name = "BandPreference">
+        <default>1</default>
+    </parm>
+    <parm name = "SubNetRoam">
+        <default>1</default>
+    </parm>
+    <parm name = "PasswordProtectEncryption">
+        <default>1</default>
+    </parm>
+    <parm name = "APSSID">
+        <default>0</default>
+        <ET56L>1</ET56L>
+        <ET56S>1</ET56S>
+        <L10AW>1</L10AW>
+        <TC57>1</TC57>
+        <TC77>1</TC77>
+        <TC97>1</TC97>
+        <TC26>1</TC26>
+        <EC55>1</EC55>
+        <TC57X>1</TC57X>
+        <MC2700>1</MC2700>
+    </parm>
+    <parm name = "APBand">
+        <default>0</default>
+        <ET56L>1</ET56L>
+        <ET56S>1</ET56S>
+        <L10AW>1</L10AW>
+        <TC57>1</TC57>
+        <TC77>1</TC77>
+        <TC97>1</TC97>
+        <TC26>1</TC26>
+        <EC55>1</EC55>
+        <TC57X>1</TC57X>
+        <MC2700>1</MC2700>
+    </parm>
+    <parm name = "APSecurityIndex">
+        <default>0</default>
+        <ET56L>1</ET56L>
+        <ET56S>1</ET56S>
+        <L10AW>1</L10AW>
+        <TC57>1</TC57>
+        <TC77>1</TC77>
+        <TC97>1</TC97>
+        <TC26>1</TC26>
+        <EC55>1</EC55>
+        <TC57X>1</TC57X>
+        <MC2700>1</MC2700>
+    </parm>
+    <parm name = "APProfilePassword">
+        <default>0</default>
+        <ET56L>1</ET56L>
+        <ET56S>1</ET56S>
+        <L10AW>1</L10AW>
+        <TC57>1</TC57>
+        <TC77>1</TC77>
+        <TC97>1</TC97>
+        <TC26>1</TC26>
+        <EC55>1</EC55>
+        <TC57X>1</TC57X>
+        <MC2700>1</MC2700>
+    </parm>
+    <parm name = "APMode">
+        <default>0</default>
+        <ET56L>1</ET56L>
+        <ET56S>1</ET56S>
+        <L10AW>1</L10AW>
+        <TC57>1</TC57>
+        <TC77>1</TC77>
+        <TC97>1</TC97>
+        <TC26>1</TC26>
+        <EC55>1</EC55>
+        <TC57X>1</TC57X>
+        <MC2700>1</MC2700>
+    </parm>
+    <parm name = "APChannel">
+        <default>0</default>
+        <ET56L>1</ET56L>
+        <ET56S>1</ET56S>
+        <L10AW>1</L10AW>
+        <TC57>1</TC57>
+        <TC77>1</TC77>
+        <TC97>1</TC97>
+        <TC26>1</TC26>
+        <EC55>1</EC55>
+        <TC57X>1</TC57X>
+        <MC2700>1</MC2700>
+    </parm>
+    <parm name = "80211v">
+        <default>1</default>
+    </parm>
+    <parm name = "CallAdmissionControl">
+        <default>1</default>
+    </parm>
+    <parm name = "GARP">
+        <default>1</default>
+    </parm>
+    <parm name = "FTMEnable">
+        <default>1</default>
+        <TC21>0</TC21>
+        <TC26>0</TC26>
+        <MC2200>0</MC2200>
+        <MC2700>0</MC2700>
+    </parm>
+    <parm name = "FTMDeployment_Mode">
+        <default>1</default>
+        <TC21>0</TC21>
+        <TC26>0</TC26>
+        <MC2200>0</MC2200>
+        <MC2700>0</MC2700>
+    </parm>
+    <parm name = "FTMDeployment_File">
+        <default>1</default>
+        <TC21>0</TC21>
+        <TC26>0</TC26>
+        <MC2200>0</MC2200>
+        <MC2700>0</MC2700>
+    </parm>
+    <parm name = "FTMAP_Location">
+        <default>1</default>
+        <TC21>0</TC21>
+        <TC26>0</TC26>
+        <MC2200>0</MC2200>
+        <MC2700>0</MC2700>
+    </parm>
+    <parm name = "FTMLocationUpdateMode">
+        <default>1</default>
+        <TC21>0</TC21>
+        <TC26>0</TC26>
+        <MC2200>0</MC2200>
+        <MC2700>0</MC2700>
+    </parm>
+    <parm name = "FinalBeaconMissCount">
+        <default>1</default>
+    </parm>
+    <parm name = "AuthRetryCount">
+        <default>1</default>
+    </parm>
+    <parm name = "AuthNoAckTimeout">
+        <default>1</default>
+    </parm>
+</params>

@@ -1,0 +1,10 @@
+
+service wpa_supplicant_eth_qcom /vendor/bin/hw/wpa_supplicant_qcom \
+       -ieth0 -Dwired -Sfusion_eth_service -c/data/vendor/wifi/wpa/wpa_supplicant_wired.conf -O/data/vendor/wifi/wpa/sockets -ddd
+       class main
+       socket wpa_eth0 dgram 660 wifi wifi
+       disabled
+       oneshot
+
+
+

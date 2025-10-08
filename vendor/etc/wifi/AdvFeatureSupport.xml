@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Advanced Options of WLAN with default values -->
+<!-- Note: use device specific tag below the default tag only-->
+<!-- to override the default value if needed -->
+<params>
+    <parm name = "HFSR">
+        <default>0</default>
+    </parm>
+    <parm name = "FT">
+        <default>1</default>
+    </parm>
+    <parm name = "FTRIC">
+        <default>0</default>
+        <TC52X>1</TC52X>
+        <MC3300x>1</MC3300x>
+        <MC3300xC>1</MC3300xC>
+    </parm>
+    <parm name = "OKC">
+        <default>1</default>
+    </parm>
+    <parm name = "PMKID">
+        <default>1</default>
+    </parm>
+    <parm name = "PreAuth">
+        <default>0</default>
+    </parm>
+    <parm name = "PowerSave">
+        <default>1</default>
+    </parm>
+    <parm name = "WLANPowerSave">
+        <default>1</default>
+    </parm>
+    <parm name = "AdvancedLogging">
+        <default>1</default>
+    </parm>
+    <parm name = "FIPS">
+        <default>0</default>
+    </parm>
+    <parm name = "802.11K">
+        <default>1</default>
+    </parm>
+    <parm name = "802.11W">
+        <default>1</default>
+    </parm>
+    <parm name = "FTOverTheDS">
+        <default>0</default>
+    </parm>
+    <parm name = "AggregatedFT">
+        <default>0</default>
+    </parm>
+    <parm name = "ScanAssist">
+        <default>0</default>
+    </parm>
+    <parm name = "CHD">
+        <default>0</default>
+    </parm>
+    <parm name = "WANCountry">
+        <default>0</default>
+        <ET56L>1</ET56L>
+        <ET56S>1</ET56S>
+        <L10AW>1</L10AW>
+        <TC57>1</TC57>
+        <TC77>1</TC77>
+        <TC97>1</TC97>
+        <TC26>1</TC26>
+        <EC55>1</EC55>
+        <TC57X>1</TC57X>
+        <MC2700>1</MC2700>
+    </parm>
+    <parm name = "ProfileRoaming">
+        <default>1</default>
+    </parm>
+    <parm name = "OTEnable">
+        <default>0</default>
+    </parm>
+    <parm name = "OTInterval">
+        <default>0</default>
+    </parm>
+    <parm name = "OTSubtype">
+        <default>0</default>
+    </parm>
+    <parm name = "OTPriority">
+        <default>0</default>
+    </parm>
+    <parm name = "OTFlag">
+        <default>0</default>
+    </parm>
+    <parm name = "OT2GHZ">
+        <default>0</default>
+    </parm>
+    <parm name = "OT5GHZ">
+        <default>0</default>
+    </parm>
+    <parm name = "OTDataRate">
+        <default>0</default>
+    </parm>
+    <parm name = "OTType">
+        <default>0</default>
+    </parm>
+    <parm name = "802.11n">
+        <default>1</default>
+    </parm>
+    <parm name = "802.11ac">
+        <default>1</default>
+    </parm>
+    <parm name = "MACRandomization">
+        <default>1</default>
+    </parm>
+    <parm name = "FusionIni">
+        <default>1</default>
+    </parm>
+
+    <parm name = "APEnable">
+        <default>0</default>
+        <ET56L>1</ET56L>
+        <ET56S>1</ET56S>
+        <L10AW>1</L10AW>
+        <TC57>1</TC57>
+        <TC77>1</TC77>
+        <TC97>1</TC97>
+        <TC26>1</TC26>
+        <EC55>1</EC55>
+        <TC57X>1</TC57X>
+        <MC2700>1</MC2700>
+    </parm>
+    <parm name = "VerboseLogging">
+        <default>1</default>
+    </parm>
+
+    <parm name = "ChannelBondingMode2g">
+        <default>1</default>
+    </parm>
+    <parm name = "WifiWakeup">
+        <default>1</default>
+    </parm>
+    <parm name = "CaptivePortalDetection">
+        <default>1</default>
+    </parm>
+    <parm name = "AMPDU">
+        <default>1</default>
+    </parm>
+    <parm name = "MandateServerCertValidation">
+        <default>1</default>
+    </parm>
+    <parm name = "AdvancedLoggingSecureMode">
+        <default>1</default>
+    </parm>
+</params>
