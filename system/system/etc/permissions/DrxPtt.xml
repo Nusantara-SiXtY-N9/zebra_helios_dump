@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<permissions>
+ <library name="com.kodiak.pttExtensions"
+          file="/system/framework/com.kodiak.pttExtensions.jar"/>
+ <!--
+ <library name="com.verizon.ptt.api"
+          file="/system/framework/com.verizon.ptt.api.jar"/>
+ -->
+</permissions>

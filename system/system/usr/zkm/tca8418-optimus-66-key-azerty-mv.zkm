@@ -1,0 +1,291 @@
+lock {
+	blue:          'toggle_oneshot_and_lock'
+	orange:        'toggle_none'
+	gray:          'toggle_none'
+	shift:         'toggle_oneshot_and_lock'
+	alt:           'toggle_oneshot'
+	ctrl:          'toggle_oneshot'
+	capslock:      'toggle_lock'
+}
+
+key 0 {
+	label:          '0'
+	base:           '0'
+}
+key 1 {
+	label:          '1'
+	base:           '1'
+	blue:           'F1'
+}
+key 2 {
+	label:          '2'
+	base:           '2'
+	blue:           'F2'
+}
+key 3 {
+	label:          '3'
+	base:           '3'
+	blue:           'F3'
+}
+key 4 {
+	label:          '4'
+	base:           '4'
+	blue:           'F4'
+}
+key 5 {
+	label:          '5'
+	base:           '5'
+	blue:           'brightness_down'
+}
+key 6 {
+	label:          '6'
+	base:           '6'
+	blue:           'volume_down'
+}
+key 7 {
+	label:          '7'
+	base:           '7'
+}
+key 8 {
+	label:          '8'
+	base:           '8'
+	blue:           'brightness_up'
+}
+key 9 {
+	label:          '9'
+	base:           '9'
+	blue:           'volume_up'
+}
+key a {
+	label:          'A'
+	base:           'a'
+}
+key b {
+	label:          'B'
+	base:           'b'
+}
+key c {
+	label:          'C'
+	base:           'c'
+}
+key d {
+	label:          'D'
+	base:           'd'
+}
+key e {
+	label:          'E'
+	base:           'e'
+}
+key f {
+	label:          'F'
+	base:           'f'
+}
+key g {
+	label:          'G'
+	base:           'g'
+}
+key h {
+	label:          'H'
+	base:           'h'
+}
+key i {
+	label:          'I'
+	base:           'i'
+}
+key j {
+	label:          'J'
+	base:           'j'
+}
+key k {
+	label:          'K'
+	base:           'k'
+}
+key l {
+	label:          'L'
+	base:           'l'
+}
+key m {
+	label:          'M'
+	base:           'm'
+}
+key n {
+	label:          'N'
+	base:           'n'
+}
+key o {
+	label:          'O'
+	base:           'o'
+}
+key p {
+	label:          'P'
+	base:           'p'
+}
+key q {
+	label:          'Q'
+	base:           'q'
+}
+key r {
+	label:          'R'
+	base:           'r'
+}
+key s {
+	label:          'S'
+	base:           's'
+}
+key t {
+	label:          'T'
+	base:           't'
+}
+key u {
+	label:          'U'
+	base:           'u'
+}
+key v {
+	label:          'V'
+	base:           'v'
+}
+key w {
+	label:          'W'
+	base:           'w'
+}
+key x {
+	label:          'X'
+	base:           'x'
+}
+key y {
+	label:          'Y'
+	base:           'y'
+}
+key z {
+	label:          'Z'
+	base:           'z'
+}
+key f1 {
+	label:          'F1'
+	base:           'f1'
+	blue:           'FUNCTION+F1'
+}
+key f2 {
+	label:          'F2'
+	base:           'f2'
+	blue:           'FUNCTION+F2'
+}
+key f3 {
+	label:          'F3'
+	base:           'f3'
+	blue:           'FUNCTION+F3'
+}
+key f4 {
+	label:          'F4'
+	base:           'f4'
+	blue:           'FUNCTION+F4'
+}
+key f5 {
+	label:          'F5'
+	base:           'f5'
+	blue:           'FUNCTION+F5'
+}
+key f6 {
+	label:          'F6'
+	base:           'f6'
+	blue:           'FUNCTION+F6'
+}
+key f7 {
+	label:          'F7'
+	base:           'f7'
+	blue:           'FUNCTION+F7'
+}
+key f8 {
+	label:          'F8'
+	base:           'f8'
+	blue:           'FUNCTION+F8'
+}
+key f9 {
+	label:          'F9'
+	base:           'f9'
+	blue:           'FUNCTION+F9'
+}
+key f10 {
+	label:          'F10'
+	base:           'f10'
+	blue:           'FUNCTION+F10'
+}
+key f11 {
+	label:          'F11'
+	base:           'f11'
+	blue:           'FUNCTION+F11'
+}
+key f12 {
+	label:          'F12'
+	base:           'f12'
+	blue:           'FUNCTION+F12'
+}
+key enter {
+	label:          'ENTER'
+	base:           'enter'
+}
+key up {
+	label:          'UP'
+	base:           'dpad_up'
+}
+key down {
+	label:          'DOWN'
+	base:           'dpad_down'
+}
+key left {
+	label:          'LEFT'
+	base:           'dpad_left'
+}
+key right {
+	label:          'RIGHT'
+	base:           'dpad_right'
+}
+key backspace {
+	label:         'BACKSPACE'
+	base:          'del'
+	blue:          'forward_del'
+}
+key pageup {
+	label:          'PAGEUP'
+	base:           'page_up'
+	blue:           'move_end'
+}
+key pagedown {
+	label:          'PAGEDOWN'
+	base:           'page_down'
+	blue:           'home'
+}
+key esc {
+	label:          'ESC'
+	base:           'escape'
+}
+key tab {
+	label:          'TAB'
+	base:           'tab'
+}
+key insert {
+	label:         'INSERT'
+	base:          'insert'
+}
+key dot {
+	label:          'DOT'
+	base:           'period'
+	blue:           'comma'
+}
+key space {
+	label:         'SPACE'
+	base:          'space'
+}
+key shift {
+	label:         'SHIFT'
+	base:          'symbol_shift'
+	blue:          'CAPS_LOCK'
+}
+key ctrl {
+	label:         'CTRL'
+	base:          'symbol_ctrl'
+}
+key alt {
+	label:         'ALT'
+	base:          'symbol_alt'
+}

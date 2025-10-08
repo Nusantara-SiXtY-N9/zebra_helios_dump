@@ -1,0 +1,8 @@
+key back {
+	label:          'BACK'
+	base:           'back'
+}
+key app_switch {
+	label:          'RECENT'
+	base:           'app_switch'
+}

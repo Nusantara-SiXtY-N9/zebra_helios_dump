@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2021 Zebra Technologies Corporation and/or its affiliates. All rights reserved. -->
+<permissions>
+   <privapp-permissions package="com.friendly.foda">
+        <permission name="android.permission.ACCESS_CACHE_FILESYSTEM"/>
+        <permission name="android.permission.BATTERY_STATS"/>
+        <permission name="android.permission.DELETE_CACHE_FILES"/>
+        <permission name="android.permission.DELETE_PACKAGES"/>
+        <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.RECOVERY"/>
+        <permission name="android.permission.UPDATE_DEVICE_STATS"/>
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+    </privapp-permissions>
+
+</permissions>

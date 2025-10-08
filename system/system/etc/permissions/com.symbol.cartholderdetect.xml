@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.symbol.cartholderdetect"
+            file="/system/framework/com.symbol.cartholderdetect.jar"/>
+</permissions>
+
+

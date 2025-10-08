@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exceptions>
+   <exception package="com.zebra.cradlefwupdater">
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="true"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fixed="true"/>
+    </exception>
+</exceptions>
+

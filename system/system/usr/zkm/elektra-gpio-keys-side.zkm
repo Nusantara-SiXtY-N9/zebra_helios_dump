@@ -1,0 +1,23 @@
+key scan_key_left {
+	label:          'LEFT_TRIGGER_1'
+	wakeup:         'false'
+	base:           'BUTTON_L1'
+}
+key scan_key_right {
+	label:          'RIGHT_TRIGGER_1'
+	wakeup:         'false'
+	base:           'BUTTON_R1'
+}
+key scan_center {
+	label:          'SCAN'
+	wakeup:         'true'
+	base:           'SCAN'
+}
+key remote_trigger_1 {
+        label:          'BLUETOOTH_REMOTE_TRIGGER_1'
+        base:           'SYMBOL_TRIGGER_1'
+}
+key remote_trigger_2 {
+        label:          'BLUETOOTH_REMOTE_TRIGGER_2'
+        base:           'SYMBOL_TRIGGER_2'
+}

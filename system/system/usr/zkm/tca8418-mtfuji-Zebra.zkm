@@ -1,0 +1,111 @@
+lock {
+	blue:          'toggle_oneshot'
+	orange:        'toggle_lock'
+	gray:          'toggle_none'
+	shift:         'toggle_oneshot_and_lock'
+	alt:           'toggle_oneshot'
+	ctrl:          'toggle_oneshot'
+	diamond:       'toggle_oneshot_and_lock'
+}
+diamond {
+	matrix:        '3x3'
+	order:         '1,2,3,4,5,6,7,8,9'
+}
+key Fn {
+	label:          'FN'
+	base:           'symbol_blue'
+	longpress:      'symbol_orange'
+}
+key 1 {
+	label:          '1'
+	base:           '1'
+	blue:           'F1'
+	orange:         'volume_up'
+	diamond:        '+'
+}
+key 2 {
+	label:          '2'
+	base:           '2'
+	blue:           'F2'
+	orange:         'A,B,C,a,b,c'
+	diamond:        '-'
+}
+key 3 {
+	label:          '3'
+	base:           '3'
+	blue:           'F3'
+	orange:         'D,E,F,d,e,f'
+	diamond:        '@'
+}
+key 4 {
+	label:          '4'
+	base:           '4'
+	blue:           'F4'
+	orange:         'G,H,I,g,h,i'
+	diamond:        '/'
+}
+key 5 {
+	label:          '5'
+	base:           '5'
+	blue:           'F5'
+	orange:         'J,K,L,j,k,l'
+	diamond:        '#'
+}
+key 6 {
+	label:         '6'
+	base:          '6'
+	blue:          'F6'
+	orange:        'M,N,O,m,n,o'
+	diamond:       ':'
+}
+key 7 {
+	label:          '7'
+	base:           '7'
+	blue:           'F7'
+	orange:         'P,Q,R,S,p,q,r,s'
+	diamond:        '.'
+}
+key 8 {
+	label:          '8'
+	base:           '8'
+	blue:           'F8'
+	orange:         'T,U,V,t,u,v'
+	diamond:        '*'
+}
+key 9 {
+	label:          '9'
+	base:           '9'
+	blue:           'F9'
+	orange:         'W,X,Y,Z,w,x,y,z'
+	diamond:        '¥'
+}
+key 0 {
+	label:          '0'
+	base:           '0'
+	blue:           'F10'
+	orange:         'volume_down'
+}
+key enter {
+	label:          'ENTER'
+	base:           'enter'
+}
+key CL {
+	label:          'CL'
+	base:           'del'
+}
+key left {
+	label:          'LEFT'
+	base:           'dpad_left'
+}
+key right {
+	label:          'RIGHT'
+	base:           'dpad_right'
+}
+key up {
+	label:          'UP'
+	base:           'dpad_up'
+}
+key down {
+	label:          'DOWN'
+	base:           'dpad_down'
+}

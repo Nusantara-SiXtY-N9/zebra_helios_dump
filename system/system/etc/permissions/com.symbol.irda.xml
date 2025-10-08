@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.symbol.irda"
+            file="/system/framework/com.symbol.irda.jar"/>
+</permissions>

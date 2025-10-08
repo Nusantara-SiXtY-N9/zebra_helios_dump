@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Properties>
+    <product>
+        <ro.product.name value="TC97,TC52,TC57,TC72,TC77,MC3300x,MC3300xR,MC3300xC,MC93,EC30,EC30PR,EC300K,CC600,CC605,CC610,CC6000,VC8300,TC8300,ET51,ET56,L10AW,L10A"/>
+        <ro.product.name_npi value="TC21PG,TC21MG,TC21BG,TC26PG,TC26MG,TC26BG,TC21PG_C,TC26PG_C,TC57X,TC57XS,TC52X,TC52XS,TC52AX,TC52AXS,MC3300xN,MC3300xNS,MC3300xS,MC3300axS,MC3300ax,EC50,EC50S,EC50SA,EC50SNF,EC55,EC55S,EC55SA,EC55SNF,TC72X,TC77X,WT6300G,ET51C,ET56C,MC20MG,RZ-H270,MC2200PG_C,MC2200PG,MC2200MG,MC2700PG,MC2700PG_C"/>
+        <ro.product.name_ng value="TC21MA,TC21PA,TC26MA,TC26PA,TC57XA,TC52XA,TC57XSA,TC52XSA,TC52AXA,TC52AXSA,EC50A,EC50SA,EC50SANF,EC55A,EC55SA,EC55SANF,WT6300A,ET51CA,ET56CA,MC3300axN,MC3300axNS,MC2200PA,MC2200MA,MC2700PA"/>
+        <ro.product.model value="TC21,TC26,TC97,TC52,TC57,TC72,TC77,MC3300x,MC3300xR,MC3300ax,MC93,EC30,EC30PR,EC300K,CC600,CC605,CC610,CC6000,VC8300,TC8300,ET51,ET56,L10AW,L10A,WT6300,MC20,RZ-H270,MC2200,MC2700"/>
+        <ro.product.board value="sdm660"/>
+        <ro.product.brand value="Zebra"/>
+        <ro.product.locale value="en-US,ru-RU,ja-JP"/>
+        <ro.product.manufacturer value="Zebra Technologies"/>
+        <ro.product.cpu.abilist value="arm64-v8a,armeabi-v7a,armeabi"/>
+    </product>
+    <build>
+    </build>
+    <bsp>
+        <ro.config.bsp.gms value="false,true"/>
+        <ro.config.bsp.hwrev value="100,101,110,111,112,120,121,122,123,130,131,132,133,141,142,143"/>
+        <ro.config.bsp.fips value="true,false"/>
+        <ro.config.bsp.beta value="true,false"/>
+    </bsp>
+    <device>
+        <DeviceManifest.version value="1.1"/>
+        <ro.config.device.platform value="9700"/>
+        <ro.config.device.scanner value="32,64,128,2048,4096,8192,16384,32768,65536,131072,262144"/>
+        <ro.config.device.camera0 value="32,128,256"/>
+        <ro.config.device.camera1 value="4"/>
+        <ro.config.device.display value="241,242,251,252,253,254,256,505,506,510,512,513,700,701,702,703,800,900,1000,1001,1002,1100,1101,1200,2000,2001"/>
+        <ro.config.device.touch value="2,64,512,1024,2048,2049,8192,8193,16384,20000,32768,32770,65536"/>
+        <ro.config.device.keyboard value="1,5,6,7,8,9,10,11,15,16,17,18,19,20,21,22,23,24,25,26"/>
+        <ro.config.device.audio value="6,7,8"/>
+        <ro.config.device.msr value="1"/>
+        <ro.config.device.wlan value="32,64,128"/>
+        <ro.config.device.wwan value="1"/>
+        <ro.config.device.lte value="1"/>
+        <ro.config.device.2g value="1"/>
+        <ro.config.device.wwan_antenna value="13535"/>
+        <ro.config.device.dsds value="1"/>
+        <ro.config.device.bluetooth value="32,64,128"/>
+        <ro.config.device.gps value="16"/>
+        <ro.config.device.rfidtype value="6,16,32"/>
+        <ro.config.device.rfid value="5,6,7,8"/>
+        <ro.config.device.nfc value="1"/>
+        <ro.config.device.accelerometer value="64,128,256,120,2052"/>
+        <ro.config.device.lightsensor value="512,1024,2048"/>
+        <ro.config.device.compass value="8,16"/>
+        <ro.config.device.proximity value="64"/>
+        <ro.config.device.proxscantrig value="8,16,256"/>
+        <ro.config.device.gyro value="4,8,32,260"/>
+        <ro.config.device.pressure value="2,16"/>
+        <ro.config.device.workstation_dock value="1"/>
+        <ro.config.device.holster value="2"/>
+        <ro.config.device.hall_effect value="3,4,8"/>
+        <ro.config.device.vibrator value="1"/>
+        <ro.config.device.flashcfg value="100,200,300"/>
+        <ro.config.device.ethernet value="1"/>
+        <ro.config.device.extsdcard value="1"/>
+        <ro.config.device.wifi_regdb value="5"/>
+        <ro.config.device.wwan_pa value="7765231"/>
+        <ro.config.device.wifi.srrc value="13,14"/>
+    </device>
+    <customized>
+    </customized>
+</Properties>

@@ -1,0 +1,175 @@
+lock {
+	blue:          'toggle_oneshot_and_lock'
+	orange:        'toggle_oneshot_and_lock'
+	gray:          'toggle_none'
+	diamond:       'toggle_oneshot_and_lock'
+	shift:         'toggle_oneshot_and_lock'
+	alt:           'toggle_oneshot'
+	ctrl:          'toggle_oneshot'
+}
+diamond {
+	matrix:        '3x3'
+	order:         '7,8,9,4,5,6,1,2,3'
+}
+key 1 {
+	label:          '1'
+	base:           '1'
+	orange:         's,t,u'
+	diamond:        '*'
+}
+key 2 {
+	label:          '2'
+	base:           '2'
+	blue:           'volume_down'
+	orange:         'v,w,x'
+	diamond:        '/'
+}
+key 3 {
+	label:          '3'
+	base:           '3'
+	blue:           'volume_up'
+	orange:         'y,z'
+	diamond:        '+'
+}
+key 4 {
+	label:          '4'
+	base:           '4'
+	blue:           'brightness_down'
+	orange:         'j,k,l'
+	diamond:        '#'
+}
+key 5 {
+	label:          '5'
+	base:           '5'
+	blue:           '='
+	orange:         'm,n,o'
+	diamond:        ';'
+}
+key 6 {
+	label:          '6'
+	base:           '6'
+	blue:           'symbol_keylightdown'
+	orange:         'p,q,r'
+	diamond:        ':'
+}
+key 7 {
+	label:          '7'
+	base:           '7'
+	blue:           'brightness_up'
+	orange:         'a,b,c'
+	diamond:        '!'
+}
+key 8 {
+	label:          '8'
+	base:           '8'
+	blue:           '/'
+	orange:         'd,e,f'
+	diamond:        '['
+}
+key 9 {
+	label:          '9'
+	base:           '9'
+	blue:           'symbol_keylightup'
+	orange:         'g,h,i'
+	diamond:        ']'
+}
+key 0 {
+	label:          '0'
+	base:           '0'
+	orange:         'space'
+}
+key f1 {
+	label:          'F1'
+	base:           'f1'
+	blue:           'f5'
+}
+key f2 {
+	label:          'F2'
+	base:           'f2'
+	blue:           'f6'
+}
+key f3 {
+	label:          'F3'
+	base:           'f3'
+	blue:           'f7'
+}
+key f4 {
+	label:          'F4'
+	base:           'f4'
+	blue:           'f8'
+}
+key dot {
+	label:          'DOT'
+	base:           'period'
+	orange:         'comma'
+}
+key shift {
+	label:         'SHIFT'
+	base:          'symbol_shift'
+	blue:          'symbol_ctrl'
+}
+key blue {
+	label:         'BLUE'
+	base:          'symbol_blue'
+}
+key orange {
+	label:         'ORANGE'
+	base:          'symbol_orange'
+}
+key diamond {
+	label:         'DIAMOND'
+	base:          'symbol_diamond'
+}
+key enter {
+	label:         'ENTER'
+	base:          'enter'
+}
+key minus {
+	label:         'MINUS'
+	base:          'minus'
+	blue:          '+'
+}
+key backspace {
+	label:         'BACKSPACE'
+	base:          'del'
+	blue:          'forward_del'
+}
+key esc {
+	label:          'ESC'
+	base:           'escape'
+	blue:           'move_home'
+}
+# blue-tab = backtab - need to generate a SHIFT
+key tab {
+	label:          'TAB'
+	base:           'tab'
+	blue:           'SHIFT_LEFT+TAB'
+}
+key left {
+	label:          'LEFT'
+	base:           'dpad_left'
+}
+key right {
+	label:          'RIGHT'
+	base:           'dpad_right'
+}
+key down {
+	label:          'DOWN'
+	base:           'dpad_down'
+	blue:           'page_down'
+}
+key up {
+	label:          'UP'
+	base:           'dpad_up'
+	blue:           'page_up'
+}
+key p1 {
+	label:          'P1'
+	wakeup:         'false'
+	base:           'BUTTON_L2'
+}
+key p2 {
+	label:          'P2'
+	base:           'symbol_trigger_1'
+	default_base:   'BUTTON_L1'
+}

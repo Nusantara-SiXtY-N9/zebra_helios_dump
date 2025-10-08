@@ -1,0 +1,11 @@
+#Copyright (c) 2021-2023 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+service zus /system/bin/zus
+    interface aidl zusbservice
+    oneshot
+    disabled
+    user system
+    group system
+
+on post-fs-data
+    mkdir /data/system/usbdeviceconfig 0775 system system
+    exec_background - system system -- /system/bin/zus run-startup-tasks

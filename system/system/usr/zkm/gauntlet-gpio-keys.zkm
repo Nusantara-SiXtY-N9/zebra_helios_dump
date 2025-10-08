@@ -1,0 +1,33 @@
+key p1-btn {
+	label:          'P1'
+	hard_wakeup:    'true'
+	base:           'volume_down'
+}
+key p2-btn {
+	label:          'P2'
+	hard_wakeup:    'true'
+	base:           'volume_up'
+}
+key p3-btn {
+	label:          'P3'
+	hard_wakeup:    'true'
+	base:           'enter'
+}
+key hw_trigger_r {
+	label:          'RIGHT_EXTERNAL_TRIGGER'
+	hard_wakeup:    'true'
+	base:           'SYMBOL_TRIGGER_8'
+}
+key hw_trigger_l {
+	label:          'LEFT_EXTERNAL_TRIGGER'
+	hard_wakeup:    'true'
+	base:           'SYMBOL_TRIGGER_7'
+}
+key remote_trigger_1 {
+	label:          'BLUETOOTH_REMOTE_TRIGGER_1'
+	base:           'SYMBOL_TRIGGER_1'
+}
+key remote_trigger_2 {
+	label:          'BLUETOOTH_REMOTE_TRIGGER_2'
+	base:           'SYMBOL_TRIGGER_2'
+}

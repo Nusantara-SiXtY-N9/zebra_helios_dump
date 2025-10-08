@@ -1,0 +1,174 @@
+lock {
+    blue:          'toggle_oneshot_and_lock'
+    diamond:       'toggle_oneshot_and_lock'
+}
+diamond {
+    matrix:        '3x12'
+    order:         'd00,d01,d02,d03,d04,d05,d06,d07,d08,d09,d0a,d0b,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d1a,d1b,d20,d21,d22,d23,d24,d25,d26,d27,d28,d29,d2a,d2b'
+    sip:           '1'
+    movekeys:      '2,0; 2,11'
+}
+key blue {
+    label:          'BLUE'
+    base:           'symbol_blue'
+}
+key diamond {
+    label:          'DIAMOND'
+    base:           'symbol_diamond'
+}
+key ptt {
+    label:          'HEADSET_HOOK'
+    base:           'BTN_TR2'
+}
+key d00 {
+    label:          'd00'
+    diamond:        '='
+}
+key d01 {
+    label:          'd01'
+    diamond:        '+'
+}
+key d02 {
+    label:          'd02'
+    diamond:        '-'
+}
+key d03 {
+    label:          'd03'
+    diamond:        '×'
+}
+key d04 {
+    label:          'd04'
+    diamond:        '÷'
+}
+key d05 {
+    label:          'd05'
+    diamond:        '('
+}
+key d06 {
+    label:          'd06'
+    diamond:        ')'
+}
+key d07 {
+    label:          'd07'
+    diamond:        '\'
+}
+key d08 {
+    label:          'd08'
+    diamond:        '/'
+}
+key d09 {
+    label:          'd09'
+    diamond:        '~'
+}
+key d0a {
+    label:          'd0a'
+    diamond:        '&'
+}
+key d0b {
+    label:          'd0b'
+    diamond:        '£'
+}
+key d10 {
+    label:          'd10'
+    diamond:        '['
+}
+key d11 {
+    label:          'd11'
+    diamond:        ']'
+}
+key d12 {
+    label:          'd12'
+    diamond:        '|'
+}
+key d13 {
+    label:          'd13'
+    diamond:        '{'
+}
+key d14 {
+    label:          'd14'
+    diamond:        '}'
+}
+key d15 {
+    label:          'd15'
+    diamond:        '€'
+}
+key d16 {
+    label:          'd16'
+    diamond:        '?'
+}
+key d17 {
+    label:          'd17'
+    diamond:        ';'
+}
+key d18 {
+    label:          'd18'
+    diamond:        ':'
+}
+key d19 {
+    label:          'd19'
+    diamond:        '@'
+}
+key d1a {
+    label:          'd1a'
+    diamond:        '`'
+}
+key d1b {
+    label:          'd1b'
+    diamond:        '''
+}
+key d20 {
+    label:          'd20'
+    diamond:        '↑↓'
+}
+key d21 {
+    label:          'd21'
+    diamond:        '<'
+}
+key d22 {
+    label:          'd22'
+    diamond:        '>'
+}
+key d23 {
+    label:          'd23'
+    diamond:        '_'
+}
+key d24 {
+    label:          'd24'
+    diamond:        '"'
+}
+key d25 {
+    label:          'd25'
+    diamond:        '*'
+}
+key d26 {
+    label:          'd26'
+    diamond:        '^'
+}
+key d27 {
+    label:          'd27'
+    diamond:        '%'
+}
+key d28 {
+    label:          'd28'
+    diamond:        '$'
+}
+key d29 {
+    label:          'd29'
+    diamond:        '#'
+}
+key d2a {
+    label:          'd2a'
+    diamond:        '!'
+}
+key d2b {
+    label:          'd2b'
+    diamond:        '↑↓'
+}
+key remote_trigger_1 {
+    label:          'BLUETOOTH_REMOTE_TRIGGER_1'
+    base:           'SYMBOL_TRIGGER_1'
+}
+key remote_trigger_2 {
+    label:          'BLUETOOTH_REMOTE_TRIGGER_2'
+    base:           'SYMBOL_TRIGGER_2'
+}

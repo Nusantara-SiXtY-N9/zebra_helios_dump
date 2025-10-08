@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="enterpriseSettings"
+            file="/system/framework/enterpriseSettings.jar"/>
+</permissions>

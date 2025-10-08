@@ -1,0 +1,17 @@
+#/*! \file fusionpersistfilecopy.rc
+#\brief system rc file to change fusion persistence configuration file mode
+#*---------------------------------------------------------------------------
+#* Copyright (c) 2019-2020 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+#*
+#* Module: fusionpersistfilecopy.rc
+#*
+#* Original Date: 25 April 2019
+#*
+#* Description:
+#*    change the permission to allow system process to read the fusion_persistence.conf file.
+#*
+#*--------------------------------------------------------------------------
+#*/
+
+on post-fs-data
+   chown system wifi /data/misc/wifi/fusion_persistence.conf

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+
+<BatteryManagerUpdate>
+        <UpdateXMLVersion>2.0</UpdateXMLVersion>
+        <AdvancedInfoParams>
+                <Param>
+                        <IntentExtraName>base_cumulative_charge</IntentExtraName>
+                        <Operation>Remove</Operation>
+                </Param>
+                <Param>
+                        <IntentExtraName>seconds_since_first_use</IntentExtraName>
+                        <Operation>Remove</Operation>
+                </Param>
+        </AdvancedInfoParams>
+</BatteryManagerUpdate>

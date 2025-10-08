@@ -1,0 +1,10 @@
+key scan_gun {
+	label:          'GUN_TRIGGER'
+	wakeup:         'true'
+	base:           'BUTTON_L1'
+}
+key scan_center {
+	label:          'SCAN'
+	wakeup:         'false'
+	base:           'SCAN'
+}

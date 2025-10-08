@@ -1,0 +1,5 @@
+key scan_1 {
+	label:                  'SCAN'
+	default_wakeup:         'true'
+	base:                   'SCAN'
+}

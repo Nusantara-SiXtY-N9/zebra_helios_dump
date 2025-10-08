@@ -1,0 +1,12 @@
+key vol_up {
+	label:          'VOLUMEUP'
+	base:           'volume_up'
+}
+key vol_down {
+	label:          'VOLUMEDOWN'
+	base:           'volume_down'
+}
+key home {
+	label:          'HOME'
+	base:           'home'
+}

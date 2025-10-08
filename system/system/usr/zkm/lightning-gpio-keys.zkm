@@ -1,0 +1,36 @@
+key scan_left {
+	label:          'SCAN'
+	wakeup:         'false'
+	base:           'SCAN'
+}
+key scan_right {
+	label:          'RIGHT_TRIGGER_1'
+	wakeup:         'false'
+	base:           'BUTTON_R1'
+}
+key scan_rear {
+	label:          'REAR_BUTTON'
+	wakeup:         'false'
+	base:           'BUTTON_L1'
+}
+key ptt {
+	label:          'LEFT_TRIGGER_2'
+	wakeup:         'false'
+	base:           'BUTTON_L2'
+}
+key vol_up {
+	label:          'VOLUMEUP'
+	base:           'volume_up'
+}
+key vol_down {
+	label:          'VOLUMEDOWN'
+	base:           'volume_down'
+}
+key remote_trigger_1 {
+        label:          'BLUETOOTH_REMOTE_TRIGGER_1'
+        base:           'SYMBOL_TRIGGER_1'
+}
+key remote_trigger_2 {
+        label:          'BLUETOOTH_REMOTE_TRIGGER_2'
+        base:           'SYMBOL_TRIGGER_2'
+}

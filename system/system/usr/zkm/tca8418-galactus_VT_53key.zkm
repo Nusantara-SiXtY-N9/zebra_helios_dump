@@ -1,0 +1,298 @@
+lock {
+	blue:          'toggle_oneshot_and_lock'
+	orange:        'toggle_none'
+	gray:          'toggle_none'
+	diamond:       'toggle_oneshot_and_lock'
+	shift:         'toggle_oneshot_and_lock'
+	alt:           'toggle_oneshot'
+	ctrl:          'toggle_oneshot'
+	capslock:      'toggle_lock'
+}
+
+diamond {
+	matrix:        '3x3'
+	order:         '7,8,9,4,5,6,1,2,3'
+}
+
+key 1 {
+	label:          '1'
+	base:           '1'
+	blue:           'f1'
+	diamond:        '~'
+	shift:          'f11'
+}
+key 2 {
+	label:          '2'
+	base:           '2'
+	blue:           'f2'
+	diamond:        '@'
+	shift:          'f12'
+}
+key 3 {
+	label:          '3'
+	base:           '3'
+	blue:           'f3'
+	diamond:        '_'
+	shift:          'FUNCTION+f1'
+}
+key 4 {
+	label:          '4'
+	base:           '4'
+	blue:           'f4'
+	diamond:        '£'
+	shift:          'FUNCTION+f2'
+}
+key 5 {
+	label:          '5'
+	base:           '5'
+	blue:           'f5'
+	diamond:        ':'
+	shift:          'FUNCTION+f3'
+}
+key 6 {
+	label:          '6'
+	base:           '6'
+	blue:           'f6'
+	diamond:        '€'
+	shift:          'FUNCTION+f4'
+}
+key 7 {
+	label:          '7'
+	base:           '7'
+	blue:           'f7'
+	diamond:        '|'
+	shift:          'FUNCTION+f5'
+}
+key 8 {
+	label:          '8'
+	base:           '8'
+	blue:           'f8'
+	diamond:        '['
+	shift:          'FUNCTION+f6'
+}
+key 9 {
+	label:          '9'
+	base:           '9'
+	blue:           'f9'
+	diamond:        ']'
+	shift:          'FUNCTION+f7'
+}
+key 0 {
+	label:          '0'
+	base:           '0'
+	blue:           'f10'
+	shift:          'FUNCTION+f8'
+}
+key a {
+	label:          'A'
+	base:           'a'
+	blue:           'comma'
+        shift+blue:     '<'
+}
+key b {
+	label:          'B'
+	base:           'b'
+	blue:           'period'
+        shift+blue:     '>'
+}
+key c {
+	label:          'C'
+	base:           'c'
+	blue:           'apostrophe'
+        shift+blue:     '"'
+}
+key d {
+	label:          'D'
+	base:           'd'
+	blue:           'brightness_up'
+}
+key e {
+	label:          'E'
+	base:           'e'
+	blue:           '['
+        shift+blue:     '{'
+}
+key f {
+	label:          'F'
+	base:           'f'
+	blue:           ']'
+        shift+blue:     '}'
+}
+key g {
+	label:          'G'
+	base:           'g'
+	blue:           '\'
+        shift+blue:     '|'
+}
+key h {
+	label:          'H'
+	base:           'h'
+	blue:           'volume_up'
+}
+key i {
+	label:          'I'
+	base:           'i'
+	blue:           'brightness_down'
+}
+key j {
+	label:          'J'
+	base:           'j'
+	blue:           'grave'
+        shift+blue:     '~'
+}
+key k {
+	label:          'K'
+	base:           'k'
+	blue:           '<'
+}
+key l {
+	label:          'L'
+	base:           'l'
+	blue:           '>'
+}
+key m {
+	label:          'M'
+	base:           'm'
+	blue:           'volume_down'
+}
+key n {
+	label:          'N'
+	base:           'n'
+	blue:           '-'
+        shift+blue:     '_'
+}
+key o {
+	label:          'O'
+	base:           'o'
+	blue:           '|'
+}
+key p {
+	label:          'P'
+	base:           'p'
+	blue:           ':'
+}
+key q {
+	label:          'Q'
+	base:           'q'
+	blue:           '!'
+}
+key r {
+	label:          'R'
+	base:           'r'
+	blue:           ';'
+        shift+blue:     ':'
+}
+key s {
+	label:          'S'
+	base:           's'
+	blue:           'plus'
+}
+key t {
+	label:          'T'
+	base:           't'
+	blue:           '-'
+}
+key u {
+	label:          'U'
+	base:           'u'
+	blue:           'star'
+}
+key v {
+	label:          'V'
+	base:           'v'
+	blue:           '/'
+        shift+blue:     '?'
+}
+key w {
+	label:          'W'
+	base:           'w'
+	blue:           '='
+}
+key x {
+	label:          'X'
+	base:           'x'
+	blue:           'symbol_keylightdown'
+}
+key y {
+	label:          'Y'
+	base:           'y'
+	blue:           'symbol_keylightup'
+}
+key z {
+	label:          'Z'
+	base:           'z'
+}
+key dot {
+	label:          'DOT'
+	base:           'period'
+	blue:           'SHIFT_LEFT+TAB'
+}
+key shift {
+	label:         'SHIFT'
+	base:          'symbol_shift'
+	blue:          'CAPS_LOCK'
+}
+key ctrl {
+	label:         'CTRL'
+	base:          'symbol_ctrl'
+	blue:          'symbol_alt'
+}
+key blue {
+	label:         'BLUE'
+	base:          'symbol_blue'
+}
+key diamond {
+	label:         'DIAMOND'
+	base:          'symbol_diamond'
+	blue:          'tab'
+}
+# Blue + Enter = Function + Enter
+key enter {
+	label:         'ENTER'
+	base:          'enter'
+	blue:          'FUNCTION+enter'
+}
+key space {
+	label:         'SPACE'
+	base:          'space'
+	blue:          'insert'
+}
+key backspace {
+	label:         'BACKSPACE'
+	base:          'del'
+	blue:          'forward_del'
+}
+key esc {
+	label:          'ESC'
+	base:           'escape'
+}
+key left {
+	label:          'LEFT'
+	base:           'dpad_left'
+	ctrl:           'dpad_left'
+}
+key right {
+	label:          'RIGHT'
+	base:           'dpad_right'
+	ctrl:           'dpad_right'
+}
+key down {
+	label:          'DOWN'
+	base:           'dpad_down'
+	ctrl:           'dpad_down'
+}
+key up {
+	label:          'UP'
+	base:           'dpad_up'
+	ctrl:           'dpad_up'
+}
+key p1 {
+	label:          'P1'
+	base:           'BUTTON_L2'
+	wakeup:         'false'
+}
+key p2 {
+	label:          'P2'
+	base:           'symbol_trigger_1'
+	default_base:   'BUTTON_L1'
+}

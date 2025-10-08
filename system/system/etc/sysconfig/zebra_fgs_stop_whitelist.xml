@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!-- Copyright (C) 2023-2024 Zebra Technologies Corporation and/or its affiliates. All rights reserved. -->
+
+<!-- This file contains package names whose foreground service can't be stopped by the user in notification panel. -->
+<config>
+    <bg-restriction-exemption
+        package="com.zebra.mdna.devicetrackercloud" />
+    <bg-restriction-exemption
+        package="com.zebra.zebradna" />
+    <bg-restriction-exemption
+        package="com.zebra.mdna.els" />
+    <bg-restriction-exemption
+        package="com.zebra.mdna.dg" />
+</config>

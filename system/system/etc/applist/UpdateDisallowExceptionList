@@ -1,0 +1,8 @@
+### Allow list of package names that Zebra has determined MUST always be allowed to be updated.
+com.symbol.dataanalytics
+com.symbol.dataanalytics.dca
+com.symbol.dataanalytics.settings
+com.zebra.oeminfo
+com.zebra.zebracontentprovider
+com.zebra.commontransportlayer
+com.symbol.fota

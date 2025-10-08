@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exceptions>
+   <exception package="com.zebra.devicemanager">
+        <permission name="android.permission.CALL_PHONE" fixed="true"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fixed="true"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="true"/>
+        <permission name="android.permission.BLUETOOTH_CONNECT" fixed="true"/>
+        <permission name="android.permission.READ_PHONE_STATE" fixed="true"/>
+        <permission name="android.permission.GET_ACCOUNTS" fixed="true"/>
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="true"/>
+    </exception>
+</exceptions>
+

@@ -1,0 +1,322 @@
+lock {
+	blue:          'toggle_lock'
+	orange:        'toggle_oneshot_and_lock'
+	gray:          'toggle_none'
+	shift:         'toggle_oneshot'
+	alt:           'toggle_oneshot'
+	ctrl:          'toggle_oneshot'
+	capslock:      'toggle_lock'
+}
+# ALPHA=BLUE, FUNC=ORANGE
+key w1 {
+	label:          'W1'
+	base:           'symbol_trigger_1'
+}
+key w2 {
+	label:          'W2'
+	base:           'symbol_trigger_2'
+}
+key bklgt {
+	label:          'KEYLIGHTUP'
+	base:           'symbol_keylightup'
+}
+key brightness_down {
+	label:          'BRIGHTNESSDOWN'
+	base:           'brightness_down'
+}
+key brightness_up {
+	label:          'BRIGHTNESSUP'
+	base:           'brightness_up'
+}
+key volume_down {
+	label:          'VOLUMEDOWN'
+	base:           'volume_down'
+}
+key volume_up {
+	label:          'VOLUMEUP'
+	base:           'volume_up'
+}
+
+key backspace {
+	label:         'BACKSPACE'
+	base:          'del'
+	orange:        'symbol_orange'
+}
+key pause {
+	label:          'PAUSE'
+	base:           'break'
+	blue:           'a'
+	orange:         'symbol_donothing'
+	shift:          'a'
+}
+key home {
+	label:          'HOME'
+	base:           'home'
+	blue:           'b'
+	orange:         'symbol_donothing'
+	shift:          'b'
+}
+key pgup {
+	label:          'PGUP'
+	base:           'page_up'
+	blue:           'c'
+	orange:         'symbol_donothing'
+	shift:          'c'
+}
+key alt {
+	label:          'ALT'
+	base:           'symbol_alt'
+}
+key dot {
+	label:          'DOT'
+	base:           'period'
+	blue:           'd'
+	orange:         'symbol_donothing'
+	shift:          'd'
+}
+key tab {
+	label:          'TAB'
+	base:           'tab'
+	blue:           'e'
+	orange:         '{'
+	shift:          'e'
+}
+key end {
+	label:          'END'
+	base:           'move_end'
+	blue:           'f'
+	orange:         '}'
+	shift:          'f'
+}
+key pgdn {
+	label:          'PGDN'
+	base:           'page_down'
+	blue:           'g'
+	orange:         '='
+	shift:          'g'
+}
+key esc {
+	label:          'ESC'
+	base:           'escape'
+	blue:           'h'
+	orange:         '?'
+	shift:          'h'
+}
+
+key f1 {
+	label:          'F1'
+	base:           'f1'
+	blue:           'i'
+	orange:         '['
+	shift:          'i'
+}
+key f2 {
+	label:          'F2'
+	base:           'f2'
+	blue:           'j'
+	orange:         ']'
+	shift:          'j'
+}
+key f3 {
+	label:          'F3'
+	base:           'f3'
+	blue:           'k'
+	orange:         '~'
+	shift:          'k'
+}
+key f4 {
+	label:          'F4'
+	base:           'f4'
+	blue:           'l'
+	orange:         '-'
+	shift:          'l'
+}
+key f5 {
+	label:          'F5'
+	base:           'f5'
+	blue:           'm'
+	orange:         'apostrophe'
+	shift:          'm'
+}
+key f6 {
+	label:          'F6'
+	base:           'f6'
+	blue:           'n'
+	orange:         ':'
+	shift:          'n'
+}
+key f7 {
+	label:          'F7'
+	base:           'f7'
+	blue:           'o'
+	orange:         ';'
+	shift:          'o'
+}
+key f8 {
+	label:          'F8'
+	base:           'f8'
+	blue:           'p'
+	orange:         '\'
+	shift:          'p'
+}
+key f9 {
+	label:          'F9'
+	base:           'f9'
+	blue:           'q'
+	orange:         'comma'
+	shift:          'q'
+}
+key f10 {
+	label:          'F10'
+	base:           'f10'
+	blue:           'r'
+	orange:         '"'
+	shift:          'r'
+}
+
+key f11 {
+	label:          'F11'
+	base:           'f11'
+	blue:           's'
+	orange:         'symbol_donothing'
+	shift:          's'
+}
+
+# needs function forced on control
+key left {
+	label:          'LEFT'
+	base:           'dpad_left'
+	blue:           't'
+	orange:         '<'
+	ctrl:           'FUNCTION+dpad_left'
+	shift:          't'
+}
+# needs function forced on control
+key up {
+	label:          'UP'
+	base:           'dpad_up'
+	blue:           'u'
+	orange:         'grave'
+	ctrl:           'FUNCTION+dpad_up'
+	shift:          'u'
+}
+# needs function forced on control
+key right {
+	label:          'RIGHT'
+	base:           'dpad_right'
+	blue:           'v'
+	orange:         '>'
+	ctrl:           'FUNCTION+dpad_right'
+	shift:          'v'
+}
+key f12 {
+	label:          'F12'
+	base:           'f12'
+	blue:           'w'
+	orange:         'period'
+	shift:          'w'
+}
+key shift {
+	label:          'SHIFT'
+	base:           'symbol_shift'
+	orange:         'CAPS_LOCK'
+}
+key plus {
+	label:          'PLUS'
+	base:           'plus'
+	blue:           'x'
+	orange:         'symbol_donothing'
+	shift:          'x'
+}
+# needs function forced on control
+key down {
+	label:          'DOWN'
+	base:           'dpad_down'
+	blue:           'y'
+	orange:         '/'
+	ctrl:           'FUNCTION+dpad_down'
+	shift:          'y'
+}
+key minus {
+	label:          'MINUS'
+	base:           'minus'
+	blue:           'z'
+	orange:         'symbol_donothing'
+	shift:          'z'
+}
+key ctrl {
+	label:          'CTRL'
+	base:           'symbol_ctrl'
+	orange:         'forward_del'
+}
+
+key alpha {
+	label:         'ALPHA'
+	base:          'symbol_blue'
+	orange:        'insert'
+}
+key 7 {
+	label:         '7'
+	base:          '7'
+	orange:        'f7'
+}
+key 8 {
+	label:         '8'
+	base:          '8'
+	orange:        'f8'
+}
+key 9 {
+	label:         '9'
+	base:          '9'
+	orange:        'f9'
+}
+# note: force function down for orange
+key enter {
+	label:         'ENTER'
+	base:          'enter'
+	orange:        'FUNCTION+enter'
+}
+key 4 {
+	label:         '4'
+	base:          '4'
+	orange:        'f4'
+}
+key 5 {
+	label:         '5'
+	base:          '5'
+	orange:        'f5'
+}
+key 6 {
+	label:         '6'
+	base:          '6'
+	orange:        'f6'
+}
+key 1 {
+	label:         '1'
+	base:          '1'
+	orange:        'f1'
+}
+key 2 {
+	label:         '2'
+	base:          '2'
+	orange:        'f2'
+}
+key 3 {
+	label:         '3'
+	base:          '3'
+	orange:        'f3'
+}
+key func {
+	label:         'FUNC'
+	base:          'symbol_orange'
+}
+key 0 {
+	label:         '0'
+	base:          '0'
+	orange:        'f10'
+}
+key space {
+	label:         'SPACE'
+	base:          'space'
+	orange:        'space'
+}

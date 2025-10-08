@@ -1,0 +1,2 @@
+libplatform.zebra.so
+libledfeedback.zebra.so

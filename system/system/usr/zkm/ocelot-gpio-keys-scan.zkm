@@ -1,0 +1,27 @@
+key vol_up {
+	label:          'VOLUMEUP'
+	base:           'volume_up'
+}
+key vol_down {
+	label:          'VOLUMEDOWN'
+	base:           'volume_down'
+}
+key P1 {
+	label:          'P1'
+	wakeup:         'false'
+	base:           'SETTINGS'
+}
+key P2 {
+	label:          'P2'
+	wakeup:         'false'
+	base:           'SYMBOL_PHOTOS'
+}
+key SCAN {
+	label:          'SCAN'
+	wakeup:         'false'
+	base:           'SCAN'
+}
+key home {
+	label:          'HOME'
+	base:           'home'
+}

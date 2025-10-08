@@ -1,0 +1,164 @@
+lock {
+	blue:           'toggle_none'
+	orange:         'toggle_lock'
+	gray:           'toggle_none'
+	shift:          'toggle_oneshot_and_lock'
+	alt:            'toggle_oneshot'
+	ctrl:           'toggle_oneshot'
+	diamond:        'toggle_oneshot_and_lock'
+}
+diamond {
+	matrix:         '3x3'
+	order:          '1,2,3,4,5,6,7,8,9'
+}
+key 1 {
+	label:          '1'
+	base:           '1'
+	diamond:        '+'
+}
+key 2 {
+	label:          '2'
+	base:           '2'
+	orange:         'a,b,c'
+	diamond:        '-'
+}
+key 3 {
+	label:          '3'
+	base:           '3'
+	orange:         'd,e,f'
+	diamond:        '@'
+}
+key 4 {
+	label:          '4'
+	base:           '4'
+	orange:         'g,h,i'
+	diamond:        '/'
+}
+key 5 {
+	label:          '5'
+	base:           '5'
+	orange:         'j,k,l'
+	diamond:        '#'
+}
+key 6 {
+	label:          '6'
+	base:           '6'
+	orange:         'm,n,o'
+	diamond:        ':'
+}
+key 7 {
+	label:          '7'
+	base:           '7'
+	orange:         'p,q,r,s'
+	diamond:        ';'
+}
+key 8 {
+	label:          '8'
+	base:           '8'
+	orange:         't,u,v'
+	diamond:        '~'
+}
+key 9 {
+	label:          '9'
+	base:           '9'
+	orange:         'w,x,y,z'
+	diamond:        '!'
+}
+key dot {
+	label:          'DOT'
+	base:           'period'
+	orange:         'comma'
+}
+key 0 {
+	label:          '0'
+	base:           '0'
+	orange:         'space'
+}
+key diamond {
+	label:          'DIAMOND'
+	base:           'symbol_diamond'
+}
+key f1 {
+	label:          'F1'
+	base:           'f1'
+	orange:         'f7'
+}
+key f2 {
+	label:          'F2'
+	base:           'f2'
+	orange:         'f8'
+}
+key f3 {
+	label:          'F3'
+	base:           'f3'
+	orange:         'f9'
+}
+key f4 {
+	label:          'F4'
+	base:           'f4'
+	orange:         'f10'
+}
+key f5 {
+	label:          'F5'
+	base:           'f5'
+	orange:         'f11'
+}
+key f6 {
+	label:          'F6'
+	base:           'f6'
+	orange:         'f12'
+}
+key orange {
+	label:          'ORANGE'
+	base:           'symbol_orange'
+}
+key shift {
+	label:          'SHIFT'
+	base:           'symbol_shift'
+}
+key alt {
+	label:          'ALT'
+	base:           'symbol_alt'
+}
+key ctrl {
+	label:          'CTRL'
+	base:           'symbol_ctrl'
+}
+key enter {
+	label:          'ENTER'
+	base:           'enter'
+}
+key backspace {
+	label:          'BACKSPACE'
+	base:           'del'
+}
+key esc {
+	label:          'ESC'
+	base:           'escape'
+}
+key tab {
+	label:          'TAB'
+	base:           'tab'
+}
+key left {
+	label:          'LEFT'
+	base:           'dpad_left'
+}
+key right {
+	label:          'RIGHT'
+	base:           'dpad_right'
+}
+key up {
+	label:          'UP'
+	base:           'dpad_up'
+	orange:         'volume_up'
+}
+key down {
+	label:          'DOWN'
+	base:           'dpad_down'
+	orange:         'volume_down'
+}
+key p2 {
+	label:          'P2'
+	base:           'app_switch'
+}

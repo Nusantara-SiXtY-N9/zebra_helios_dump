@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+
+<BatteryManagerUpdate>
+        <UpdateXMLVersion>2.0</UpdateXMLVersion>
+        <AdvancedInfoParams>
+                <Param>
+                        <IntentExtraName>bkvoltage</IntentExtraName>
+                        <Operation>Remove</Operation>
+                </Param>
+                <Param>
+                        <IntentExtraName>Backup battery level</IntentExtraName>
+                        <Operation>Remove</Operation>
+                </Param>
+                <Param>
+                        <IntentExtraName>BATTERY_PROPERTY_CHARGE_COUNTER</IntentExtraName>
+                        <Operation>Remove</Operation>
+                </Param>
+                <Param>
+                        <Title>Battery error status</Title>
+                        <IntentExtraName>battery_error_status</IntentExtraName>
+                        <ValueType>Integer</ValueType>
+                        <Operation>Add</Operation>
+                </Param>
+                <Param>
+                        <IntentExtraName>ratedcapacity</IntentExtraName>
+                        <Operation>Remove</Operation>
+                </Param>
+        </AdvancedInfoParams>
+</BatteryManagerUpdate>

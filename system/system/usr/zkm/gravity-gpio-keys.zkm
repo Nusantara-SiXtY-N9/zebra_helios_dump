@@ -1,0 +1,23 @@
+key scan_gun {
+	label:          'GUN_TRIGGER'
+	wakeup:         'false'
+	base:           'BUTTON_L1'
+}
+key scan_center {
+	label:          'SCAN'
+	wakeup:         'false'
+	base:           'SCAN'
+}
+key gpio_p1 {
+	label:          'P1'
+	wakeup:         'false'
+	base:           'BUTTON_L2'
+}
+key remote_trigger_1 {
+        label:          'BLUETOOTH_REMOTE_TRIGGER_1'
+        base:           'SYMBOL_TRIGGER_1'
+}
+key remote_trigger_2 {
+        label:          'BLUETOOTH_REMOTE_TRIGGER_2'
+        base:           'SYMBOL_TRIGGER_2'
+}

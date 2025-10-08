@@ -1,0 +1,5 @@
+# Dynamic protected Admin list
+# This dynamic list conains the receivers name of the admins that will be protected from
+# manually enabling and disabling via Settings app, these admins will be greyed out in
+# Settings app. These can be added or removed using Mx api's.
+# List Format: PackageName/.Classname

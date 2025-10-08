@@ -1,0 +1,61 @@
+#--------------------------------------------------------------------------
+# Copyright (c) 2021-2022 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+#
+# Module: dhcputil init rc
+# 
+# Description:
+#    To start dhcputil service at init time.
+#
+#--------------------------------------------------------------------------
+
+service dhcpcd_wlan0 /system/bin/dhcpcd wlan0 -d -6 --config /system/etc/dhcpcd-6.8.2/dhcpcd.conf
+   class main
+   disabled
+   user root
+   group system
+   oneshot
+
+service dhcpcd_eth0 /system/bin/dhcpcd eth0 -d
+   class main
+   disabled
+   user root
+   group system
+   oneshot
+
+service dhcpcd_eth1 /system/bin/dhcpcd eth1 -d
+   class main
+   disabled
+   user root
+   group system
+   oneshot
+
+service dhcpcd_eth2 /system/bin/dhcpcd eth2 -d
+   class main
+   disabled
+   user root
+   group system
+   oneshot
+
+on property:sys.dhcpcd_wlan0=1
+    start dhcpcd_wlan0
+
+on property:sys.dhcpcd_eth0=1
+    start dhcpcd_eth0
+
+on property:sys.dhcpcd_eth1=1
+    start dhcpcd_eth1
+
+on property:sys.dhcpcd_eth2=1
+    start dhcpcd_eth2
+
+on property:sys.dhcpcd_wlan0=0
+    stop dhcpcd_wlan0
+
+on property:sys.dhcpcd_eth0=0
+    stop dhcpcd_eth0
+
+on property:sys.dhcpcd_eth1=0
+    stop dhcpcd_eth1
+
+on property:sys.dhcpcd_eth2=0
+    stop dhcpcd_eth2

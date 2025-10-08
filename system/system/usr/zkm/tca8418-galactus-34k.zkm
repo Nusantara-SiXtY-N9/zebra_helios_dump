@@ -1,0 +1,189 @@
+lock {
+	blue:          'toggle_oneshot_and_lock'
+	orange:        'toggle_none'
+	gray:          'toggle_none'
+	diamond:       'toggle_oneshot_and_lock'
+	shift:         'toggle_oneshot_and_lock'
+	alt:           'toggle_oneshot'
+	ctrl:          'toggle_oneshot'
+	capslock:      'toggle_lock'
+}
+diamond {
+	matrix:        '3x3'
+	order:         '1,2,3,4,5,6,7,8,9'
+}
+key 1 {
+	label:          '1'
+	base:           '1'
+	diamond:        '|'
+}
+key 2 {
+	label:          '2'
+	base:           '2'
+	blue:           'a,b,c'
+	diamond:        '['
+}
+key 3 {
+	label:          '3'
+	base:           '3'
+	blue:           'd,e,f'
+	diamond:        ']'
+}
+key 4 {
+	label:          '4'
+	base:           '4'
+	blue:           'g,h,i'
+	diamond:        '£'
+}
+key 5 {
+	label:          '5'
+	base:           '5'
+	blue:           'j,k,l'
+	diamond:        ':'
+}
+key 6 {
+	label:          '6'
+	base:           '6'
+	blue:           'm,n,o'
+	diamond:        '€'
+}
+key 7 {
+	label:          '7'
+	base:           '7'
+	blue:           'p,q,r,s'
+	diamond:        '~'
+}
+key 8 {
+	label:          '8'
+	base:           '8'
+	blue:           't,u,v'
+	diamond:        '@'
+}
+key 9 {
+	label:          '9'
+	base:           '9'
+	blue:           'w,x,y,z'
+	diamond:        '_'
+}
+key 0 {
+	label:          '0'
+	base:           '0'
+	blue:           'space'
+}
+# F1-F12 need to generate function down for the blue table entries
+key f1 {
+	label:          'F1'
+	base:           'f1'
+	blue:           'brightness_up'
+	orange:         'f1'
+}
+key f2 {
+	label:          'F2'
+	base:           'f2'
+	orange:         'f2'
+}
+key f3 {
+	label:          'F3'
+	base:           'f3'
+	orange:         'f3'
+}
+key f4 {
+	label:          'F4'
+	base:           'f4'
+	blue:           'volume_up'
+	orange:         'f4'
+}
+key f5 {
+	label:          'F5'
+	base:           'f5'
+	blue:           'brightness_down'
+	orange:         'f5'
+}
+key f6 {
+	label:          'F6'
+	base:           'f6'
+	orange:         'f6'
+}
+key f7 {
+	label:          'F7'
+	base:           'f7'
+	orange:         'f7'
+}
+key f8 {
+	label:          'F8'
+	base:           'f8'
+	blue:           'volume_down'
+	orange:         'f8'
+}
+key f9 {
+	label:          'F9'
+	base:           'f9'
+	orange:         'f9'
+}
+key f10 {
+	label:          'F10'
+	base:           'f10'
+	blue:           'symbol_keylightdown'
+	orange:         'fl0'
+}
+key f11 {
+	label:          'F11'
+	base:           'f11'
+	blue:           'symbol_keylightup'
+	orange:         'f11'
+}
+key f12 {
+	label:          'F12'
+	base:           'f12'
+	orange:         'f12'
+}
+key dot {
+	label:          'DOT'
+	base:           'period'
+	blue:           'comma'
+}
+key shift {
+	label:         'SHIFT'
+	base:          'symbol_shift'
+	blue:          'CAPS_LOCK'
+}
+key ctrl {
+	label:         'CTRL'
+	base:          'symbol_ctrl'
+	blue:          'symbol_alt'
+}
+key blue {
+	label:         'BLUE'
+	base:          'symbol_blue'
+}
+key diamond {
+	label:         'DIAMOND'
+	base:          'symbol_diamond'
+}
+key enter {
+	label:         'ENTER'
+	base:          'enter'
+}
+key bksp {
+	label:         'BACKSPACE'
+	base:          'del'
+	blue:          'forward_del'
+}
+key esc {
+	label:          'ESC'
+	base:           'escape'
+}
+key tab {
+	label:          'TAB'
+	base:           'tab'
+}
+key down {
+	label:          'DOWN'
+	base:           'dpad_down'
+	blue:           'dpad_right'
+}
+key up {
+	label:          'UP'
+	base:           'dpad_up'
+	blue:           'dpad_left'
+}

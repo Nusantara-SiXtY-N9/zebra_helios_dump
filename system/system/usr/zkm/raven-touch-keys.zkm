@@ -1,0 +1,5 @@
+key cap_touch {
+	label:          'NAV_PAD'
+	base:           'NONE'
+	extra_flag:     'DoNotProcessBase'
+}

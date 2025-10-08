@@ -1,0 +1,39 @@
+Cradle Firmware Updater Application
+
+Copyright (c) 2018-2022 Zebra
+Technologies Corporation and/or its
+affiliates. All rights reserved.
+
+Cradle Firmware Updater Document:
+
+The CradleFWUpdater  application  allows
+to  update  cradle  firmware  using PS20
+terminal.
+1)Open "CradleFWUpdater" Application
+  on PS20 device.
+2)Click  on  button  "FW File Location".
+  It will  open a  dialog box to  select
+  Firmware file.
+3)Select  appropriate  Firmware file and
+  click on "OK" button. It  will display
+  path     of     selected    file    in
+  "Input FW File" text box.  Verify  the
+  file name with file extension.
+4)Now Click on "Program Firmware" button
+  to  start  flashing  the  firmware. It
+  will  show a warning informing not to
+  remove  terminal  from   cradle  until
+  firmware   update  process   finishes.
+  After selecting "OK" on warning dialog
+  box   it   will   start  the  firmware
+  downloading process.
+5)In some cases, when application is not
+  able to reset the cradle, it asks user
+  to  manually   reset  the   cradle  by
+  powering it off and on.
+6)After resetting the cradle,application
+  will    start   firmware   downloading
+  process.
+7)When application completes downloading
+  successfully,  it   will  show  status
+  message "UPDATE COMPLETED" on UI.

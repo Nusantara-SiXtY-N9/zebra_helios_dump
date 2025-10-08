@@ -1,0 +1,226 @@
+lock {
+	blue:          'toggle_oneshot_and_lock'
+	orange:        'toggle_oneshot_and_lock'
+	gray:          'toggle_none'
+	diamond:       'toggle_oneshot_and_lock'
+	shift:         'toggle_oneshot_and_lock'
+	alt:           'toggle_oneshot'
+	ctrl:          'toggle_oneshot'
+	capslock:      'toggle_lock'
+}
+diamond {
+	matrix:        '3x3'
+	order:         '7,8,9,4,5,6,1,2,3'
+}
+key p1 {
+	label:          'P1'
+	wakeup:         'false'
+	base:           'BUTTON_L2'
+}
+key p2 {
+	label:          'P2'
+	base:           'symbol_trigger_1'
+	default_base:   'BUTTON_L1'
+}
+key left {
+	label:          'LEFT'
+	base:           'dpad_left'
+}
+key right {
+	label:          'RIGHT'
+	base:           'dpad_right'
+}
+key down {
+	label:          'DOWN'
+	base:           'dpad_down'
+}
+key up {
+	label:          'UP'
+	base:           'dpad_up'
+}
+key esc {
+	label:          'ESC'
+	base:           'escape'
+}
+key ctrl {
+	label:         'CTRL'
+	base:          'symbol_ctrl'
+}
+key alt {
+	label:         'ALT'
+	base:          'symbol_alt'
+}
+key blue {
+	label:         'BLUE'
+	base:          'symbol_blue'
+}
+key orange {
+	label:         'ORANGE'
+	base:          'symbol_orange'
+}
+
+key f1 {
+	label:          'F1'
+	base:           'f1'
+	blue:           'brightness_up'
+	orange:         'a'
+}
+key f2 {
+	label:          'F2'
+	base:           'f2'
+	orange:         'b'
+}
+key f3 {
+	label:          'F3'
+	base:           'f3'
+	orange:         'c'
+}
+key f4 {
+	label:          'F4'
+	base:           'f4'
+	blue:           'volume_up'
+	orange:         'd'
+}
+key f5 {
+	label:          'F5'
+	base:           'f5'
+	blue:           'brightness_down'
+	orange:         'e'
+}
+key f6 {
+	label:          'F6'
+	base:           'f6'
+	orange:         'f'
+}
+key f7 {
+	label:          'F7'
+	base:           'f7'
+	orange:         'g'
+}
+key f8 {
+	label:          'F8'
+	base:           'f8'
+	blue:           'volume_down'
+	orange:         'h'
+}
+key f9 {
+	label:          'F9'
+	base:           'f9'
+	blue:           '+'
+	orange:         'i'
+}
+key f10 {
+	label:          'F10'
+	base:           'f10'
+	blue:           'minus'
+	orange:         'j'
+}
+key f11 {
+	label:          'F11'
+	base:           'f11'
+	blue:           'star'
+	orange:         'k'
+}
+key f12 {
+	label:          'F12'
+	base:           'f12'
+	blue:           '/'
+	orange:         'l'
+}
+key space {
+	label:          'SPACE'
+	base:           'space'
+}
+key KL_DN {
+	label:          'KEYLIGHTDOWN'
+	base:           'symbol_keylightdown'
+	orange:         'm'
+}
+key KL_UP {
+	label:          'KEYLIGHTUP'
+	base:           'symbol_keylightup'
+	orange:         'n'
+}
+key backspace {
+	label:          'BACKSPACE'
+	base:           'del'
+	blue:           '='
+}
+key 1 {
+	label:          '1'
+	base:           '1'
+	orange:         'u'
+	diamond:        '~'
+}
+key 2 {
+	label:          '2'
+	base:           '2'
+	orange:         'v'
+	diamond:        '@'
+}
+key 3 {
+	label:          '3'
+	base:           '3'
+	orange:         'w'
+	diamond:        '_'
+}
+key 4 {
+	label:          '4'
+	base:           '4'
+	orange:         'r'
+	diamond:        '£'
+}
+key 5 {
+	label:          '5'
+	base:           '5'
+	orange:         's'
+	diamond:        ':'
+}
+key 6 {
+	label:          '6'
+	base:           '6'
+	orange:         't'
+	diamond:        '€'
+}
+key 7 {
+	label:          '7'
+	base:           '7'
+	orange:         'o'
+	diamond:        '|'
+}
+key 8 {
+	label:          '8'
+	base:           '8'
+	orange:         'p'
+	diamond:        '['
+}
+key 9 {
+	label:          '9'
+	base:           '9'
+	orange:         'q'
+	diamond:        ']'
+}
+key 0 {
+	label:          '0'
+	base:           '0'
+	orange:         'y'
+}
+key dot {
+	label:          'DOT'
+	base:           'period'
+	orange:         'x'
+}
+key diamond {
+	label:          'DIAMOND'
+	base:           'symbol_diamond'
+	orange:         'z'
+}
+key shift {
+	label:         'SHIFT'
+	base:          'symbol_shift'
+	blue:          'CAPS_LOCK'
+}
+key enter {
+	label:         'ENTER'
+	base:          'enter'
+}

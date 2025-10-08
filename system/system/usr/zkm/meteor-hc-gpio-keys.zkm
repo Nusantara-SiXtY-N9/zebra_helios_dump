@@ -1,0 +1,28 @@
+key scan_left {
+	label:          'SCAN'
+	wakeup:         'true'
+	base:           'SCAN'
+}
+key scan_right {
+	label:          'RIGHT_TRIGGER_1'
+	wakeup:         'true'
+	base:           'BUTTON_R1'
+}
+key scan_gun {
+	label:          'REAR_BUTTON'
+	wakeup:         'true'
+	base:           'BUTTON_L1'
+}
+key ptt {
+	label:          'LEFT_TRIGGER_2'
+	wakeup:         'true'
+	base:           'BUTTON_L2'
+}
+key vol_up {
+	label:          'VOLUMEUP'
+	base:           'volume_up'
+}
+key vol_down {
+	label:          'VOLUMEDOWN'
+	base:           'volume_down'
+}

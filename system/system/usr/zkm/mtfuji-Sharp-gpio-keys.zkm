@@ -1,0 +1,30 @@
+lock {
+	diamond:        'toggle_oneshot_and_lock'
+}
+key scan_button_1 {
+	label:          'SCAN'
+	wakeup:         'false'
+	base:           'SCAN'
+}
+key NAV_OK {
+	label:          'NAV_OK'
+	wakeup:         'false'
+	base:           'enter'
+}
+key star {
+	label:          'STAR'
+	wakeup:         'false'
+	base:           'NUMPAD_MULTIPLY'
+}
+key ptt {
+	label:          'HEADSET_HOOK'
+	base:           'BTN_TR2'
+}
+key remote_trigger_1 {
+        label:          'BLUETOOTH_REMOTE_TRIGGER_1'
+        base:           'SYMBOL_TRIGGER_1'
+}
+key remote_trigger_2 {
+        label:          'BLUETOOTH_REMOTE_TRIGGER_2'
+        base:           'SYMBOL_TRIGGER_2'
+}

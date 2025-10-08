@@ -1,0 +1,32 @@
+#*---------------------------------------------------------------------------
+#* Copyright (c) 2020 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+#*
+#* Module: Smartmu init rc
+#*
+#* Author:
+#*
+#* Original Date:
+#*
+#* Description:
+#*    To start Smartmu service at init time.
+#*
+#* Revision History:
+#*       Initial ver.
+#*--------------------------------------------------------------------------
+
+service smartmu /system/bin/smartmu
+    class main
+    user root
+    group root wifi net_raw net_admin everybody
+
+on post-fs-data
+    mkdir /data/misc/smu 0777 root root
+    chown root root /data/misc/smu/
+    chown root root /data/misc/smu/smu.ini
+    chown root root /data/misc/smu/smu_pcap/
+    chown root root /data/misc/smu/smu_pcap/tempkey
+    chown root root /data/misc/smu/smu_pcap/pass
+    chown root root /data/misc/smu/smu_pcap/key
+
+on property:ro.boot.device.wa_stack_status=0
+    stop smartmu

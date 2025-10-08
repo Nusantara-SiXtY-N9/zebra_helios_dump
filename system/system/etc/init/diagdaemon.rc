@@ -1,0 +1,8 @@
+service diagdaemon /system/bin/diagdaemon
+    class late_start
+    user root
+    group root system
+    seclabel u:r:dumpstate:s0
+
+on boot
+    setprop ro.symbol.rxlogger.bundle 0

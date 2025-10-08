@@ -1,0 +1,284 @@
+lock {
+	blue:          'toggle_oneshot_and_lock'
+	orange:        'toggle_none'
+	gray:          'toggle_none'
+	diamond:       'toggle_oneshot_and_lock'
+	shift:         'toggle_oneshot_and_lock'
+	alt:           'toggle_oneshot'
+	ctrl:          'toggle_oneshot'
+	capslock:      'toggle_lock'
+}
+diamond {
+	matrix:        '3x3'
+	order:         '1,2,3,4,5,6,7,8,9'
+}
+
+key 1 {
+	label:          '1'
+	base:           '1'
+	diamond:        '|'
+}
+key 2 {
+	label:          '2'
+	base:           '2'
+	diamond:        '['
+}
+key 3 {
+	label:          '3'
+	base:           '3'
+	diamond:        ']'
+}
+key 4 {
+	label:          '4'
+	base:           '4'
+	diamond:        '£'
+}
+key 5 {
+	label:          '5'
+	base:           '5'
+	diamond:        ':'
+}
+key 6 {
+	label:          '6'
+	base:           '6'
+	diamond:        '€'
+}
+key 7 {
+	label:          '7'
+	base:           '7'
+	diamond:        '~'
+}
+key 8 {
+	label:          '8'
+	base:           '8'
+	diamond:        '@'
+}
+key 9 {
+	label:          '9'
+	base:           '9'
+	diamond:        '_'
+}
+key 0 {
+	label:          '0'
+	base:           '0'
+}
+# A-L need to generate FN for blue table function key values
+key a {
+	label:          'A'
+	base:           'a'
+	blue:           'FUNCTION+f1'
+}
+key b {
+	label:          'B'
+	base:           'b'
+	blue:           'FUNCTION+f2'
+}
+key c {
+	label:          'C'
+	base:           'c'
+	blue:           'FUNCTION+f3'
+}
+key d {
+	label:          'D'
+	base:           'd'
+	blue:           'FUNCTION+f4'
+}
+key e {
+	label:          'E'
+	base:           'e'
+	blue:           'FUNCTION+f5'
+}
+key f {
+	label:          'F'
+	base:           'f'
+	blue:           'FUNCTION+f6'
+}
+key g {
+	label:          'G'
+	base:           'g'
+	blue:           'FUNCTION+f7'
+}
+key h {
+	label:          'H'
+	base:           'h'
+	blue:           'FUNCTION+f8'
+}
+key i {
+	label:          'I'
+	base:           'i'
+	blue:           'FUNCTION+f9'
+}
+key j {
+	label:          'J'
+	base:           'j'
+	blue:           'FUNCTION+f10'
+}
+key k {
+	label:          'K'
+	base:           'k'
+	blue:           'FUNCTION+f11'
+}
+key l {
+	label:          'L'
+	base:           'l'
+	blue:           'FUNCTION+f12'
+}
+key m {
+	label:          'M'
+	base:           'm'
+	blue:           'brightness_down'
+}
+key n {
+	label:          'N'
+	base:           'n'
+	blue:           'brightness_up'
+}
+key o {
+	label:          'O'
+	base:           'o'
+}
+key p {
+	label:          'P'
+	base:           'p'
+}
+key q {
+	label:          'Q'
+	base:           'q'
+	blue:           'volume_down'
+}
+key r {
+	label:          'R'
+	base:           'r'
+	blue:           'volume_up'
+}
+key s {
+	label:          'S'
+	base:           's'
+}
+key t {
+	label:          'T'
+	base:           't'
+}
+key u {
+	label:          'U'
+	base:           'u'
+}
+key v {
+	label:          'V'
+	base:           'v'
+}
+key w {
+	label:          'W'
+	base:           'w'
+}
+key x {
+	label:          'X'
+	base:           'x'
+}
+key y {
+	label:          'Y'
+	base:           'y'
+	blue:           'symbol_keylightdown'
+}
+key z {
+	label:          'Z'
+	base:           'z'
+	blue:           'symbol_keylightup'
+}
+key f1 {
+	label:          'F1'
+	base:           'f1'
+	blue:           'f7'
+}
+key f2 {
+	label:          'F2'
+	base:           'f2'
+	blue:           'f8'
+}
+key f3 {
+	label:          'F3'
+	base:           'f3'
+	blue:           'f9'
+}
+key f4 {
+	label:          'F4'
+	base:           'f4'
+	blue:           'f10'
+}
+key f5 {
+	label:          'F5'
+	base:           'f5'
+	blue:           'f11'
+}
+key f6 {
+	label:          'F6'
+	base:           'f6'
+	blue:           'f12'
+}
+key dot {
+	label:          'DOT'
+	base:           'period'
+	blue:           'comma'
+}
+key shift {
+	label:         'SHIFT'
+	base:          'symbol_shift'
+	blue:          'CAPS_LOCK'
+}
+key ctrl {
+	label:         'CTRL'
+	base:          'symbol_ctrl'
+	blue:          'symbol_alt'
+}
+key blue {
+	label:         'BLUE'
+	base:          'symbol_blue'
+}
+key diamond {
+	label:         'DIAMOND'
+	base:          'symbol_diamond'
+}
+key enter {
+	label:         'ENTER'
+	base:          'enter'
+}
+key space {
+	label:         'SPACE'
+	base:          'space'
+}
+key backspace {
+	label:         'BACKSPACE'
+	base:          'del'
+	blue:          'forward_del'
+}
+key esc {
+	label:          'ESC'
+	base:           'escape'
+}
+key tab {
+	label:          'TAB'
+	base:           'tab'
+}
+key left {
+	label:          'LEFT'
+	base:           'dpad_left'
+}
+key down {
+	label:          'DOWN'
+	base:           'dpad_down'
+	blue:           'page_down'
+}
+key up {
+	label:          'UP'
+	base:           'dpad_up'
+	blue:           'page_up'
+}
+key right {
+	label:          'RIGHT'
+	base:           'dpad_right'
+}
+key p1 {
+	label:          'P1'
+	wakeup:         'false'
+	base:           'BUTTON_L2'
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exceptions>
+ <exception package="com.symbol.fota">
+  <permission name="android.permission.POST_NOTIFICATIONS" fixed="true" />
+  <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="true" />
+  <permission name="android.permission.READ_EXTERNAL_STORAGE" fixed="true" />
+  <permission name="android.permission.READ_PHONE_STATE" fixed="true" />
+ </exception>
+ <exception package="com.zebra.enrollmentmgr">
+   <permission name="android.permission.POST_NOTIFICATIONS" fixed="true" />
+   <permission name="android.permission.READ_PHONE_STATE"   fixed="true" />
+ </exception>
+</exceptions>

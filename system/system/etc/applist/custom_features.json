@@ -1,0 +1,22 @@
+{
+    "CustomFeatures": [
+      {
+        "_Name": "CPR#38900 Disable Battery swap for Lowe's Companies",
+        "_GUID": "f3C6eDc38cFC9DeA5aAaD7fA",
+        "_Property": "persist.sys.custom.disablebatteryswap",
+        "_ENABLE": "1",
+        "_DISABLE": "0",
+        "_Product": ["TC53","TC57","TC58","TC72","TC73","TC77","TC78","ET51","ET56","ET60","ET65","MC93","MC94"]
+      },
+      {
+            "_Name": "Testing CF CSP Integration on SDM660 A14",
+            "_GUID": "KFEAkZOcTQVe70anrW0LzdWc",
+            "_Property": "persist.sys.custom.timeout",
+            "_ENABLE": "1",
+            "_DISABLE": "0",
+            "_Product": "*"
+      }
+    ],
+    "version": "",
+    "platformList": ["sdm660", "sd6490","sd6375"]
+}

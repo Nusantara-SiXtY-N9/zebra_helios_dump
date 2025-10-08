@@ -1,0 +1,150 @@
+lock {
+	blue:           'toggle_oneshot_and_lock'
+	orange:         'toggle_lock'
+	gray:           'toggle_none'
+	shift:          'toggle_oneshot_and_lock'
+	alt:            'toggle_oneshot'
+	ctrl:           'toggle_oneshot'
+	diamond:        'toggle_oneshot_and_lock'
+}
+diamond {
+	matrix:         '3x3'
+	order:          '1,2,3,4,5,6,7,8,9'
+}
+key 1 {
+	label:          '1'
+	base:           '1'
+	blue:           'f1'
+	diamond:        '+'
+}
+key 2 {
+	label:          '2'
+	base:           '2'
+	blue:           'f2'
+	orange:         'a,b,c'
+	diamond:        '-'
+}
+key 3 {
+	label:          '3'
+	base:           '3'
+	blue:           'f3'
+	orange:         'd,e,f'
+	diamond:        '@'
+}
+key 4 {
+	label:          '4'
+	base:           '4'
+	blue:           'f4'
+	orange:         'g,h,i'
+	diamond:        '/'
+}
+key 5 {
+	label:          '5'
+	base:           '5'
+	blue:           'f5'
+	orange:         'j,k,l'
+	diamond:        '#'
+}
+key 6 {
+	label:          '6'
+	base:           '6'
+	blue:           'f6'
+	orange:         'm,n,o'
+	diamond:        ':'
+}
+key 7 {
+	label:          '7'
+	base:           '7'
+	blue:           'f7'
+	orange:         'p,q,r,s'
+	diamond:        ';'
+}
+key 8 {
+	label:          '8'
+	base:           '8'
+	blue:           'f8'
+	orange:         't,u,v'
+	diamond:        '~'
+}
+key 9 {
+	label:          '9'
+	base:           '9'
+	blue:           'f9'
+	orange:         'w,x,y,z'
+	diamond:        '!'
+}
+key 0 {
+	label:          '0'
+	base:           '0'
+	blue:           'f10'
+}
+key dot {
+	label:          'DOT'
+	base:           'period'
+}
+key blue {
+	label:          'BLUE'
+	base:           'symbol_blue'
+}
+key orange {
+	label:          'ORANGE'
+	base:           'symbol_orange'
+}
+key diamond {
+	label:          'DIAMOND'
+	base:           'symbol_diamond'
+}
+key shift {
+	label:          'SHIFT'
+	base:           'symbol_shift'
+}
+key alt {
+	label:          'ALT'
+	base:           'symbol_alt'
+}
+key ctrl {
+	label:          'CTRL'
+	base:           'symbol_ctrl'
+}
+key enter {
+	label:          'ENTER'
+	base:           'enter'
+}
+key space {
+	label:          'SPACE'
+	base:           'space'
+	blue:           'volume_up'
+}
+key backspace {
+	label:          'BACKSPACE'
+	base:           'del'
+	blue:           'volume_down'
+}
+key esc {
+	label:          'ESC'
+	base:           'escape'
+}
+key tab {
+	label:          'TAB'
+	base:           'tab'
+}
+key left {
+	label:          'LEFT'
+	base:           'dpad_left'
+}
+key right {
+	label:          'RIGHT'
+	base:           'dpad_right'
+}
+key up {
+	label:          'UP'
+	base:           'dpad_up'
+}
+key down {
+	label:          'DOWN'
+	base:           'dpad_down'
+}
+key back {
+	label:          'P1'
+	base:           'back'
+}

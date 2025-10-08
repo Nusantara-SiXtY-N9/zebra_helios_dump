@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+<permission name="com.symbol.osx.permission.scopestorage" >
+     <group gid="sdcard_rw" />
+</permission>
+</permissions>

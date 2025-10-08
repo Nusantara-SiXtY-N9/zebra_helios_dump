@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ptt_settings version="1.1">
+  <setting name="enable">false
+    <description>Enable or disable the PTT service. The default is false.</description>
+  </setting>
+  <setting name="defaultProfileID">1
+    <description>Numeric Identifier of default profile. Decimal value : min=1.</description>
+  </setting>
+  <setting name="ignoreKeysInLockMode">false
+    <description>Ignore keys in lock mode. The default is false.</description>
+  </setting>
+  <setting name="logLevel">None
+    <description>Log level: None, Error, Warning, Info, Debug. The default is None.</description>
+  </setting>
+  <setting name="logDir">PTT
+    <description>Log Directory: Path on SDCard to store PTT Log Files.</description>
+  </setting>
+  <setting name="enableCDR">false
+    <description>Enable/Disable CDR logs. Default is false</description>
+  </setting>
+  <setting name="cdrSize">5000
+    <description>Size of CDR log in KB. Default is 5000, Minimum is 100 and Maximum is 25000</description>
+  </setting>
+  <setting name="fullDuplexClientCoexistence">true
+    <description>Allows PTT to coexist with full duplex clients</description>
+  </setting>
+  <setting name="vibrateOnVoiceCall">true
+    <description>Allows full duplex incoming calls to vibrate when PTT is in call</description>
+  </setting>
+  <setting name="profileSwitchKey">
+    <description>Key for making profile switch. Contains two parts. 1. the key code 2. Single/Double Click. The parts are separated by hyphen.</description>
+  </setting>
+  <setting name="allowProfileSwitchFromUI">true
+    <description>Allow profile switch from UI</description>
+  </setting>
+  <setting name="allowProfileSwitchFromKey">true
+    <description>Allow profile switch using Key</description>
+  </setting>
+  <setting name="ipBroadcastGroup">239.192.2.2
+    <description>Multicast address to be used for Group Broadcast communications.</description>
+  </setting>
+  <setting name="ipBasePort">5000
+    <description>IP Port number of the multicast address being used for Group Broadcast communications. Decimal value : min = 1024, max = 49151</description>
+  </setting>
+  <setting name="sipLocalPort">4080
+    <description>SIP IP Port to be used for Private Response communications. Decimal value : min = 1024, max = 49151</description>
+  </setting>
+  <setting name="gcJitterSize">3
+    <description>One group call packet holds 200 ms data. Decimal value : min = 2, max = 4, default = 3 : which means the maximum data the jitter holds is 600 ms. </description>
+  </setting>
+  <setting name="pcJitterSize">3
+    <description>One private call packet holds 100 ms data. Decimal value : min = 2, max = 4, default = 3 : which means the maximum data the jitter holds is 300 ms</description>
+  </setting>
+  <setting name="gcFloorHoldTimer">60000
+    <description>In a group call, the amount of time the user is allowed to hold the floor (talk without interruption). Decimal value in milliseconds : disable = 0. min=10000 ms, max=90000 ms, default = 60000 ms</description>
+  </setting>
+  <setting name="pcFloorHoldTimer">60000
+    <description>In a private call, the amount of time the user is allowed to hold the floor in the private call (talk without interruption). Decimal value in milliseconds: disable = 0. min=10000 ms, max=90000 ms, default = 60000 ms</description>
+  </setting>
+  <setting name="gcHangTimer">10000
+    <description>The amount of time that has to elapse after which a Private Response cannot be made to the last known talker in the session. Decimal value in milliseconds : min=1000ms, max=10000ms. default = 10000 ms</description>
+  </setting>
+  <setting name="pcHangTimer">10000
+    <description>The amount of time that has to elapse after which the Private Response will terminate. Decimal value in milliseconds : min=1000ms, max=10000ms. default = 10000 ms</description>
+  </setting>
+  <setting name="muteExitTimer">120000
+    <description>The amount of time that has to elapse after which the device will come out of mute state. Decimal value in milliseconds :  0 implies an infinite switch,   min=0ms  max=8640000ms. default =  120000ms </description>
+  </setting>
+  <setting name="headsetKey">R2
+      <description>The Head Set Key</description>
+  </setting>
+  <profile_list>
+    <profile id="1" name="" enable="true" language="en">
+      <description>id is the Profile Identifier (1-12). name assigns an ASCII string name to the profile. 16 alphanumeric character string, including symbols, textual name. This name will be displayed on the UI. The value for language attribute should be a locale string defined as per http://developer.android.com/reference/java/util/Locale.html.</description>
+      <setting name="disablePrivateCall">false
+        <description>Disable or enable private call. Default is false.</description>
+      </setting>
+      <setting name="audioFeedback">Default
+        <description>Off to disable the feature, Default to play the Profile/Channel names while switching.</description>
+      </setting>
+      <setting name="scanOnlyHome">true
+        <description>If this parameter is true, the device will only listen on the channel it is set to transmit upon. i.e. that scan only the HOME channel (as in 1.1).</description>
+      </setting>
+      <setting name="alternativeChannelSwitchTimer">0
+        <description>The amount of time that has to elapse after which the current channel will change from Alternative Channel to Home Channel. 0 implies an infinite switch. Decimal value in milliseconds : min=0, max=8640000</description>
+      </setting>
+      <setting name="enablePriority">false
+        <description>The value true implies that the per channel priority settings will be honored, else it will be ignored</description>
+      </setting>
+      <setting name="pttClientStatusUILock">false
+        <description>Allow PTT to be enabled/disabled from UI. The default is false.</description>
+      </setting>
+      <setting name="callKeyConfiguration">1
+        <description>Set as 0 to use soft key for GC and PC. Set as 1 to use hard keys as defined by key codes in XML for Group Call, Private Call</description>
+      </setting>
+      <setting name="gcKey">L2-Single,R2-Single
+        <description>Key for making Group Call. Contains two parts. 1. the key code 2. Single/Double Click. The parts are separated by hyphen.</description>
+      </setting>
+      <setting name="pcKey">L2-Double,R2-Double
+        <description>Key for making Private Call. Contains two parts. 1. the key code 2. Single/Double Click. The parts are separated by hyphen.</description>
+      </setting>
+      <setting name="muteKey">
+        <description>Key for Muting and Unmuting the application.Contains two parts. 1. the key code 2. Single/Double Click. The parts are separated by hyphen.</description>
+      </setting>
+      <setting name="alternativeChannelSwitchKey">
+        <description>Key for making alternative channel switch. Contains two parts. 1. the key code 2. Single/Double Click. The parts are separated by hyphen.</description>
+      </setting>
+      <setting name="oneKeyTimerDelay">600
+        <description>One key timer delay.  Decimal value in milliseconds : min = 400 ms, max = 1000 ms, default = 600 ms.</description>
+      </setting>
+      <setting name="allowChannelSwitchFromUI">true
+        <description>Allow channel switch from UI</description>
+      </setting>
+      <setting name="allowChannelSwitchFromKey">true
+        <description>Allow channel switch using Key</description>
+      </setting>
+      <setting name="allowMuteFromUI">false
+        <description>Allow mute operation from UI</description>
+      </setting>
+      <setting name="allowMuteFromKey">false
+        <description>Allow mute operation using Key</description>
+      </setting>
+      <channel_list>
+        <description>
+          Channel- list : List of channels in the profile, with following attributes.
+          Channel Attributes:
+          id - Channel identifier. Decimal value : min = 1, max = 32
+          name - An ASCII string name to the channel. 16 alphanumeric character string, including symbols, textual name. This name will be displayed on the UI.
+          priority -The priority of the channel. Decimal value : min = 1, max = 32. 1 being highest, 32 lowest
+          type - Home/Alternative/Emergency/Scan/Disabled. Channels that are not mentioned in the list will be disabled from scan group and from UI,
+          replyable - if  set to t rue, allows a channel to be in a conversation in response to an inbound traffic on this channel,
+          preemptor - When set to true, a preemptor channel of higher priority can preempt a conversation on lower priority channel
+        </description>
+        <channel id="1" priority="1" name="" type="Home" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="2" priority="2" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="3" priority="3" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="4" priority="4" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="5" priority="5" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="6" priority="6" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="7" priority="7" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="8" priority="8" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="9" priority="9" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="10" priority="10" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="11" priority="11" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="12" priority="12" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="13" priority="13" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="14" priority="14" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="15" priority="15" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="16" priority="16" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="17" priority="17" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="18" priority="18" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="19" priority="19" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="20" priority="20" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="21" priority="21" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="22" priority="22" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="23" priority="23" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="24" priority="24" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="25" priority="25" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="26" priority="26" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="27" priority="27" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="28" priority="28" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="29" priority="29" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="30" priority="30" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="31" priority="31" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+        <channel id="32" priority="32" name="" type="Alternative" replyable="true" preemptor="false" cdr="false"/>
+      </channel_list>
+    </profile>
+    <profile id="2" name="First Floor" enable="false" language="en">
+      <description>id is the Profile Identifier (1-12). name assigns an ASCII string name to the profile. 16 alphanumeric character string, including symbols, textual name. This name will be displayed on the UI. The value for language attribute should be a locale string defined as per http://developer.android.com/reference/java/util/Locale.html.</description>
+      <setting name="disablePrivateCall">false
+        <description>Disable or enable private call. Default is false.</description>
+      </setting>
+      <setting name="audioFeedback">Default
+        <description>Off to disable the feature, Default to play the Profile/Channel names while switching.</description>
+      </setting>
+      <setting name="scanOnlyHome">false
+        <description>If this parameter is true, the device will only listen on the channel it is set to transmit upon. i.e. that scan only the HOME channel (as in 1.1).</description>
+      </setting>
+      <setting name="alternativeChannelSwitchTimer">10000
+        <description>The amount of time that has to elapse after which the current channel will change from Alternative Channel to Home Channel. 0 implies an infinite switch. Decimal value in milliseconds : min=0, max=8640000</description>
+      </setting>
+      <setting name="enablePriority">true
+        <description>The value true implies that the per channel priority settings will be honored, else it will be ignored</description>
+      </setting>
+      <setting name="pttClientStatusUILock">false
+        <description>Allow PTT to be enabled/disabled from UI. The default is false.</description>
+      </setting>
+      <setting name="callKeyConfiguration">1
+        <description>Set as 0 to use soft key for GC and PC. Set as 1 to use hard keys as defined by key codes in XML for Group Call, Private Call</description>
+      </setting>
+      <setting name="gcKey">L2-Single,R2-Single
+        <description>Key for making Group Call. Contains two parts. 1. the key code 2. Single/Double Click. The parts are separated by hyphen.</description>
+      </setting>
+      <setting name="pcKey">L2-Double,R2-Double
+        <description>Key for making Private Call. Contains two parts. 1. the key code 2. Single/Double Click. The parts are separated by hyphen.</description>
+      </setting>
+      <setting name="muteKey">
+        <description>Key for Muting and Unmuting the application.Contains two parts. 1. the key code 2. Single/Double Click. The parts are separated by hyphen.</description>
+      </setting>
+      <setting name="alternativeChannelSwitchKey">L1-Single
+        <description>Key for making alternative channel switch. Contains two parts. 1. the key code 2. Single/Double Click. The parts are separated by hyphen.</description>
+      </setting>
+      <setting name="oneKeyTimerDelay">600
+        <description>One key timer delay.  Decimal value in milliseconds : min = 400 ms, max = 1000 ms, default = 600 ms.</description>
+      </setting>
+      <setting name="allowChannelSwitchFromUI">true
+        <description>Allow channel switch from UI</description>
+      </setting>
+      <setting name="allowChannelSwitchFromKey">true
+        <description>Allow channel switch using Key</description>
+      </setting>
+      <setting name="allowMuteFromUI">true
+        <description>Allow mute operation from UI</description>
+      </setting>
+      <setting name="allowMuteFromKey">true
+        <description>Allow mute operation using Key</description>
+      </setting>
+      <channel_list>
+        <description>
+          Channel- list : List of channels in the profile, with following attributes.
+          Channel Attributes:
+          id - Channel identifier. Decimal value : min = 1, max = 32
+          name - An ASCII string name to the channel. 16 alphanumeric character string, including symbols, textual name. This name will be displayed on the UI.
+          priority -The priority of the channel. Decimal value : min = 1, max = 32. 1 being highest, 32 lowest
+          type - Home/Alternative/Emergency/Scan/Disabled. Channels that are not mentioned in the list will be disabled from scan group and from UI,
+          replyable - if  set to t rue, allows a channel to be in a conversation in response to an inbound traffic on this channel,
+          preemptor - When set to true, a pre-emptor channel of higher priority can pre-empt a conversation on lower priority channel
+        </description>
+        <channel id="1" name="Everyone" priority="1" type="Alternative" replyable="false" preemptor="true" cdr="false"/>
+        <channel id="2" name="Apparels" priority="2" type="Home" replyable="true" preemptor="true" cdr="false"/>
+        <channel id="3" name="Household" priority="2" type="Alternative" replyable="true" preemptor="true" cdr="false"/>
+      </channel_list>
+    </profile>
+    <profile id="3" name="Second Floor" enable="false" language="en">
+      <description>id is the Profile Identifier (1-12). name assigns an ASCII string name to the profile. 16 alphanumeric character string, including symbols, textual name. This name will be displayed on the UI. The value for language attribute should be a locale string defined as per http://developer.android.com/reference/java/util/Locale.html.</description>
+      <setting name="disablePrivateCall">false
+        <description>Disable or enable private call. Default is false.</description>
+      </setting>
+      <setting name="audioFeedback"> Default
+        <description>Off to disable the feature, Default to play the Profile/Channel names while switching.</description>
+      </setting>
+      <setting name="scanOnlyHome">false
+        <description>If this parameter is true, the device will only listen on the channel it is set to transmit upon. i.e. that scan only the HOME channel (as in 1.1).</description>
+      </setting>
+      <setting name="alternativeChannelSwitchTimer">10000
+        <description>The amount of time that has to elapse after which the current channel will change from Alternative Channel to Home Channel. 0 implies an infinite switch. Decimal value in milliseconds : min=0, max=8640000</description>
+      </setting>
+      <setting name="enablePriority">true
+        <description>The value true implies that the per channel priority settings will be honored, else it will be ignored</description>
+      </setting>
+      <setting name="pttClientStatusUILock">false
+        <description>Allow PTT to be enabled/disabled from UI. The default is false.</description>
+      </setting>
+      <setting name="callKeyConfiguration">1
+        <description>Set as 0 to use soft key for GC and PC. Set as 1 to use hard keys as defined by key codes in XML for Group Call, Private Call</description>
+      </setting>
+      <setting name="gcKey">L2-Single,R2-Single
+        <description>Key for making Group Call. Contains two parts. 1. the key code 2. Single/Double Click. The parts are separated by hyphen.</description>
+      </setting>
+      <setting name="pcKey">L2-Double,R2-Double
+        <description>Key for making Private Call. Contains two parts. 1. the key code 2. Single/Double Click. The parts are separated by hyphen.</description>
+      </setting>
+      <setting name="muteKey">
+        <description>Key for Muting and Unmuting the application.Contains two parts. 1. the key code 2. Single/Double Click. The parts are separated by hyphen.</description>
+      </setting>
+      <setting name="alternativeChannelSwitchKey">L1-Single
+        <description>Key for making alternative channel switch. Contains two parts. 1. the key code 2. Single/Double Click. The parts are separated by hyphen.</description>
+      </setting>
+      <setting name="oneKeyTimerDelay">600
+        <description>One key timer delay.  Decimal value in milliseconds : min = 400 ms, max = 1000 ms, default = 600 ms.</description>
+      </setting>
+      <setting name="allowChannelSwitchFromUI">true
+        <description>Allow channel switch from UI</description>
+      </setting>
+      <setting name="allowChannelSwitchFromKey">true
+        <description>Allow channel switch using Key</description>
+      </setting>
+      <setting name="allowMuteFromUI">true
+        <description>Allow mute operation from UI</description>
+      </setting>
+      <setting name="allowMuteFromKey">true
+        <description>Allow mute operation using Key</description>
+      </setting>
+      <channel_list>
+        <description>
+          Channel- list : List of channels in the profile, with following attributes.
+          Channel Attributes:
+          id - Channel identifier. Decimal value : min = 1, max = 32
+          name - An ASCII string name to the channel. 16 alphanumeric character string, including symbols, textual name. This name will be displayed on the UI.
+          priority -The priority of the channel. Decimal value : min = 1, max = 32. 1 being highest, 32 lowest
+          type - Home/Alternative/Emergency/Scan/Disabled. Channels that are not mentioned in the list will be disabled from scan group and from UI,
+          replyable - if  set to t rue, allows a channel to be in a conversation in response to an inbound traffic on this channel,
+          preemptor - When set to true, a preemptor channel of higher priority can preempt a conversation on lower priority channel
+        </description>
+        <channel id="1" name="Everyone" priority="1" type="Alternative" replyable="false" preemptor="true" cdr="false"/>
+        <channel id="4" name="Electronics" priority="2" type="Home" replyable="true" preemptor="true" cdr="false"/>
+        <channel id="5" name="Books" priority="2" type="Alternative" replyable="true" preemptor="true" cdr="false"/>
+      </channel_list>
+    </profile>
+  </profile_list>
+</ptt_settings>

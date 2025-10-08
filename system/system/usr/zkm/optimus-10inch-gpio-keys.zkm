@@ -1,0 +1,29 @@
+lock {
+	blue:          'toggle_oneshot_and_lock'
+}
+
+key brightness_up {
+	label:          'BRIGHTNESSUP'
+	wakeup:         'false'
+	base:           'brightness_up'
+	blue:           'volume_up'
+}
+key brightness_down {
+	label:          'BRIGHTNESSDOWN'
+	wakeup:         'false'
+	base:           'brightness_down'
+	blue:           'volume_down'
+}
+key ptt {
+	label:          'HEADSET_HOOK'
+	wakeup:         'false'
+	base:           'BTN_TR2'
+}
+key remote_trigger_1 {
+        label:          'BLUETOOTH_REMOTE_TRIGGER_1'
+        base:           'SYMBOL_TRIGGER_1'
+}
+key remote_trigger_2 {
+        label:          'BLUETOOTH_REMOTE_TRIGGER_2'
+        base:           'SYMBOL_TRIGGER_2'
+}

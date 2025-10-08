@@ -1,0 +1,18 @@
+key grip_trigger {
+	label:          'GRIP_TRIGGER'
+	wakeup:         'true'
+	base:           'BUTTON_L1'
+}
+key scan_center {
+	label:          'SCAN'
+	wakeup:         'false'
+	base:           'SCAN'
+}
+key remote_trigger_1 {
+        label:          'BLUETOOTH_REMOTE_TRIGGER_1'
+        base:           'SYMBOL_TRIGGER_3'
+}
+key remote_trigger_2 {
+        label:          'BLUETOOTH_REMOTE_TRIGGER_2'
+        base:           'SYMBOL_TRIGGER_4'
+}

@@ -1,0 +1,25 @@
+<permissions>
+
+<privapp-permissions package="com.zebra.devicemanager">
+        <permission name="android.permission.CHANGE_CONFIGURATION"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.READ_LOGS"/>
+	<permission name="android.permission.MASTER_CLEAR"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.SET_TIME"/>
+        <permission name="android.permission.SET_TIME_ZONE"/>
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="com.symbol.permission.FUSION_CHANGE"/>
+	<permission name="com.symbol.permission.ENTERPRISE"/>
+	<permission name="android.permission.PACKAGE_USAGE_STATS" />
+	<permission name="com.symbol.osx.rootdetection.permission.START_ROOT_DETECTION"/>
+	<permission name="com.symbol.permission.FUSION_ETHERNET_BIND_ACCESS" />
+    </privapp-permissions>
+<privapp-permissions package="com.symbol.mxmf">
+<permission name="com.symbol.permission.ENTERPRISE"/>
+<permission name="android.permission.INTERACT_ACROSS_USERS" />
+</privapp-permissions>
+</permissions>
