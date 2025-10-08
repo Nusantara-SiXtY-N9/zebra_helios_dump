@@ -1,0 +1,68 @@
+####################################
+# from generate-common-build-props
+# These properties identify this partition image.
+####################################
+ro.product.product.brand=Zebra
+ro.product.product.device=helios
+ro.product.product.manufacturer=Zebra Technologies
+ro.product.product.model=helios
+ro.product.product.name=helios
+ro.product.model_for_attestation=
+ro.product.brand_for_attestation=
+ro.product.name_for_attestation=
+ro.product.build.date=Tue Aug 12 19:36:33 IST 2025
+ro.product.build.date.utc=1755007593
+ro.product.build.fingerprint=Zebra/helios/helios:14/14-32-12.00-UG-U00-STD-HEL-04/15:user/release-keys
+ro.product.build.fp=Zebra/helios/helios:14/14-32-12.00-UG-U00-STD-HEL-04/15:user/release-keys
+ro.build.platform=helios
+ro.product.build.id=14-32-12.00-UG-U00-STD-HEL-04
+ro.product.build.tags=release-keys
+ro.product.build.type=user
+ro.product.build.version.incremental=15
+ro.product.build.version.release=14
+ro.product.build.version.release_or_codename=14
+ro.product.build.version.sdk=34
+####################################
+# from variable ADDITIONAL_PRODUCT_PROPERTIES
+####################################
+ro.build.characteristics=nosdcard
+ro.product.ab_ota_partitions=abl,bluetooth,boot,cmnlib,cmnlib64,devcfg,dsp,dtbo,hyp,keymaster,mdtp,modem,modem_apq,pmic,rpm,system,tz,vbmeta,vendor,xbl
+ro.product.cpu.pagesize.max=65536
+ro.dalvik.vm.enable_uffd_gc=false
+####################################
+# from variable PRODUCT_PRODUCT_PROPERTIES
+####################################
+bluetooth.profile.a2dp.source.enabled=true
+bluetooth.profile.avrcp.target.enabled=true
+bluetooth.profile.avrcp.controller.enabled=true
+bluetooth.profile.hfp.ag.enabled=true
+bluetooth.profile.asha.central.enabled=true
+bluetooth.profile.gatt.enabled=true
+bluetooth.profile.hid.host.enabled=true
+bluetooth.profile.hid.device.enabled=true
+bluetooth.profile.map.server.enabled=true
+bluetooth.profile.opp.enabled=true
+bluetooth.profile.pan.nap.enabled=true
+bluetooth.profile.pan.panu.enabled=true
+bluetooth.profile.pbap.server.enabled=true
+ro.setupwizard.rotation_locked=false
+setupwizard.theme=glif_v3_light
+ro.opa.eligible_device=true
+ro.com.google.gmsversion=14_202408
+dhcp.optionsupportversion=1.0
+dhcp.defaultoptions=1,3,6,15,26,51,58,59
+dhcp.configurableoptions=12,28,42,43,60,61,66,67,77,81,119,150,186,188,230
+persist.service.dhcp.enabledopt=12,28,42,43,60,61,66,67,77,81,119,150,186,188,230
+persist.service.dhcp.requestedparam=12,28,42,43,66,67,119,150,186,188,230
+net.dns.search=
+persist.service.dhcp.vendorid=
+ro.dhcp.sethostname.enable=1
+ro.dhcp.tftp.enable=1
+persist.service.enableuserclass=1
+persist.service.setuserclass=ANDROID
+persist.service.dhcp.hostname=
+persist.service.dhcp.fqdn=
+persist.service.dhcp.fqdnCF=
+dhcp.fqdn.serverflags=
+persist.wm.extensions.enabled=true
+# end of file
