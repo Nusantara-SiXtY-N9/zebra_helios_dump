@@ -1,0 +1,20 @@
+## helios-user 14 14-32-12.00-UG-U00-STD-HEL-04 15 release-keys
+- Manufacturer: zebra technologies
+- Platform: sdm660
+- Codename: helios
+- Brand: Zebra
+- Flavor: helios-user
+- Release Version: 14
+- Kernel Version: 4.19.157
+- Id: 14-32-12.00-UG-U00-STD-HEL-04
+- Incremental: 15
+- Tags: release-keys
+- CPU Abilist: arm64-v8a,armeabi-v7a,armeabi
+- A/B Device: true
+- Treble Device: true
+- Locale: en-US
+- Screen Density: undefined
+- Fingerprint: Zebra/helios/helios:14/14-32-12.00-UG-U00-STD-HEL-04/15:user/release-keys
+- OTA version: 
+- Branch: helios-user-14-14-32-12.00-UG-U00-STD-HEL-04-15-release-keys
+- Repo: zebra_helios_dump
